@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!-- define css & js resource
 <link href="#" type="text/css" rel="stylesheet" /> 
 <link href="#" rel="script" />
