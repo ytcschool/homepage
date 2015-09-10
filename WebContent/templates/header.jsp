@@ -3,7 +3,7 @@
 	<hgroup id="title">
 		<h3>Header</h3>	
 	</hgroup>
-
+<!-- 
 	<nav id="main_gnb"> 
 	  <div id="menuTitleBox" class="skew50">
   	    <div class="un_skew50">
@@ -33,5 +33,5 @@
 			<li><a href="#">Sign Up</a></li>	
 			<li><a href="#">Log In</a></li>
 		</ul>
-	</nav>
+	</nav> -->
 </header>
