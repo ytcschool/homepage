@@ -7,7 +7,6 @@
 		<h3>Header</h3>	
 	</hgroup>
 
-<!-- 
 	<nav id="main_gnb"> 
 	  <div id="menuTitleBox" class="skew50">
   	    <div class="un_skew50">
@@ -17,7 +16,7 @@
 	  <input id="select1" name="radioMenu" type="radio" class="openInput" checked />
 	  <label for="select1" class="openBtn">Open Menu</label>
 	  <input id="select2" name="radioMenu" type="radio" class="closeInput" />
-	  <label for="select2" class="openBtn">Close Menu</label>
+	  <label for="select2" class="closeBtn">Close Menu</label>
 	  <nav id="menuListBox" class="skew50">
 	    <ul id="mainMenu">
 	 	  <li class="menu1"><span><a href="#">Book</a></span></li> 	
@@ -25,13 +24,12 @@
 	 	  <li class="menu3"><span><a href="#">Nature</a></span></li> 	
 	 	</ul> 
 	    <ul id="sideMenu">
-	 	  <li><span><a href="#">About me</a></span></li> 	
+	 	  <li><span><a href="#">About</a></span></li> 	
 	 	  <li><span><a href="#">Services</a></span></li> 	
 	 	  <li><span><a href="#">Contact</a></span></li> 	
 	 	</ul> 
 	  </nav>
 	</nav>
--->
 
 	<nav id="main_lnb">
 		<ul id="main_lnb">
