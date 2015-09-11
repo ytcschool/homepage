@@ -11,71 +11,46 @@
 	} else if (session.getAttribute("id") == null) {
 %>
 	<form name="loginform" action="./MemberLoginAction.me" method="post">
-		<div>
-			<table border=1>
-				<tr>
-					<td colspan="2" align=center><b><font size=5>Login Page</font></b></td>
-				</tr>
-				<tr>
-					<td>ID :</td>
-					<td><input type="text" name="MEMBER_ID" /></td>
-				</tr>
-				<tr>
-					<td>PASSWORD :</td>
-					<td><input type="password" name="MEMBER_PW" /></td>
-				</tr>
-				<tr>
-					<td colspan="2" align=center>
-					<a href="javascript:loginform.submit()">Sign-In</a>&nbsp;&nbsp; 
-				</tr>
-			</table>
-		</div>
+		<input type="text" name="MEMBER_ID" placeholder="ID" size="20"><br/>
+		<input type="password" name="MEMBER_PW" placeholder="Password" size="20"><br/><br/>
+		<a href="javascript:loginform.submit()">Sign-In</a>&nbsp;&nbsp; 
 	</form>
 	<br />
 	
 	<!-- 회원가입 기능 -->
 	<form name="joinform" action="./MemberJoinAction.me" method="post">
-		<div>
-			<table border=1>
-				<tr>
-					<td colspan="2" align=center><b><font size=5>Sign-Up Page</font></b></td>
-				</tr>
-				<tr>
-					<td>ID:</td>
-					<td><input type="text" name="MEMBER_ID" />
-				</tr>
-				<tr>
-					<td>PASSWORD:</td>
-					<td><input type="password" name="MEMBER_PW" /></td>
-				</tr>
-				<tr>
-					<td>NAME:</td>
-					<td><input type="text" name="MEMBER_NAME" /></td>
-				</tr>
-				<tr>
-					<td>BIRTH(EX: 881019):</td>
-					<td><input type="text" name="MEMBER_AGE" maxlength=6 size=6 /></td>
-				</tr>
-				<tr>
-					<td>GENDER:</td>
-					<td>
-						<input type="radio" name="MEMBER_GENDER" value="Male" checked />Male
-						<input type="radio" name="MEMBER_GENDER" value="Female" />Female
-					</td>
-				</tr>
-				<tr>
-					<td>E-MAIL:</td>
-					<td>
-						<input type="text" name="MEMBER_EMAIL" size=30 />
-					</td>
-				</tr>
-				<tr>
-					<td colspan="2" align=center>
-						<a href="javascript:joinform.submit()">Sign-Up</a>&nbsp;&nbsp; 
-						<a href="javascript:joinform.reset()">Reset</a></td>
-				</tr>
-			</table>
-		</div>
+		<input type="text" name="MEMBER_ID" placeholder="ID" size="10">&nbsp;&nbsp;&nbsp;
+		<input type="password" name="MEMBER_PW" placeholder="Password" size="10"><br/>
+		<input type="text" name="MEBER_NAME" placeholder="Name" size="10">&nbsp;&nbsp;&nbsp;
+		<input type="text" name="MEMBER_EMAIL" placeholder="E-mail" size="10"><br/>
+		
+		<select name="MEMBER_YEAR">
+			<% 
+			for(int year=2010; year>=1930; year--){
+			%><option><%=year%></option>
+			<% }%>
+		</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<select name="MEMBER_MONTH">
+			<%
+			for(int month=1; month<=12; month++){
+			%><option><%=month%></option>
+			<% }%>
+		</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<select name="MEMBER_DAY">
+			<%
+			for(int day=1; day<=31; day++){
+			%><option><%=day%></option>
+			<% }%>
+			
+		</select><br/>
+		
+		<input type="radio" name="MEMBER_GENDER" value="male"/>Male&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="radio" name="MEMBER_GENDER" value="female"/>Female&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<br />
+		<a href="javascript:joinform.submit()">Sign-Up</a>&nbsp;&nbsp; 
+		<a href="javascript:joinform.reset()">Reset</a>
+		
+		
 	</form>
 <%	
 	} 

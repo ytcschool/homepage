@@ -20,7 +20,9 @@ public class MemberJoinAction implements Action {
 		member.setMEMBER_ID(request.getParameter("MEMBER_ID"));
 		member.setMEMBER_PW(request.getParameter("MEMBER_PW"));
 		member.setMEMBER_NAME(request.getParameter("MEMBER_NAME"));
-		member.setMEMBER_AGE(Integer.parseInt(request.getParameter("MEMBER_AGE")));
+		member.setMEMBER_YEAR(Integer.parseInt(request.getParameter("MEMBER_YEAR")));
+		member.setMEMBER_MONTH(Integer.parseInt(request.getParameter("MEMBER_MONTH")));
+		member.setMEMBER_DAY(Integer.parseInt(request.getParameter("MEMBER_DAY")));
 		member.setMEMBER_GENDER(request.getParameter("MEMBER_GENDER"));
 		member.setMEMBER_EMAIL(request.getParameter("MEMBER_EMAIL"));
 

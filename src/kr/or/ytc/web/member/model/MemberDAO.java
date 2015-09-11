@@ -46,7 +46,7 @@ public class MemberDAO {
 	// 회원가입 처리 메소드
 	public boolean joinMember(MemberBean member) {
 		Connection con = DBUtil.getConnection();
-		String sql = "INSERT INTO MEMBER VALUES (?,?,?,?,?,?)";
+		String sql = "INSERT INTO MEMBER VALUES (?,?,?,?,?,?,?,?)";
 		int result = 0;
 
 		try {
@@ -54,9 +54,11 @@ public class MemberDAO {
 			pstmt.setString(1, member.getMEMBER_ID());
 			pstmt.setString(2, member.getMEMBER_PW());
 			pstmt.setString(3, member.getMEMBER_NAME());
-			pstmt.setInt(4, member.getMEMBER_AGE());
-			pstmt.setString(5, member.getMEMBER_GENDER());
-			pstmt.setString(6, member.getMEMBER_EMAIL());
+			pstmt.setInt(4, member.getMEMBER_YEAR());
+			pstmt.setInt(5, member.getMEMBER_MONTH());
+			pstmt.setInt(6, member.getMEMBER_DAY());
+			pstmt.setString(7, member.getMEMBER_GENDER());
+			pstmt.setString(8, member.getMEMBER_EMAIL());
 			result = pstmt.executeUpdate();
 
 			if (result != 0) {
