@@ -18,12 +18,12 @@ public class TemplateProcessor extends HttpServlet {
 		String contextPath = request.getContextPath();
 		String resource = uri.substring(contextPath.length(), uri.length() - ".view".length())
 				          + ".jsp";
-
+        System.out.println(resource);
 		request.setAttribute("title", "YTC School Site");
 		request.setAttribute("body", resource);
-
 		RequestDispatcher rd = request.getRequestDispatcher("/templates/template.jsp");
 		rd.include(request, response);
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

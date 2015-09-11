@@ -5,5 +5,5 @@
 
 <!--  begin main content -->
 <div id="content">
-	<h1>This is Content.</h1>
+	<h1>This is Join Content.</h1>
 </div>
