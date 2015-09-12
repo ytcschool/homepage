@@ -102,9 +102,8 @@ header#main_header {
 	position: relative;
 	vertical-align: top;
 	width: 195px;
-/* 	height: 215px; */
-	height: 80px;
-	line-height: 80px;
+	height: 215px;
+	line-height: 215px;
 	border-right: 1px solid #000f5f;
 	cursor: pointer;
 	background: red;
@@ -138,12 +137,10 @@ header#main_header {
 	position: relative;
 /* 	width: 185px; */
 	width: 90px;
-/* 	height: 71px; */
-	height: 40px;
+	height: 71px;
 	border-bottom: 1px solid #0066ff;	
 	line-height: 71px;
 	cursor: pointer;
-	box-sizing: border-box;
 }
 #menuListBox #sideMenu li span {
 	display: inline-block;

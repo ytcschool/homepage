@@ -26,7 +26,6 @@
 	    <ul id="sideMenu">
 	 	  <li><span><a href="#">About</a></span></li> 	
 	 	  <li><span><a href="#">Services</a></span></li> 	
-	 	  <li><span><a href="#">Contact</a></span></li> 	
 	 	</ul> 
 	  </nav>
 	</nav>
