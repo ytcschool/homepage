@@ -2,7 +2,7 @@
 
 /*  Init  */
 * { margin:0; padding: 0; }
-body { font-family: 'Times New Roman', serif; }
+body { font-family: 'Times New Roman', serif; align: center;}
 ul,ol,li { list-style: none; }
 a { 
 	text-decoration: none; 
@@ -14,6 +14,11 @@ img { border: 0; }
 /* Header */
 #main_header {
 }  
+
+body > * {
+	margin: 0 auto;	
+	overflow: hidden;
+}
 
 header#main_header {
 		width: 960px; magin: 0 auto;
@@ -29,13 +34,6 @@ header#main_header {
 	height: 80px;
 }
 
-#main_header > #main_lnb {
-	position: absolute;
-	right: 20px; bottom: 10px;
-/* 	border: 1px solid red; */
-	height: 80px;
-}
-
 /* Global Menu */
 .skew50 {
 	-webkit-transform: skewX(-50deg);
@@ -47,47 +45,46 @@ header#main_header {
 
 #main_gnb {
 	position: relative;
-	left: 0px;
-	top: 10px;
-/* 	border: 1px solid black */
 }
 
+/* Global Menu Title */
 #menuTitleBox {
 	overflow: hidden;
 	position: absolute;
 	left: -180px;
 	top: 20px;
 	width: 330px;
-	height: 280px;
+	height: 80px;
 	z-index: 100;
+	
 }
 
 #menuTitleBox > div {
 	position: relative;
 	width: 500px;
-	height: 215px;
+	height: 80px;
 	background: black;
 }
 
 #menuTitleBox div.title {
 	position: absolute;
-	top: 33px;
+	top: 20px;
 	left: 200px;
 	width: 82px;
-	height: 90px;
+	height: 80px;
 	font-size: 18px;
 	font-weight: bold;
 	color: #fff;
 }
 
+/* Global Menu List */
 #menuListBox {
 	overflow: hidden;
 	position: absolute;
 	top: 20px;
-	left: 188px;
-	height: 215px;
+	margin-left: -33px;
 	border-right: 1px solid #2bd3ff;
-	background: #000; /*black*/
+	background: white; /*black*/
 }
 
 #menuListBox #mainMenu {
@@ -102,10 +99,8 @@ header#main_header {
 	position: relative;
 	vertical-align: top;
 	width: 195px;
-/* 	height: 215px; */
 	height: 80px;
 	line-height: 80px;
-	border-right: 1px solid #000f5f;
 	cursor: pointer;
 	background: red;
 }
@@ -129,29 +124,27 @@ header#main_header {
 	overflow: hidden;
 	display: inline-block;
 	position: relative; 
-	margin: 0 0 0 -80px; 
+	margin: 0 0 0 -76px; 
 	vertical-align: top; 
 	background: lightgreen;
 }
 
 #menuListBox #sideMenu > li {
 	position: relative;
-/* 	width: 185px; */
-	width: 90px;
-/* 	height: 71px; */
+	width: 120px;
 	height: 40px;
-	border-bottom: 1px solid #0066ff;	
-	line-height: 71px;
+	border-top: 2px solid white;	
+	border-bottom: 1px solid white;	
+	line-height: 34px;
 	cursor: pointer;
 	box-sizing: border-box;
 }
 #menuListBox #sideMenu li span {
 	display: inline-block;
 	position: relative;
-/* 	width: 112px; */
-	width: 112px;
-/* 	margin: 0 0 0 36px; */
-	padding: 10px;
+	width: 120px;
+	margin: 0 0 0 10px;
+	padding: 5px;
 	vertical-align: middle;
 	line-height: 15px;
 	-webkit-transform: skew(50deg);
@@ -165,12 +158,13 @@ header#main_header {
 	background: #000;
 }
 
+/* Open&Close Button */
 input {display: none;}
 
 label {
 	position: absolute;
 	height: 20px;
-	width: 315px;
+	width: 198px;
 	text-align: center;
 	background: #e1e1e1;
 	color: #000;
@@ -188,8 +182,6 @@ label.closeBtn {
 	color: #fff
 }
 
-/* input.openInput:checked ~ label.openBtn, */
-/* input.closeInput:checkd ~ label.closeBtn { */
 input[type="radio"]:checked + label { 
 	background: #000;
 	color: white;
@@ -204,27 +196,29 @@ input.closeInput:checked ~ nav#menuListBox {
 	left:-776px;
 }
 
-/* Local Menu */
-#main_lnb > ul { overflow: hidden; }
-
-#main_lnb > ul > li { float: right;	}
-
-#main_lnb > ul > li > a {
-	display: blcok;
-	padding: 10px 20px;
-	border: 1px solid black;
-	color: black;
-}
-
-#main_lnb > ul > li > a:hover {
-	background: black;
-	color: red;
-}
-
+/* Footer */
 footer {
+	overflow: hidden;
 	border: 1px solid blue;
 	width: 960px;
 	text-align: center;
+}
+
+#footer_logo {
+	float: left;
+	width: 140px;
+	height: 100px;
+	background: red;
+}
+
+#footer_content {
+	float: left;
+	height: 100px;
+	margin-left: 60px;
+}
+
+#footer_content > p {
+	font-size: 11px;	
 }
 
 div#content {
