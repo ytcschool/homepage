@@ -36,7 +36,7 @@
 	<nav id="main_lnb">
 		<ul id="main_lnb">
 			<li><a href="#">Q/A</a></li>
-			<li><a href="#">공지사항</a></li>
+			<li><a href="<%=request.getContextPath() %>/AnnmntList.do">공지사항</a></li>
 			<li><a href="#">교육과정</a></li>
 			<li><a href="#">학교소개</a></li>	
 		</ul>

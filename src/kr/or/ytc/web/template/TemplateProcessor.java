@@ -24,7 +24,8 @@ public class TemplateProcessor extends HttpServlet {
 
 		request.setAttribute("title", "YTC School Site");
 		request.setAttribute("body", resource);
-
+		System.out.println("in template");
+		System.out.println(resource);
 		RequestDispatcher rd = request.getRequestDispatcher("/templates/template.jsp");
 		rd.include(request, response);
 	}
