@@ -8,8 +8,12 @@
 	<title>${requestScope.title}</title>
 </head>
 <body>
-	<jsp:include page="${requestScope.header}" />
-	<jsp:include page="${requestScope.body}" />
+	<div id="page">
+		<div id="sticky-footer-wrap">
+			<jsp:include page="${requestScope.header}" />
+			<jsp:include page="${requestScope.body}" />
+		</div>
+	</div>
 	<jsp:include page="${requestScope.footer}" />
 </body>
 

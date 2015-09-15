@@ -23,5 +23,6 @@
       </div>
       <div id="annmnt_box"></div>
       <div id="consult"> </div>
+</div>
 <script src="resources/js/jquery-1.11.3.min.js"></script>
 <script src="resources/js/slider.js"></script>
