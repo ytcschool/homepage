@@ -12,4 +12,18 @@
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
+	
+	<display-name>YTC-Website-v1.0</display-name>
+	<servlet>
+		<description>
+		</description>
+		<display-name>MemberFrontController</display-name>
+		<servlet-name>MemberFrontController</servlet-name>
+		<servlet-class>kr.or.ytc.web.member.controller.MemberFrontController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MemberFrontController</servlet-name>
+		<url-pattern>*.me</url-pattern>
+	</servlet-mapping>
+	
 </web-app>
