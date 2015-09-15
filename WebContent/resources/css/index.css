@@ -1,0 +1,166 @@
+#content-wrapper { 
+	position: relative;
+	height: 670px; 
+} 
+
+/********** Member **********/
+aside {
+	position: absolute;
+	width: 270px;
+	height: 270px;
+	right: 50px;
+	top: 50px;
+	border: 1px solid gray;
+	z-index: 100;
+}
+
+input[type=radio]:nth-of-type(1) {display:none;}
+input:nth-of-type(1) ~ div:nth-of-type(1){display:none;}
+input:nth-of-type(1):checked ~ div:nth-of-type(1) {display:block}
+input:nth-of-type(1):checked ~ div:nth-of-type(1) {border:none} 
+
+input[type=radio]:nth-of-type(2) {display:none;}
+input:nth-of-type(2) ~ div:nth-of-type(2){display:none;}
+input:nth-of-type(2):checked ~ div:nth-of-type(2) {display:block;}
+input:nth-of-type(2):checked ~ div:nth-of-type(2) {border:none;} 
+
+section.buttons{overflow:hidden;}
+section.buttons > label{
+	/*수평정렬*/
+	display:block; float:left;
+	/*크기 및 글자 위치 지정*/
+	width:135px; heigth:30px;
+	line-hegiht:30px;
+	text-align:center;
+	/*테두리 지정*/
+	box-sizing:border-box;
+	border:3px solid black;
+	/*색상 지정*/
+	background:white;
+	color:black;
+}
+
+input:nth-of-type(1):checked ~ section.buttons > label:nth-of-type(1){
+		background-color: #ffff99; 
+	color:black;
+}
+
+input:nth-of-type(2):checked ~ section.buttons > label:nth-of-type(2){
+		background-color: #ffcc99; 
+	color:black;
+}	
+
+/* 로그인 성공 시 스타일 적용 부분 */
+div#loginSuccess {
+	position: absolute;
+	width: 270px;
+	height: 270px;
+	right: 50px;
+	top: 50px;
+	border: 2px solid orange;
+	text-align: center;
+	font-size: 20px;
+	width: 155px;
+	height: 60px;
+	padding: 10px;
+	background-color: #FFFFEB;
+}
+
+div#loginSuccess > p {
+	margin-bottom: 13px;
+}
+
+div#loginSuccess > a {
+	font-size:12pt;
+}
+
+p#signupbtn {
+	margin: auto;
+}
+
+/* <a> 태그 버튼으로 변경 */
+a.button {
+	-webkit-appearance: button;
+	-moz-appearance: button;
+	appearance: button;
+}
+
+/* 링크 속성 변경 */
+a:link {
+	color: black; text-decoration: none;
+}
+
+a:visited {
+	color: balck; text-decoration: none;
+}
+
+a:hover {
+	color: balck; text-decoration: none;
+}
+
+div.right_item {
+	background:white;
+	height: 243px;
+}
+
+/********** SLIDER **********/
+.slider {
+  max-width: 960px;
+  margin: 0px auto 30px auto;
+}
+
+.slide-viewer {
+    position: relative; /* needed for IE7 */
+    overflow: hidden;
+    height: 360px;
+}
+
+.slide-group {
+    width: 100%;
+    height: 100%;
+    position: relative;}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: absolute;}
+
+.slide:first-child {
+    display: block;}
+
+
+/********** BUTTONS **********/
+.slide-buttons {
+  text-align: center;
+ }
+
+.slide-btn {
+  border: none;
+  background: none;
+  color: #000;
+  font-size: 200%;
+  line-height: 0.5em;
+}
+
+.slide-btn.active, .slide-btn:hover {
+  color: #ed8e6c;
+  cursor: pointer;}
+
+/********** Index Box **********/
+div#annmnt_box {
+	position: absolute;
+	left: 70px; bottom: 50px;
+	width: 400px;
+	height: 200px;
+	text-align: center;
+	border: 1px solid black;
+}
+div#consult_box {
+	position: absolute;
+	right: 70px; bottom: 50px;
+	width: 300px;
+	height: 200px;
+	text-align: center;
+	border: 1px solid black;
+}

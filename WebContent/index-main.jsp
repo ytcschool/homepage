@@ -1,104 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-    
-<!-- 로그인 / 회원가입 스타일 -->
-<style>
-	#content {
-		position: relative;
-	}
-	
-	aside {
-		position: absolute;
-		width: 270px;
-		height: 270px;
-		right: 50px;
-		top: 50px;
-		border: 1px solid gray;
-	}
-	
-	input[type=radio]:nth-of-type(1) {display:none;}
-	input:nth-of-type(1) ~ div:nth-of-type(1){display:none;}
-	input:nth-of-type(1):checked ~ div:nth-of-type(1) {display:block}
-	input:nth-of-type(1):checked ~ div:nth-of-type(1) {border:none}
-	
-	input[type=radio]:nth-of-type(2) {display:none;}
-	input:nth-of-type(2) ~ div:nth-of-type(2){display:none;}
-	input:nth-of-type(2):checked ~ div:nth-of-type(2) {display:block;}
-	input:nth-of-type(2):checked ~ div:nth-of-type(2) {border:none;}
-	
-	section.buttons{overflow:hidden;}
-	section.buttons > label{
-	/*수평정렬*/
-	display:block; float:left;
-	/*크기 및 글자 위치 지정*/
-	width:135px; heigth:30px;
-	line-hegiht:30px;
-	text-align:center;
-	/*테두리 지정*/
-	box-sizing:border-box;
-	border:3px solid black;
-	/*색상 지정*/
-	background:white;
-	color:black;
-	}
-	input:nth-of-type(1):checked ~ section.buttons > label:nth-of-type(1){
-		background-color: #ffff99;
-		color:black;
-	}
-	input:nth-of-type(2):checked ~ section.buttons > label:nth-of-type(2){
-		background-color: #ffcc99;
-		color:black;
-	}	
-	
-	/* 로그인 성공 시 스타일 적용 부분 */
-	div#loginSuccess {
-		position: absolute;
-		width: 270px;
-		height: 270px;
-		right: 50px;
-		top: 50px;
-		border: 2px solid orange;
-		text-align: center;
-		font-size: 20px;
-		width: 155px;
-		height: 60px;
-		padding: 10px;
-		background-color: #FFFFEB;
-	}
 
-	div#loginSuccess > p {
-		margin-bottom: 13px;
-	}
-	
-	div#loginSuccess > a {
-		font-size:12pt;
-	}
-	
-	p#signupbtn {
-		margin: auto;
-	}
-	
-	/* <a> 태그 버튼으로 변경 */
-	a.button {
-		-webkit-appearance: button;
-		-moz-appearance: button;
-		appearance: button;
-	}
-	
-	/* 링크 속성 변경 */
-	a:link {
-		color: black; text-decoration: none;
-	}
-	a:visited {
-		color: balck; text-decoration: none;
-	}
-	a:hover {
-		color: balck; text-decoration: none;
-	}
-	div.right_item {
-		background:white;
-	}
-</style>
+<!-- 로그인 / 회원가입 스타일 -->
+<link href="resources/css/index.css" type="text/css" rel="stylesheet" /> 
 
 <div id="content">
 <%
@@ -117,7 +21,7 @@
 %>
 
 <!-- 로그인 / 회원가입 배너 -->
-	
+	<div id="content-wrapper">
 	<aside id="main_aside">
 		<input id="first" type ="radio" name="tab" checked="checked" onclick="disappear()" />
 		<input id="second" type="radio" name="tab" onclick="appear()" />
@@ -174,9 +78,29 @@
 			</form>
 		</div>
 	</aside>
-<%	
-	} 
-%>
+	<%	} %>
+ 	<div class="slider">
+        <div class="slide-viewer">
+          <div class="slide-group">
+            <div class="slide slide-1">
+              <img src="resources/images/banner.png" width="100%" height="350px"/>
+            </div>
+            <div class="slide slide-2">
+              <img src="resources/images/slide-2.jpg" width="100%" height="350px"/>
+            </div>
+            <div class="slide slide-3">
+              <img src="resources/images/slide-3.jpg" width="100%" height="350px"/>
+            </div>
+            <div class="slide slide-4">
+              <img src="resources/images/slide-4.jpg" width="100%" height="350px"/>
+            </div>
+          </div>
+        </div>
+        <div class="slide-buttons"></div>
+      </div>
+    <div id="annmnt_box">공지사항 미니 목록</div>
+    <div id="consult_box">전화상담 안내</div>
+	</div>
 </div>
 
 <!-- Sign-In / Sign-Up 테두리 설정 -->
@@ -184,9 +108,11 @@
 document.getElementById("main_aside").style.borderStyle = "none";
 var mainAside = document.getElementById("main_aside");
 var appear = function() {
-	mainAside.style.border = "1px solid black"
+	mainAside.style.border = "1px solid gray";
 };
 var disappear = function() {
 	mainAside.style.border = "none";
 };
 </script>
+<script src="resources/js/jquery-1.11.3.min.js"></script>
+<script src="resources/js/slider.js"></script>
