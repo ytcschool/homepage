@@ -1,3 +1,5 @@
+<link href="/YTC-Website-v1.0/resources/css/member.css" type="text/css" rel="stylesheet" /> 
+
 <div id="content">
 <%
 	// 로그인 성공 시
@@ -10,19 +12,27 @@
 	// 로그인 실패 시
 	} else if (session.getAttribute("id") == null) {
 %>
+
+	<div id="login">
 	<form name="loginform" action="./MemberLoginAction.me" method="post">
-		<input type="text" name="MEMBER_ID" placeholder="ID" size="20"><br/>
-		<input type="password" name="MEMBER_PW" placeholder="Password" size="20"><br/><br/>
+		
+		<input type="text" name="MEMBER_ID" placeholder="ID" size="20"><br/><br/><br/>
+		<input type="password" name="MEMBER_PW" placeholder="Password" size="20"><br/><br/><br/>
 		<a href="javascript:loginform.submit()">Sign-In</a>&nbsp;&nbsp; 
+		
 	</form>
+	</div>
 	<br />
 	
 	<!-- 회원가입 기능 -->
+	
+	<div id="signup">
 	<form name="joinform" action="./MemberJoinAction.me" method="post">
+	
 		<input type="text" name="MEMBER_ID" placeholder="ID" size="10">&nbsp;&nbsp;&nbsp;
-		<input type="password" name="MEMBER_PW" placeholder="Password" size="10"><br/>
+		<input type="password" name="MEMBER_PW" placeholder="Password" size="10"><br/><br/>
 		<input type="text" name="MEBER_NAME" placeholder="Name" size="10">&nbsp;&nbsp;&nbsp;
-		<input type="text" name="MEMBER_EMAIL" placeholder="E-mail" size="10"><br/>
+		<input type="text" name="MEMBER_EMAIL" placeholder="E-mail" size="10"><br/><br/>
 		
 		<select name="MEMBER_YEAR">
 			<% 
@@ -42,16 +52,18 @@
 			%><option><%=day%></option>
 			<% }%>
 			
-		</select><br/>
+		</select><br/><br/>
 		
 		<input type="radio" name="MEMBER_GENDER" value="male"/>Male&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<input type="radio" name="MEMBER_GENDER" value="female"/>Female&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<br />
+		<br /><br/>
 		<a href="javascript:joinform.submit()">Sign-Up</a>&nbsp;&nbsp; 
 		<a href="javascript:joinform.reset()">Reset</a>
 		
 		
 	</form>
+	</div>
+	
 <%	
 	} 
 %>
