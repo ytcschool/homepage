@@ -54,22 +54,31 @@ public class AnnouncementDAO {
 	
 	//글 목록 보기
 	public List getBoardList(int page,int limit){
-	
-		String board_list_sql="select * from annboard";
-	
-		
 		List list = new ArrayList();
 		
 		int startrow=(page-1)*10+1; //읽기 시작할 row 번호.
 		int endrow=startrow+limit-1; //읽을 마지막 row 번호.		
+		String board_list_sql="select * from annboard order by ANNBOARD_NUM desc limit "+(startrow-1)+","+10;
+	
+		
+
 		try{
 			con = ds.getConnection();
+				
 			pstmt = con.prepareStatement(board_list_sql);
+			/*MYSQL에서 필요없음.
 			pstmt.setInt(1, startrow);
+			System.out.println("pstmt.setInt1");
 			pstmt.setInt(2, endrow);
+			System.out.println("pstmt.setInt2");
+			*/
 			rs = pstmt.executeQuery();
-			
+			//System.out.println("rs=");
+			//int n =0;
+			//System.out.println("rs before");
 			while(rs.next()){
+				//n= n+1; // 리스트 체크용
+				//System.out.println("ok " + String.valueOf(n)); //리스트 체크용
 				Announcement annboard = new Announcement();
 				annboard.setANNBOARD_NUM(rs.getInt("ANNBOARD_NUM"));
 				annboard.setANNBOARD_NAME(rs.getString("ANNBOARD_NAME"));
@@ -83,7 +92,7 @@ public class AnnouncementDAO {
 				annboard.setANNBOARD_DATE(rs.getDate("ANNBOARD_DATE"));
 				list.add(annboard);
 			}
-			
+			System.out.println("getboardlist end");
 			return list;
 		}catch(Exception ex){
 			System.out.println("getBoardList 에러 : " + ex);
@@ -205,7 +214,7 @@ public class AnnouncementDAO {
 	
 	//글 삭제
 	public boolean boardDelete(int num){
-		
+		System.out.println("boardDelete");
 		String board_delete_sql="delete from annboard where ANNBOARD_num=?";
 		
 		int result=0;

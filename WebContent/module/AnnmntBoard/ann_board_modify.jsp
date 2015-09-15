@@ -17,7 +17,7 @@ Announcement annboard = (Announcement)request.getAttribute("boarddata");
 </head>
 <body>
 <!-- 게시판 수정 -->
-<form action="<%=request.getContextPath() %>AnnmntModifyAction.do" method="post" name="modifyform">
+<form action="<%=request.getContextPath() %>/AnnmntModifyAction.do" method="post" name="modifyform">
 <input type="hidden" name="ANNBOARD_NUM" value=<%=annboard.getANNBOARD_NUM() %>>
 <table cellpadding="0" cellspacing="0">
 	<tr align="center" valign="middle">

@@ -53,7 +53,7 @@
 		</td>
 		<td style="font-family:µ¸À½; font-size:12">
 		<%if(!(annboard.getANNBOARD_FILE()==null)){ %>
-		<a href="./annboardupload/<%=annboard.getANNBOARD_FILE()%>">
+		<a href="./module/annboardupload/<%=annboard.getANNBOARD_FILE()%>">
 			<%=annboard.getANNBOARD_FILE() %>
 		</a>
 		<%} %>

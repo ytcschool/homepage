@@ -9,6 +9,7 @@
 	int num=Integer.parseInt(request.getParameter("num"));
 %>
 </head>
+
 <body>
 <form name="deleteForm" action="<%=request.getContextPath() %>/AnnmntDeleteAction.do?num=<%=num %>" 
 	method="post">
@@ -31,4 +32,5 @@
 </table>
 </form>
 </body>
+
 </html>

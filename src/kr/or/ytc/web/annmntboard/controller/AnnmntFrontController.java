@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet({ 
 		"/AnnmntWrite.do", 
 		"/AnnmntModify.do",
+		"/AnnmntDelete.do",
 		"/AnnmntAddAction.do",
 		"/AnnmntModifyAction.do", 
 		"/AnnmntDeleteAction.do", 
@@ -35,10 +36,12 @@ public class AnnmntFrontController
 			forward=new AnnmntActionForward();
 			forward.setRedirect(false);
 			forward.setPath("/module/AnnmntBoard/ann_board_write.jsp");
+			
 		}else if(command.equals("/AnnmntDelete.do")){
 			forward=new AnnmntActionForward();
 			forward.setRedirect(false);
-			forward.setPath("/module/AnnmntBoard/ann_board_delete.jsp");
+			forward.setPath("./module/AnnmntBoard/ann_board_delete.jsp");
+			
 		}else if(command.equals("/AnnmntModify.do")){
 			action = new AnnmntModifyView();
 			try{
@@ -60,6 +63,7 @@ public class AnnmntFrontController
 			}catch(Exception e){
 				e.printStackTrace();
 			}
+			
 		}else if(command.equals("/AnnmntDeleteAction.do")){
 			action = new AnnmntDeleteAction();
 			try{
@@ -67,6 +71,7 @@ public class AnnmntFrontController
 			}catch(Exception e){
 				e.printStackTrace();
 			}
+			
 		}else if(command.equals("/AnnmntList.do")){
 			action = new AnnmntListAction();
 			try{

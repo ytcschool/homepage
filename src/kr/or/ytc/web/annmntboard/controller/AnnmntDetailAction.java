@@ -1,10 +1,10 @@
 package kr.or.ytc.web.annmntboard.controller;
 
 import javax.servlet.http.HttpServletRequest;
-	import javax.servlet.http.HttpServletResponse;
-	
-	import kr.or.ytc.web.annmntboard.model.AnnouncementDAO;
-	import kr.or.ytc.web.annmntboard.model.Announcement;
+import javax.servlet.http.HttpServletResponse;
+
+import kr.or.ytc.web.annmntboard.model.Announcement;
+import kr.or.ytc.web.annmntboard.model.AnnouncementDAO;
 	
 public class AnnmntDetailAction implements AnnmntAction {
 	 public AnnmntActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception{ 
@@ -26,8 +26,8 @@ public class AnnmntDetailAction implements AnnmntAction {
 	   	request.setAttribute("boarddata", boarddata);
 	   	AnnmntActionForward forward = new AnnmntActionForward();
 	   	forward.setRedirect(false);
-  		forward.setPath("./AnnmntBoard/ann_board_view.jsp");
+  		forward.setPath("./module/AnnmntBoard/ann_board_view.view");
   		return forward;
-
+  		
 	 }
 }

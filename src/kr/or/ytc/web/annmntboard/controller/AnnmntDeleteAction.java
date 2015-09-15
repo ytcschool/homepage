@@ -12,7 +12,9 @@ public class AnnmntDeleteAction implements AnnmntAction {
 			 	throws Exception{
 				 
 		 AnnmntActionForward forward = new AnnmntActionForward();
-				request.setCharacterEncoding("euc-kr");
+		 	System.out.println(">>before request");		
+		 	request.setCharacterEncoding("euc-kr");
+				
 				
 			   	boolean result=false;
 			   	boolean usercheck=false;
@@ -26,7 +28,7 @@ public class AnnmntDeleteAction implements AnnmntAction {
 			   		PrintWriter out=response.getWriter();
 			   		out.println("<script>");
 			   		out.println("alert('삭제할 권한이 없습니다.');");
-			   		out.println("location.href='./AnnmntList.do';");
+			   		out.println("location.href='<%=request.getContextPath() %>/AnnmntList.do';");
 			   		out.println("</script>");
 			   		out.close();
 			   		return null;
@@ -40,7 +42,8 @@ public class AnnmntDeleteAction implements AnnmntAction {
 			   	
 			   	System.out.println("게시판 삭제 성공");
 			   	forward.setRedirect(true);
-		   		forward.setPath("./AnnmntList.do");
+		   		forward.setPath("./module/AnnmntBoard/ann_board_list.view");
 		   		return forward;
+		   		
 			 }
 }

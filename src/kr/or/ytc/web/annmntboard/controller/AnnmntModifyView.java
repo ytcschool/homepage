@@ -25,7 +25,7 @@ public class AnnmntModifyView implements AnnmntAction {
 		   	
 		   	request.setAttribute("boarddata", boarddata);
 		   	forward.setRedirect(false);
-	   		forward.setPath("./AnnmntBoard/ann_board_modify.jsp");
+	   		forward.setPath("./module/AnnmntBoard/ann_board_modify.view");
 	   		return forward;
 	 }
 }

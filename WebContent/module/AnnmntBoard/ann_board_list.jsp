@@ -6,14 +6,14 @@
 
 <%
 	List boardList=(List)request.getAttribute("boardlist");
-	int listcount = 0, maxpage = 0, startpage = 0, endpage = 0, nowpage = 0;
-	if(request.getAttribute("listcount") != null) {
-		listcount=((Integer)request.getAttribute("listcount")).intValue();
-		maxpage=((Integer)request.getAttribute("maxpage")).intValue();
-		startpage=((Integer)request.getAttribute("startpage")).intValue();
-		endpage=((Integer)request.getAttribute("endpage")).intValue();
-		nowpage=((Integer)request.getAttribute("page")).intValue();
-	}
+//	int listcount = 0, maxpage = 0, startpage = 0, endpage = 0, nowpage = 0;
+	//if(request.getAttribute("listcount") != null) {
+		int listcount=((Integer)request.getAttribute("listcount")).intValue();
+		int nowpage=((Integer)request.getAttribute("page")).intValue();
+		int maxpage=((Integer)request.getAttribute("maxpage")).intValue();
+		int startpage=((Integer)request.getAttribute("startpage")).intValue();
+		int endpage=((Integer)request.getAttribute("endpage")).intValue();
+	//}
 
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -56,6 +56,7 @@ if(listcount > 0){
 	</tr>
 	
 	<%
+ 	System.out.println(">>>>>>>>>boardList.size() => " + boardList.size());
 		for(int i=0;i<boardList.size();i++){
 			Announcement bl=(Announcement)boardList.get(i);
 	%>
