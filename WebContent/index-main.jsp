@@ -65,9 +65,13 @@
 		padding: 10px;
 		background-color: #FFFFEB;
 	}
-	
+
 	div#loginSuccess > p {
 		margin-bottom: 13px;
+	}
+	
+	div#loginSuccess > a {
+		font-size:12pt;
 	}
 	
 	p#signupbtn {
@@ -95,7 +99,6 @@
 		background:white;
 	}
 </style>
->>>>>>> refs/heads/fb-member
 
 <div id="content">
 <%
@@ -106,7 +109,7 @@
 %>	
 	<div id="loginSuccess">	
 		<p><b><%out.println(sessionId + " Welcome!");%></b></p>
-		<a href="./MemberLogoutAction.me" class="button">Logout</a>
+		<a href="./MemberLogoutAction.me" class="button">&nbsp;&nbsp;Logout&nbsp;&nbsp;</a>
 	</div>
 <%
 	// 로그인 실패 시 (혹은 로그인 시)
