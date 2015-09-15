@@ -12,7 +12,6 @@ public class AnnmntDeleteAction implements AnnmntAction {
 			 	throws Exception{
 				 
 		 AnnmntActionForward forward = new AnnmntActionForward();
-		 	System.out.println(">>before request");		
 		 	request.setCharacterEncoding("euc-kr");
 				
 				
@@ -42,7 +41,8 @@ public class AnnmntDeleteAction implements AnnmntAction {
 			   	
 			   	System.out.println("게시판 삭제 성공");
 			   	forward.setRedirect(true);
-		   		forward.setPath("./module/AnnmntBoard/ann_board_list.view");
+		   		//forward.setPath("./module/AnnmntBoard/ann_board_list.view");
+		   		forward.setPath(request.getContextPath()+"/AnnmntList.do");
 		   		return forward;
 		   		
 			 }
