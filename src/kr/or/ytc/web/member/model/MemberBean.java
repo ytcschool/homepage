@@ -4,7 +4,9 @@ public class MemberBean {
 	private String MEMBER_ID;
 	private String MEMBER_PW;
 	private String MEMBER_NAME;
-	private int MEMBER_AGE;
+	private int MEMBER_YEAR;
+	private int MEMBER_MONTH;
+	private int MEMBER_DAY;
 	private String MEMBER_GENDER;
 	private String MEMBER_EMAIL;
 
@@ -32,14 +34,30 @@ public class MemberBean {
 		MEMBER_NAME = member_name;
 	}
 
-	public int getMEMBER_AGE() {
-		return MEMBER_AGE;
+	public int getMEMBER_YEAR() {
+		return MEMBER_YEAR;
 	}
 
-	public void setMEMBER_AGE(int member_age) {
-		MEMBER_AGE = member_age;
+	public void setMEMBER_YEAR(int mEMBER_YEAR) {
+		MEMBER_YEAR = mEMBER_YEAR;
 	}
 
+	public int getMEMBER_MONTH() {
+		return MEMBER_MONTH;
+	}
+
+	public void setMEMBER_MONTH(int mEMBER_MONTH) {
+		MEMBER_MONTH = mEMBER_MONTH;
+	}
+
+	public int getMEMBER_DAY() {
+		return MEMBER_DAY;
+	}
+
+	public void setMEMBER_DAY(int mEMBER_DAY) {
+		MEMBER_DAY = mEMBER_DAY;
+	}
+	
 	public String getMEMBER_GENDER() {
 		return MEMBER_GENDER;
 	}
