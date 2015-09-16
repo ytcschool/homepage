@@ -9,7 +9,7 @@
             username="root"
             password="apmsetup"
             driverClassName="org.gjt.mm.mysql.Driver"
-            url="jdbc:mysql://localhost:3306/test"
+            url="jdbc:mysql://54.64.175.75:3306/test"
             maxActive="500"
             maxIdle="100"/>
 </Context>
