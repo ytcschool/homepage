@@ -4,10 +4,11 @@
 	BoardBean board = (BoardBean)request.getAttribute("boarddata");
 %>
 <style>
-	#content {
-		padding-top: 40px;
-		padding-bottom: 50px;
-	}
+	#qnalist-wrapper {
+			padding-top: 40px;
+			padding-bottom: 50px;
+			height: 550px;
+		}
 	table {
 		margin: 0 auto;
 	}
@@ -17,6 +18,7 @@
 </style>
 
 <div id="content">
+<div id="qnalist-wrapper">
 	<title>Q/A 게시판</title>
 	<script type="text/javascript">
 	function modifyboard(){
@@ -77,4 +79,5 @@
 	</tr>
 </form>
 <!-- 게시판 수정 -->
+</div>
 </div>

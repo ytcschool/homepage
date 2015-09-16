@@ -6,10 +6,11 @@
 
 
 <style>
-	#content {
-		padding-top: 40px;
-		padding-bottom: 30px;
-	}
+	#qnalist-wrapper {
+			padding-top: 40px;
+			padding-bottom: 50px;
+			height: 550px;
+		}
 	#btnArea {
 		width: 700px;
 		margin: 30px auto;
@@ -21,8 +22,8 @@
 	}
 </style>
 </head>
-
 <div id="content">
+<div id="qnalist-wrapper">
 	<div align="center" valign="middle">
 		<ul colspan="4" style="font-size:25pt; padding-bottom:30px;">
 		<span style=background-color:#DCEBFF>Q/A 게시판</ul>
@@ -78,4 +79,5 @@
 			</a>&nbsp; &nbsp;
 			<a href="./BoardList.do">[목록]</a>&nbsp;&nbsp;
 	</div>
+</div>
 </div>

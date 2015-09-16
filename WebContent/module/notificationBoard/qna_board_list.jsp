@@ -19,7 +19,7 @@
 		#qnalist-wrapper {
 			padding-top: 40px;
 			padding-bottom: 50px;
-			height: 400px;
+			height: 550px;
 		}
 		
 		tr {

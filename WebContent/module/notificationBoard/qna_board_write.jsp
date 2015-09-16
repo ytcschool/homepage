@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"%>
 
 <style>
-	#content {
-		padding-top: 40px;
-		padding-bottom: 50px;
-	}
+	#qnalist-wrapper {
+			padding-top: 40px;
+			padding-bottom: 50px;
+			height: 550px;
+		}
 	table {
 		margin: 0 auto;
 	}
@@ -14,6 +15,7 @@
 </style>
 
 <div id="content">
+<div id="qnalist-wrapper">
 	<script language="javascript">
 		function addboard(){
 		boardform.submit();
@@ -77,4 +79,5 @@
 	</div>
 </form>
 
+</div>
 </div>

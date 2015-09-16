@@ -3,10 +3,11 @@
 	int num=Integer.parseInt(request.getParameter("num"));
 %>
 <style>
-	#content {
-		padding-top: 40px;
-		padding-bottom: 50px;
-	}
+	#qnalist-wrapper {
+			padding-top: 40px;
+			padding-bottom: 50px;
+			height: 550px;
+		}
 	table {
 		margin: 80px auto;
 		border: 1px solid black;
@@ -15,7 +16,7 @@
 	}
 </style>
 <div id="content">
-
+<div id="qnalist-wrapper">
 <form name="deleteForm" action="./BoardDeleteAction.do?num=<%=num %>" 
 	method="post">	
 <div align="center" valign="middle">
@@ -40,4 +41,5 @@
 </tr>
 </table>
 </form>
+</div>
 </div>
