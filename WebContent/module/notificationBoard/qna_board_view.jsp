@@ -1,0 +1,81 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"%>
+<%@ page import="kr.or.ytc.qnaboard.model.*" %>
+<%
+	BoardBean board = (BoardBean)request.getAttribute("boarddata");
+%>
+
+
+<style>
+	#content {
+		padding-top: 40px;
+		padding-bottom: 30px;
+	}
+	#btnArea {
+		width: 700px;
+		margin: 30px auto;
+		text-align: center;
+		font-size: 16px;
+	}
+	table {
+		margin: 0 auto;
+	}
+</style>
+</head>
+
+<div id="content">
+	<div align="center" valign="middle">
+		<ul colspan="4" style="font-size:25pt; padding-bottom:30px;">
+		<span style=background-color:#DCEBFF>Q/A °Ô½ÃÆÇ</ul>
+	</div>
+<table cellspacing="0" width=540 align="center" border="1px solid black">	
+	<tr>
+		<td style="font-family:µ¸À½; font-size:12px" height="30">
+			<div align="center">Á¦ ¸ñ&nbsp;&nbsp;</div>
+		</td>
+		
+		<td style="font-family:µ¸À½; font-size:12">
+		<div align="justify"> &nbsp; <%=board.getBOARD_SUBJECT()%></div>
+		</td>
+	</tr>
+
+	<tr>
+		<td style="font-family:µ¸À½; font-size:15px" height="30px">
+			<div align="center">³» ¿ë</div>
+		</td>
+		<td style="font-family:µ¸À½; font-size:12">
+			<table border=0 width=470 height=250 style="table-layout:fixed">
+				<tr>
+					<td valign=top style="font-family:µ¸À½; font-size:12; word-break:break-all;">
+					<div align="justify"> &nbsp; <%=board.getBOARD_CONTENT() %></div>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td style="font-family:µ¸À½; font-size:12" height="30">
+			<div align="center">Ã·ºÎÆÄÀÏ</div>
+		</td>
+		<td style="font-family:µ¸À½; font-size:12">
+		<%if(!(board.getBOARD_FILE()==null)){ %>
+		<a href="./boardUpload/<%=board.getBOARD_FILE()%>">
+			<%=board.getBOARD_FILE() %>
+		</a>
+		<%} %>
+		</td>
+	</tr>
+</table>	
+
+	<div id="btnArea">		
+			<a href="./BoardReplyView.do?num=<%=board.getBOARD_NUM() %>">
+			[´äº¯]
+			</a>&nbsp; &nbsp;
+			<a href="./BoardModify.do?num=<%=board.getBOARD_NUM() %>">
+			[¼öÁ¤]
+			</a>&nbsp; &nbsp;
+			<a href="./BoardDelete.do?num=<%=board.getBOARD_NUM() %>">
+			[»èÁ¦]
+			</a>&nbsp; &nbsp;
+			<a href="./BoardList.do">[¸ñ·Ï]</a>&nbsp;&nbsp;
+	</div>
+</div>
