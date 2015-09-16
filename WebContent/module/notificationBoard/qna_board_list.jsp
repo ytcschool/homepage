@@ -42,7 +42,7 @@ if(listcount > 0){
 %>
 	<div align="center" valign="middle">
 		<ul colspan="4" style="font-size:25pt; padding-bottom:30px;">
-		<span style="background-color:#DCEBFF">Q/A 게시판</ul>	
+		<span style="background-color:#DCEBFF">Q/A Board</ul>	
 	</div>
 <table width=700 align="center">
 	<tr id="abc" align="center" valign="middle" style="background:#DFD4D4">
@@ -131,7 +131,7 @@ if(listcount > 0){
 	{
 	%>
 	<div align="center" valign="middle">
-		<ul colspan="4">Q/A 게시판</ul>
+		<ul colspan="4">Q/A Board</ul>
 		<ul align=right>
 			<font size=2>Q/A list not found</font>
 		</ul>
@@ -140,6 +140,6 @@ if(listcount > 0){
 	}
 	%>
 	<div id="writeBtnArea">
-	   		<a href="./BoardWrite.do">[글 쓰기]</a>
+	   		<a href="./BoardWrite.do">[Write]</a>
 	</div>
 </div>
