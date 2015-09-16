@@ -64,6 +64,7 @@ div#loginSuccess {
 	height: 60px;
 	padding: 10px;
 	background-color: #FFFFEB;
+	z-index: 101;
 }
 
 div#loginSuccess > p {
@@ -102,6 +103,7 @@ div.right_item {
 	background:white;
 	height: 243px;
 }
+
 
 /********** SLIDER **********/
 .slider {

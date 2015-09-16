@@ -5,6 +5,7 @@
 <link href="resources/css/index.css" type="text/css" rel="stylesheet" /> 
 
 <div id="content">
+	<div id="content-wrapper">
 <%
 	// 로그인 성공 시
 	if (session.getAttribute("id") != null) {	
@@ -21,7 +22,6 @@
 %>
 
 <!-- 로그인 / 회원가입 배너 -->
-	<div id="content-wrapper">
 	<aside id="main_aside">
 		<input id="first" type ="radio" name="tab" checked="checked" onclick="disappear()" />
 		<input id="second" type="radio" name="tab" onclick="appear()" />
