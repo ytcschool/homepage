@@ -26,7 +26,7 @@ import kr.or.ytc.qnaboard.model.BoardDAO;
 	   	request.setAttribute("boarddata", boarddata);
 	   	ActionForward forward = new ActionForward();
 	   	forward.setRedirect(false);
-   		forward.setPath("./notificationBoard/qna_board_view.view");
+   		forward.setPath("/module/notificationBoard/qna_board_view.view");
    		return forward;
 
 	 }

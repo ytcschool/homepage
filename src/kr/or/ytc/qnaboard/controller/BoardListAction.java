@@ -12,10 +12,9 @@ import kr.or.ytc.qnaboard.model.BoardDAO;
 	 public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception{
 		BoardDAO boarddao=new BoardDAO();
 		List boardlist=new ArrayList();
-		
+		System.out.println("boardlistaction!!");
 		int page=1;
 		int limit=10;
-		
 		if(request.getParameter("page")!=null){
 			page=Integer.parseInt(request.getParameter("page"));
 		}
@@ -32,7 +31,6 @@ import kr.or.ytc.qnaboard.model.BoardDAO;
 
  		if (endpage> maxpage) endpage= maxpage;
 
- 		
  		request.setAttribute("page", page); //현재 페이지 수
  		request.setAttribute("maxpage", maxpage); //최대 페이지 수
  		request.setAttribute("startpage", startpage); //현재 페이지에 표시할 첫 페이지 수
@@ -42,7 +40,7 @@ import kr.or.ytc.qnaboard.model.BoardDAO;
 		
 		ActionForward forward= new ActionForward();
 	 	forward.setRedirect(false);
- 		forward.setPath("./notificationBoard/qna_board_list.view");
+ 		forward.setPath("/module/notificationBoard/qna_board_list.view");
  		return forward;
 	 }
  }

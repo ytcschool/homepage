@@ -6,6 +6,6 @@
 <!--  begin main content -->
 <div id="content"></div>
 	<h1>This is Content.</h1>
-<a href="BoardList.do">boardList</a><br/>
-<a href="BoardWrite.do">BoardWrite</a>
+<a href="<%=request.getContextPath() %>/BoardList.do">boardList</a><br/>
+<a href="<%=request.getContextPath() %>/BoardWrite.do">BoardWrite</a>
 </div>

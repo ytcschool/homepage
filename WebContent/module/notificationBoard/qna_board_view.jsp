@@ -4,46 +4,56 @@
 	BoardBean board = (BoardBean)request.getAttribute("boarddata");
 %>
 
-<div id="content">
-	<title>MVC °Ô½ÃÆÇ</title>
 
-<!-- °Ô½ÃÆÇ ¼öÁ¤ -->
-<table cellpadding="0" cellspacing="0">
-	<tr align="center" valign="middle">
-		<td colspan="5">MVC °Ô½ÃÆÇ</td>
-	</tr>
-	
+<style>
+	#content {
+		padding-top: 40px;
+		padding-bottom: 30px;
+	}
+	#btnArea {
+		width: 700px;
+		margin: 30px auto;
+		text-align: center;
+		font-size: 16px;
+	}
+	table {
+		margin: 0 auto;
+	}
+</style>
+</head>
+
+<div id="content">
+	<div align="center" valign="middle">
+		<ul colspan="4" style="font-size:25pt; padding-bottom:30px;">
+		<span style=background-color:#DCEBFF>Q/A °Ô½ÃÆÇ</ul>
+	</div>
+<table cellspacing="0" width=540 align="center" border="1px solid black">	
 	<tr>
-		<td style="font-family:µ¸À½; font-size:12" height="16">
+		<td style="font-family:µ¸À½; font-size:12px" height="30">
 			<div align="center">Á¦ ¸ñ&nbsp;&nbsp;</div>
 		</td>
 		
 		<td style="font-family:µ¸À½; font-size:12">
-		<%=board.getBOARD_SUBJECT()%>
+		<div align="justify"> &nbsp; <%=board.getBOARD_SUBJECT()%></div>
 		</td>
 	</tr>
-	
-	<tr bgcolor="cccccc">
-		<td colspan="2" style="height:1px;">
-		</td>
-	</tr>
-	
+
 	<tr>
-		<td style="font-family:µ¸À½; font-size:12">
+		<td style="font-family:µ¸À½; font-size:15px" height="30px">
 			<div align="center">³» ¿ë</div>
 		</td>
 		<td style="font-family:µ¸À½; font-size:12">
-			<table border=0 width=490 height=250 style="table-layout:fixed">
+			<table border=0 width=470 height=250 style="table-layout:fixed">
 				<tr>
-					<td valign=top style="font-family:µ¸À½; font-size:12">
-					<%=board.getBOARD_CONTENT() %>
+					<td valign=top style="font-family:µ¸À½; font-size:12; word-break:break-all;">
+					<div align="justify"> &nbsp; <%=board.getBOARD_CONTENT() %></div>
 					</td>
 				</tr>
 			</table>
 		</td>
 	</tr>
 	<tr>
-		<td style="font-family:µ¸À½; font-size:12">
+		<td style="font-family:µ¸À½; font-size:12" height="30">
 			<div align="center">Ã·ºÎÆÄÀÏ</div>
 		</td>
 		<td style="font-family:µ¸À½; font-size:12">
@@ -54,28 +64,18 @@
 		<%} %>
 		</td>
 	</tr>
-	
-	<tr bgcolor="cccccc">
-		<td colspan="2" style="height:1px;"></td>
-	</tr>
-	<tr><td colspan="2">&nbsp;</td></tr>
-	
-	<tr align="center" valign="middle">
-		<td colspan="5">
-			<font size=2>
+</table>	
+
+	<div id="btnArea">		
 			<a href="./BoardReplyView.do?num=<%=board.getBOARD_NUM() %>">
 			[´äº¯]
-			</a>&nbsp;&nbsp;
+			</a>&nbsp; &nbsp;
 			<a href="./BoardModify.do?num=<%=board.getBOARD_NUM() %>">
 			[¼öÁ¤]
-			</a>&nbsp;&nbsp;
+			</a>&nbsp; &nbsp;
 			<a href="./BoardDelete.do?num=<%=board.getBOARD_NUM() %>">
 			[»èÁ¦]
-			</a>&nbsp;&nbsp;
+			</a>&nbsp; &nbsp;
 			<a href="./BoardList.do">[¸ñ·Ï]</a>&nbsp;&nbsp;
-			</font>
-		</td>
-	</tr>
-</table>
-<!-- °Ô½ÃÆÇ ¼öÁ¤ -->
+	</div>
 </div>

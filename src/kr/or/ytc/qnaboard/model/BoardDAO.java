@@ -55,12 +55,13 @@ public class BoardDAO {
 	//글 목록 보기
 	public List getBoardList(int page,int limit){
 	
-		String board_list_sql="select * from board";
 		//mysql에는 limit 기능이 있으므로 Oracle정렬 쿼리가 필요없다.
-		List list = new ArrayList();
-		
-		int startrow=(page-1)*10+1; //읽기 시작할 row 번호.
-		int endrow=startrow+limit-1; //읽을 마지막 row 번호.		
+				List list = new ArrayList();
+				
+				int startrow=(page-1)*10+1; //읽기 시작할 row 번호.
+				int endrow=startrow+limit-1; //읽을 마지막 row 번호.	
+				String board_list_sql="select * from board order by BOARD_NUM desc limit "+(startrow-1)+","+10;
+				
 		try{
 			con = ds.getConnection();
 			pstmt = con.prepareStatement(board_list_sql);

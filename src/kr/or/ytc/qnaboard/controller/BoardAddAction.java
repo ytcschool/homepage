@@ -20,7 +20,6 @@ public class BoardAddAction implements Action {
 		BoardDAO boarddao = new BoardDAO(); //net.board.db - p.381
 		BoardBean boarddata = new BoardBean(); //net.board.db - p.383
 		ActionForward forward = new ActionForward();
-		
 		String realFolder="";
 		String saveFolder="boardUpload";
 		
@@ -29,7 +28,6 @@ public class BoardAddAction implements Action {
 		realFolder=request.getRealPath(saveFolder);
 		
 		boolean result = false;
-		System.out.println("boardAction");
 		try {
 			MultipartRequest multi = null;
 			multi = new MultipartRequest(request, 

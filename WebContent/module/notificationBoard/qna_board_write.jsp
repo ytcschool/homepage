@@ -1,74 +1,80 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"%>
 
+<style>
+	#content {
+		padding-top: 40px;
+		padding-bottom: 50px;
+	}
+	table {
+		margin: 0 auto;
+	}
+	#BtnArea {
+		padding-top: 30px;
+	}
+</style>
+
 <div id="content">
-	<title>MVC 게시판</title>
 	<script language="javascript">
-	function addboard(){
+		function addboard(){
 		boardform.submit();
 	}
 	</script>
 <!-- 게시판 등록 -->
-<form action="./BoardAddAction.do" method="post" 
+<form action="<%=request.getContextPath() %>/BoardAddAction.do" method="post" 
 	enctype="multipart/form-data" name="boardform">
-<table cellpadding="0" cellspacing="0">
-	<tr align="center" valign="middle">
-		<td colspan="5">MVC 게시판</td>
-	</tr>
+
+<div align="center" valign="middle">
+		<ul style="font-size:25pt; padding-bottom:30px;">
+		<span style="background-color:#DCEBFF">Q/A 게시판</ul>	
+</div>
+<table>
 	<tr>
-		<td style="font-family:돋음; font-size:12" height="16">
+		<td style="font-family:돋음; font-size:15px" height="30px">
 			<div align="center">글쓴이</div>
 		</td>
-		<td>
+		<td align="left">
 			<input name="BOARD_NAME" type="text" size="10" maxlength="10" 
 				value=""/>
 		</td>
 	</tr>
+	
 	<tr>
-		<td style="font-family:돋음; font-size:12" height="16">
-			<div align="center">비밀번호</div>
+		<td style="font-family:돋음; font-size:15px" height="30px">
+			<div align="center">제 &nbsp; 목</div>
 		</td>
-		<td>
-			<input name="BOARD_PASS" type="password" size="10" maxlength="10" 
+		<td align="left">
+			<input name="BOARD_SUBJECT" type="text" size="35" maxlength="100" 
 				value=""/>
 		</td>
 	</tr>
 	<tr>
-		<td style="font-family:돋음; font-size:12" height="16">
-			<div align="center">제 목</div>
+		<td style="font-family:돋음; font-size:15px" height="30px">
+			<div align="center">내 &nbsp; 용</div>
 		</td>
-		<td>
-			<input name="BOARD_SUBJECT" type="text" size="50" maxlength="100" 
-				value=""/>
-		</td>
-	</tr>
-	<tr>
-		<td style="font-family:돋음; font-size:12">
-			<div align="center">내 용</div>
-		</td>
-		<td>
+		<td colspan="3">
 			<textarea name="BOARD_CONTENT" cols="67" rows="15"></textarea>
 		</td>
 	</tr>
 	<tr>
-		<td style="font-family:돋음; font-size:12">
+		<td style="font-family:돋음; font-size:15px" height="30px">
 			<div align="center">파일 첨부</div>
 		</td>
-		<td>
-			<input name="BOARD_FILE" type="file"/>
+		<td align="left">
+			<input type="file" name="BOARD_FILE" />
 		</td>
-	</tr>
-	<tr bgcolor="cccccc">
-		<td colspan="2" style="height:1px;">
+		<td style="font-family:돋음; font-size:15px" height="30px">
+			<div align="center">비밀번호</div>
 		</td>
-	</tr>
-	<tr><td colspan="2">&nbsp;</td></tr>
-	<tr align="center" valign="middle">
-		<td colspan="5">
-			<a href="javascript:addboard()">[등록]</a>&nbsp;&nbsp;
-			<a href="javascript:history.go(-1)">[뒤로]</a>
+		<td align="left">
+			<input name="BOARD_PASS" type="password" size="10" maxlength="10" 
+				value=""/>
 		</td>
 	</tr>
 </table>
+	<div id="BtnArea" align="center" valign="middle">
+		<a href="javascript:addboard()">[등록]</a> &nbsp; &nbsp; &nbsp;
+		<a href="javascript:history.go(-1)">[뒤로]</a>	
+	</div>
 </form>
-<!-- 게시판 등록 -->
+
 </div>

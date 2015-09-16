@@ -25,7 +25,7 @@ public class BoardModifyView implements Action {
 		   	
 		   	request.setAttribute("boarddata", boarddata);
 		   	forward.setRedirect(false);
-	   		forward.setPath("./notificationBoard/qna_board_modify.view");
+	   		forward.setPath("/module/notificationBoard/qna_board_modify.view");
 	   		return forward;
 	 }
 }

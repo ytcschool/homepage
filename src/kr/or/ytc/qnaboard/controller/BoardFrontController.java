@@ -9,10 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet({ "*.do" })
+@WebServlet({ "/BoardList.do", 
+	"/BoardWrite.do", 
+	"/BoardAddAction.do", 
+	"/BoardDelete.do", 
+	"/BoardDeleteAction.do",
+	"/BoardDetailAction.do",
+	"/BoardModify.do",
+	"/BoardModifyAction.do",
+	"/BoardReplyAction.do",
+	"/BoardReplyView.do"
+})
 public class BoardFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String RequestURI = request.getRequestURI();
@@ -24,7 +34,7 @@ public class BoardFrontController extends HttpServlet {
 		if(command.equals("/BoardWrite.do")){
 			forward = new ActionForward();
 			forward.setRedirect(false);
-			forward.setPath("./notificationBoard/qna_board_write.view"); //교재 p396 86라인		
+			forward.setPath("/module/notificationBoard/qna_board_write.view"); //교재 p396 86라인		
 		} else if(command.equals("/BoardAddAction.do")){
 			action = new BoardAddAction();
 			try {
@@ -36,13 +46,14 @@ public class BoardFrontController extends HttpServlet {
 			action = new BoardListAction();  // p402
 			try {
 				forward = action.execute(request, response);
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		} else if(command.equals("/BoardDelete.do")){
 			forward = new ActionForward();
 			forward.setRedirect(false);
-			forward.setPath("./notificationBoard/qna_board_delete.view");
+			forward.setPath("/module/notificationBoard/qna_board_delete.view");
 		} else if(command.equals("/BoardDeleteAction.do")){
 			action = new BoardDeleteAction();
 			try {

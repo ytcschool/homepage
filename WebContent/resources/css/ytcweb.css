@@ -179,6 +179,6 @@ footer {
 div#content {
 	border: 1px solid red;
 	width: 960px;
-	height: 400px;
+	height: 100%;
 	text-align: center;
 }
