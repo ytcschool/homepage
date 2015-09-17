@@ -5,14 +5,70 @@
 	Announcement annboard = (Announcement)request.getAttribute("boarddata");
 %>
     
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
-</head>
-<body>
-<!-- 게시판 수정 -->
+
+
+<style>
+h1 {
+	border : 1px solid black;
+	width : 150px;
+	margin:auto;
+	text-align: center;
+	background : pink;
+	margin-top : 40px;
+	
+}
+table {
+	margin : 40px auto 0px;
+	float : center;
+}
+div#ankor_area {
+	width : 1000px;
+	text-align : center;
+	margin : 40px auto;
+}
+
+div#ankor_area > a {
+	margin: 0 30px;
+}
+tr#content_tr {
+	cellpadding : 40px;
+	vertical-align: top;
+}
+
+</style>
+
+
+<div id="content">
+
+<h1>공지사항 </h1>
+
+	<table border="1" width="600" height="300" align="center" cellspacing="0">
+
+		<tr height="50">
+			<td width="100" align="center">제 목</td>
+			<td width="500" align="left"><%=annboard.getANNBOARD_SUBJECT()%></td>
+		</tr>
+		<tr height="200" id="content_tr">
+			<td width="100" align="center">내 용</td>
+			<td width="500" align="left"><%=annboard.getANNBOARD_CONTENT() %></td>
+		</tr>
+		<tr height="50">
+			<td width="100" align="center">첨부파일</td>
+			<%if(!(annboard.getANNBOARD_FILE()==null)){ %>
+			<td width="500"><a href="./module/annboardupload/<%=annboard.getANNBOARD_FILE()%>">
+				<%=annboard.getANNBOARD_FILE() %></a></td>
+			<%} %>
+		</tr>
+	
+	</table>
+	<div id="ankor_area">
+		<a href="<%=request.getContextPath() %>/AnnmntModify.do?num=<%=annboard.getANNBOARD_NUM() %>">[수정]</a>
+		<a href="<%=request.getContextPath() %>/AnnmntDelete.do?num=<%=annboard.getANNBOARD_NUM() %>">[삭제]</a>
+		<a href="<%=request.getContextPath() %>/AnnmntList.do">[목록]</a>
+	</div>
+</div>
+
+<!-- 게시판 수정
 <table cellpadding="0" cellspacing="0">
 	<tr align="center" valign="middle">
 		<td colspan="5">YTC 임시 게시판</td>
@@ -79,6 +135,7 @@
 		</td>
 	</tr>
 </table>
-<!-- 게시판 수정 -->
+
 </body>
 </html>
+게시판 수정 -->

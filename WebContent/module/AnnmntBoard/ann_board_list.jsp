@@ -31,7 +31,7 @@ if(listcount > 0){
 	
 %>
 	<tr align="center" valign="middle">
-		<td colspan="4">YTC 임시게시판</td>
+		<td colspan="4"> YTC 임시게시판</td>
 		<td align=right>
 			<font size=2>글 개수 : ${listcount }</font>
 		</td>

@@ -4,19 +4,92 @@
 <%
 Announcement annboard = (Announcement)request.getAttribute("boarddata");
 %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+
+<style>
+h1 {
+	border : 1px solid black;
+	width : 150px;
+	margin:auto;
+	text-align: center;
+	background : pink;
+	margin-top : 40px;
+	
+}
+table {
+	margin : 40px auto 0px;
+	float : center;
+}
+div#ankor_area {
+	width : 1250px;
+	text-align : center;
+	margin-top : 40px;
+}
+
+div#ankor_area > a {
+	margin: 0 30px;
+}
+
+tr#content_tr {
+	cellpadding : 40px;
+	vertical-align: top;
+}
+
+</style>
+
+<!-- 
 	<script type="text/javascript">
 	function modifyboard(){
 		modifyform.submit();
 	}
 	</script>
-</head>
-<body>
-<!-- 게시판 수정 -->
+	
+	<style>
+		div#ankor_area {
+		width : 1250px;
+		text-align : center;
+		margin-top : 40px;
+		}
+	
+	</style>
+ -->
+<div id="content">
+
+<h1>공지사항</h1>
+<form action="<%=request.getContextPath() %>/AnnmntModifyAction.do" method="post" name="modifyform">
+<input type="hidden" name="ANNBOARD_NUM" value=<%=annboard.getANNBOARD_NUM() %>>
+	<table border="0" width="600" height="270" align="center"cellspacing="0" >
+
+		<tr height="40">
+			<td width="100" align="center">제 목</td>
+			<td colspan="3"><input  name="ANNBOARD_SUBJECT" value="<%=annboard.getANNBOARD_SUBJECT()%>"></td>
+		</tr>
+		<tr height="190">
+			<td align="center" width="100">내 용</td>
+			<td colspan="3">
+				<textarea name="ANNBOARD_CONTENT" rows="10" cols="78"><%=annboard.getANNBOARD_CONTENT() %></textarea>
+			</td>
+		</tr>
+		
+		<tr height="40">
+			<%if(!(annboard.getANNBOARD_FILE()==null)){ %>
+			<td align="center">첨부파일</td>
+			<td align="center"><%=annboard.getANNBOARD_FILE() %></td>
+			<%} %>
+			<td width="90">비밀번호</td>
+			<td width="90"><input name="ANNBOARD_PASS" type="password" size="15"></td>
+		</tr>
+		
+	</table>
+	</form>
+	<div id="ankor_area">
+		<a href="javascript:modifyboard()">[수정]</a>
+		<a href="javascript:history.go(-1)">[목록]</a>
+	</div>
+
+</div>
+
+
+<!-- 게시판 수정 
 <form action="<%=request.getContextPath() %>/AnnmntModifyAction.do" method="post" name="modifyform">
 <input type="hidden" name="ANNBOARD_NUM" value=<%=annboard.getANNBOARD_NUM() %>>
 <table cellpadding="0" cellspacing="0">
@@ -65,16 +138,19 @@ Announcement annboard = (Announcement)request.getAttribute("boarddata");
 	</tr>
 	<tr><td colspan="2">&nbsp;</td></tr>
 	
-	<tr align="center" valign="middle">
-		<td colspan="5">
-			<font size=2>
-			<a href="javascript:modifyboard()">[수정]</a>&nbsp;&nbsp;
-			<a href="javascript:history.go(-1)">[뒤로]</a>&nbsp;&nbsp;
-			</font>
+
+		<tr align="center" valign="middle">
+			<td colspan="5">
+				<font size=2>
+
+		<div id="ankor_area">
+			<a href="javascript:modifyboard()">[수정]</a>
+			<a href="javascript:history.go(-1)">[목록]</a>
+		</div>
+	</font>
 		</td>
 	</tr>
+
 </table>
 </form>
-<!-- 게시판 수정 -->
-</body>
-</html>
+게시판 수정 -->

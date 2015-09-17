@@ -1,18 +1,60 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+
 <script language="javascript">
 	function addboard(){
 		boardform.submit();
 	}
-	</script>
-</head>
-<body>
-<!-- 게시판 등록 -->
+</script>
+<style>
+
+h1 {
+	width : 150px;
+	margin: auto;
+	text-align: center;
+	background : pink;
+	margin-top : 40px;
+	
+}
+table {
+	margin-top :40px;
+}
+
+</style>	
+
+<div id="content">
+<form action="<%=request.getContextPath() %>/AnnmntAddAction.do" method="post" 
+	enctype="multipart/form-data" name="boardform">
+	
+	<h1>공지사항</h1>
+	<table border="0" width="800" height="350" align="center" >
+		<tr>
+			<td width="100">글쓴이</td>
+			<td><input name="ANNBOARD_NAME" type="text"></td>
+		</tr>
+		<tr>
+			<td width="100">제 목</td>
+			<td colspan="2"><input name="ANNBOARD_SUBJECT" type="text" size="44"></td>
+		</tr>
+		<tr height="250">
+			<td width="100">내 용</td>
+			<td colspan="4"><textarea  name="ANNBOARD_CONTENT" rows="12" cols="95"></textarea></td>
+		</tr>
+		<tr>
+			<td width="100">파일첨부</td>
+			<td><input name="ANNBOARD_FILE" type="file" value="&nbsp;&nbsp;&nbsp;&nbsp;찾아보기...&nbsp;&nbsp;&nbsp;&nbsp;"/></td>
+			<td width="100">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀번호</td>
+			<td width="100"><input name="ANNBOARD_PASS" type="password" size="10"></td>
+		</tr>
+	
+	</table></br>
+	<div id="ankor_area" align="center">
+		<a href="javascript:addboard()">[등록]</a> &nbsp;&nbsp;<a href="javascript:history.go(-1)">[뒤로]</a>
+	</div>
+</form>
+</div>
+
+<!-- 게시판 등록 
 <form action="<%=request.getContextPath() %>/AnnmntAddAction.do" method="post" 
 	enctype="multipart/form-data" name="boardform">
 <table cellpadding="0" cellspacing="0">
@@ -75,6 +117,8 @@
 	</tr>
 </table>
 </form>
-<!-- 게시판 등록 -->
+
+
 </body>
 </html>
+게시판 등록 -->
