@@ -5,6 +5,7 @@
 <link href="resources/css/index.css" type="text/css" rel="stylesheet" /> 
 
 <div id="content">
+	<div id="content-wrapper">
 <%
 	// 로그인 성공 시
 	if (session.getAttribute("id") != null) {	
@@ -21,7 +22,6 @@
 %>
 
 <!-- 로그인 / 회원가입 배너 -->
-	<div id="content-wrapper">
 	<aside id="main_aside">
 		<input id="first" type ="radio" name="tab" checked="checked" onclick="disappear()" />
 		<input id="second" type="radio" name="tab" onclick="appear()" />
@@ -35,9 +35,9 @@
 			<br />
 			<br />
 			<form name="loginform" action="./MemberLoginAction.me" method="post">
-			<input id="memId" type="text" name="MEMBER_ID" placeholder="ID" size="20">
+			<input id="memId" class="loginInput" type="text" name="MEMBER_ID" placeholder="ID" size="20">
 			<br /><br />
-			<input id="memPw" type="password" name="MEMBER_PW" placeholder="Password" size="20">
+			<input id="memPw" class="loginInput" type="password" name="MEMBER_PW" placeholder="Password" size="20">
 			<br />&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
 			<p id="loginbtn">
 			<a href="javascript:loginform.submit()" class="button" id="signInButton">&nbsp;&nbsp;&nbsp;Sign-In&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp; 
