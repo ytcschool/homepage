@@ -2,89 +2,84 @@
 	pageEncoding="EUC-KR"%>
 <style>
 div#intro-box {
-	height: 600px;
-border:1px solid red;
+	height: 900px;
+	
 }
 
 #content {
 	width: 960px;
 	margin: auto;
 	overflow: hidden;
-	border:1px solid green;
+	
 }
 
 #content  #main_section {
 	width: 750px;
 	float: left;
-	border:1px solid black;
+	
 }
 
 #content  #main_aside {
 	width: 200px;
 	float: left;
-	border:1px solid yellow;
 	
 }
-#main_section>article.main_article{
 
-margin-bottom: 10px;
-padding:20px;
-
+#main_aside>article.main_aside {
+	margin-top: 70px;
+	padding: 10px 40px 180px;
 }
 
+#main_section>article.main_article {
+	margin-bottom: 10px;
+	padding: 10px;
+}
 </style>
 
 <div id="content">
-	
+
 	<div id="intro-box">
 		<aside id="main_aside">
-			<h1>main aside</h1>
-			<br/><br/>
-			<p>인사말</p>
-			<br/><br/><br/>
-			<p>교훈</p>
-			<br/><br/><br/>
-			<p>찾아오시는 길</p>
+			<article class="main_aside">
+				<p><h3>인사말</h3></p>
+				<hr/>
+			</article>
+			<article class="main_aside">
+				<p><h3>교훈</h3></p>
+				<hr/>
+			</article>
+			<article class="main_aside">
+				<p><h3>찾아오시는 길</h3></p>
+			<hr/>
+			</article>
 		</aside>
 
-	
-		<section id= "main_section">
-			<article class = "main_article">
-			<h1>main section</h1>
-			<br/>
-			<p>Lorem Ipsum is simply dummy text of the printing and
-				typesetting industry. Lorem Ipsum has been the industry's standard
-				dummy text ever since the 1500s, when an unknown printer took a
-				galley of type and scrambled it to make a type specimen book. It has
-				survived not only five centuries, but also the leap into electronic
-				typesetting, remaining essentially unchanged. It was popularised in
-				the 1960s with the release of Letraset sheets containing Lorem Ipsum
-				passages, and more recently with desktop publishing software like
-				Aldus PageMaker including versions of Lorem Ipsum.</p>
+<br/>
+		<section id="main_section">
+			<article class="main_article">
+				<p>
+				<img src="<%=request.getContextPath() %>/resources/images/introducepic.png" alt="인사말" width="600"
+						height="250">
+				</p>
 			</article>
 			
-			<article class = "main_article">
-			<p>Lorem Ipsum is simply dummy text of the printing and
-				typesetting industry. Lorem Ipsum has been the industry's standard
-				dummy text ever since the 1500s, when an unknown printer took a
-				galley of type and scrambled it to make a type specimen book. It has
-				survived not only five centuries, but also the leap into electronic
-				typesetting, remaining essentially unchanged. It was popularised in
-				the 1960s with the release of Letraset sheets containing Lorem Ipsum
-				passages, and more recently with desktop publishing software like
-				Aldus PageMaker including versions of Lorem Ipsum.</p>
+<br/><br/>
+			<article class="main_article">
+				<p>
+					<img src="<%=request.getContextPath() %>/resources/images/diciple.png" alt="교훈" width="600"
+						height="250">
+				</p>
 			</article>
-			
-			<article class = "main_article">
-			<p>box</p>
-			</article>
-			
-		</section>
-		
-		
-		
-		
+<br/><br/>
 
+			<article class="main_article">
+				<p>
+					<img src="<%=request.getContextPath() %>/resources/images/map.png" alt="지도" width="600"
+						height="250">
+				</p>
+			</article>
+
+		</section>
 
 	</div>
 </div>
