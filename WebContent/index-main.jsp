@@ -35,9 +35,9 @@
 			<br />
 			<br />
 			<form name="loginform" action="./MemberLoginAction.me" method="post">
-			<input id="memId" type="text" name="MEMBER_ID" placeholder="ID" size="20">
+			<input id="memId" class="loginInput" type="text" name="MEMBER_ID" placeholder="ID" size="20">
 			<br /><br />
-			<input id="memPw" type="password" name="MEMBER_PW" placeholder="Password" size="20">
+			<input id="memPw" class="loginInput" type="password" name="MEMBER_PW" placeholder="Password" size="20">
 			<br />&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
 			<p id="loginbtn">
 			<a href="javascript:loginform.submit()" class="button" id="signInButton">&nbsp;&nbsp;&nbsp;Sign-In&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp; 

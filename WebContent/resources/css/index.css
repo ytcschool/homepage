@@ -104,6 +104,14 @@ div.right_item {
 	height: 243px;
 }
 
+div#left_item input.loginInput {
+	border-radius: 8px;	
+	padding: 8px 12px;
+	font-size: 15px;
+	width: 150px;
+	background: lightyellow;
+}
+
 
 /********** SLIDER **********/
 .slider {
