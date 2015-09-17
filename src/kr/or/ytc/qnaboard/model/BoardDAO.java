@@ -60,7 +60,8 @@ public class BoardDAO {
 				
 				int startrow=(page-1)*10+1; //읽기 시작할 row 번호.
 				int endrow=startrow+limit-1; //읽을 마지막 row 번호.	
-				String board_list_sql="select * from board order by BOARD_NUM desc limit "+(startrow-1)+","+10;
+				String board_list_sql="select * from board order by BOARD_RE_REF desc,"
+						+ " BOARD_RE_LEV asc limit "+(startrow-1)+","+10;
 				
 		try{
 			con = ds.getConnection();
