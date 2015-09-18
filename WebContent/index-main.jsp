@@ -83,23 +83,23 @@
         <div class="slide-viewer">
           <div class="slide-group">
             <div class="slide slide-1">
-              <img src="resources/images/banner.png" width="100%" height="350px"/>
+              <img src="resources/images/banner1.png" width="100%" height="350px"/>
             </div>
             <div class="slide slide-2">
-              <img src="resources/images/slide-2.jpg" width="100%" height="350px"/>
+              <img src="resources/images/banner2.png" width="100%" height="350px"/>
             </div>
             <div class="slide slide-3">
-              <img src="resources/images/slide-3.jpg" width="100%" height="350px"/>
+              <img src="resources/images/banner3.png" width="100%" height="350px"/>
             </div>
             <div class="slide slide-4">
-              <img src="resources/images/slide-4.jpg" width="100%" height="350px"/>
+              <img src="resources/images/banner4.png" width="100%" height="350px"/>
             </div>
           </div>
         </div>
         <div class="slide-buttons"></div>
       </div>
     <div id="annmnt_box">공지사항 미니 목록</div>
-    <div id="consult_box">전화상담 안내</div>
+    <div id="consult_box"><img src="resources/images/consult.png" width="100%" height="100%"/></div>
 	</div>
 </div>
 

@@ -4,7 +4,7 @@
 <!-- Footer Component -->
 <footer>
 	<div id="footer_logo">
-		<img src="http://placehold.it/140x100" alt="YTC Logo"></img>
+		<img src="<%=request.getContextPath()%>/resources/images/footer.png "  alt="YTC Logo" width="140" height="100"></img>
 	</div>	
 	<div id="footer_content">
 		<br />
