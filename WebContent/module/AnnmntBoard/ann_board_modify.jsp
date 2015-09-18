@@ -4,6 +4,11 @@
 <%
 Announcement annboard = (Announcement)request.getAttribute("boarddata");
 %>
+<script type="text/javascript">
+	function modifyboard(){
+		modifyform.submit();
+	}
+</script>
 
 <style>
 h1 {
@@ -20,7 +25,6 @@ table {
 	float : center;
 }
 div#ankor_area {
-	width : 1250px;
 	text-align : center;
 	margin-top : 40px;
 }
@@ -56,15 +60,15 @@ tr#content_tr {
 
 <h1>공지사항</h1>
 <form action="<%=request.getContextPath() %>/AnnmntModifyAction.do" method="post" name="modifyform">
-<input type="hidden" name="ANNBOARD_NUM" value=<%=annboard.getANNBOARD_NUM() %>>
-	<table border="0" width="600" height="270" align="center"cellspacing="0" >
+	<input type="hidden" name="ANNBOARD_NUM" value=<%=annboard.getANNBOARD_NUM() %>>
+	<table border="0" width="640" height="270" align="center" cellspacing="0" >
 
 		<tr height="40">
-			<td width="100" align="center">제 목</td>
-			<td colspan="3"><input  name="ANNBOARD_SUBJECT" value="<%=annboard.getANNBOARD_SUBJECT()%>"></td>
+			<td align="center">제 목</td>
+			<td colspan="3" align="left" ><input name="ANNBOARD_SUBJECT" value="<%=annboard.getANNBOARD_SUBJECT()%>"></td>
 		</tr>
 		<tr height="190">
-			<td align="center" width="100">내 용</td>
+			<td align="center">내 용</td>
 			<td colspan="3">
 				<textarea name="ANNBOARD_CONTENT" rows="10" cols="78"><%=annboard.getANNBOARD_CONTENT() %></textarea>
 			</td>
@@ -72,20 +76,19 @@ tr#content_tr {
 		
 		<tr height="40">
 			<%if(!(annboard.getANNBOARD_FILE()==null)){ %>
-			<td align="center">첨부파일</td>
+			<td align="center" align="left">첨부파일</td>
 			<td align="center"><%=annboard.getANNBOARD_FILE() %></td>
 			<%} %>
 			<td width="90">비밀번호</td>
 			<td width="90"><input name="ANNBOARD_PASS" type="password" size="15"></td>
 		</tr>
-		
 	</table>
-	</form>
+	
 	<div id="ankor_area">
-		<a href="javascript:modifyboard()">[수정]</a>
-		<a href="javascript:history.go(-1)">[목록]</a>
+		<a href="javascript:modifyboard()">[등록]</a>
+		<a href="javascript:history.go(-1)">[뒤로]</a>
 	</div>
-
+</form>
 </div>
 
 

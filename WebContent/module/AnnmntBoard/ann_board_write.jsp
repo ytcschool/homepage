@@ -9,6 +9,7 @@
 <style>
 
 h1 {
+	border : 1px solid black;
 	width : 150px;
 	margin: auto;
 	text-align: center;
