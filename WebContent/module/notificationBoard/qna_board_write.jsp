@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 <style>
 	#qnalist-wrapper {
@@ -21,18 +22,18 @@
 		boardform.submit();
 	}
 	</script>
-<!-- °Ô½ÃÆÇ µî·Ï -->
+<!-- ê²Œì‹œíŒ ë“±ë¡ -->
 <form action="<%=request.getContextPath() %>/BoardAddAction.do" method="post" 
 	enctype="multipart/form-data" name="boardform">
 
 <div align="center" valign="middle">
 		<ul style="font-size:25pt; padding-bottom:30px;">
-		<span style="background-color:#DCEBFF">Q/A °Ô½ÃÆÇ</ul>	
+		<span style="background-color:#DCEBFF">Q/A ê²Œì‹œíŒ</ul>	
 </div>
 <table>
 	<tr>
-		<td style="font-family:µ¸À½; font-size:15px" height="30px">
-			<div align="center">±Û¾´ÀÌ</div>
+		<td style="font-family:ë‹ìŒ; font-size:15px" height="30px">
+			<div align="center">ê¸€ì“´ì´</div>
 		</td>
 		<td align="left">
 			<input name="BOARD_NAME" type="text" size="10" maxlength="10" 
@@ -41,8 +42,8 @@
 	</tr>
 	
 	<tr>
-		<td style="font-family:µ¸À½; font-size:15px" height="30px">
-			<div align="center">Á¦ &nbsp; ¸ñ</div>
+		<td style="font-family:ë‹ìŒ; font-size:15px" height="30px">
+			<div align="center">ì œ &nbsp; ëª©</div>
 		</td>
 		<td align="left">
 			<input name="BOARD_SUBJECT" type="text" size="35" maxlength="100" 
@@ -50,22 +51,22 @@
 		</td>
 	</tr>
 	<tr>
-		<td style="font-family:µ¸À½; font-size:15px" height="30px">
-			<div align="center">³» &nbsp; ¿ë</div>
+		<td style="font-family:ë‹ìŒ; font-size:15px" height="30px">
+			<div align="center">ë‚´ &nbsp; ìš©</div>
 		</td>
 		<td colspan="3">
 			<textarea name="BOARD_CONTENT" cols="67" rows="15"></textarea>
 		</td>
 	</tr>
 	<tr>
-		<td style="font-family:µ¸À½; font-size:15px" height="30px">
-			<div align="center">ÆÄÀÏ Ã·ºÎ</div>
+		<td style="font-family:ë‹ìŒ; font-size:15px" height="30px">
+			<div align="center">íŒŒì¼ ì²¨ë¶€</div>
 		</td>
 		<td align="left">
 			<input type="file" name="BOARD_FILE" />
 		</td>
-		<td style="font-family:µ¸À½; font-size:15px" height="30px">
-			<div align="center">ºñ¹Ğ¹øÈ£</div>
+		<td style="font-family:ë‹ìŒ; font-size:15px" height="30px">
+			<div align="center">ë¹„ë°€ë²ˆí˜¸</div>
 		</td>
 		<td align="left">
 			<input name="BOARD_PASS" type="password" size="10" maxlength="10" 
@@ -74,8 +75,8 @@
 	</tr>
 </table>
 	<div id="BtnArea" align="center" valign="middle">
-		<a href="javascript:addboard()">[µî·Ï]</a> &nbsp; &nbsp; &nbsp;
-		<a href="javascript:history.go(-1)">[µÚ·Î]</a>	
+		<a href="javascript:addboard()">[ë“±ë¡]</a> &nbsp; &nbsp; &nbsp;
+		<a href="javascript:history.go(-1)">[ë’¤ë¡œ]</a>	
 	</div>
 </form>
 

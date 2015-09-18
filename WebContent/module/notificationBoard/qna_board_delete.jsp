@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%
 	int num=Integer.parseInt(request.getParameter("num"));
 %>
@@ -21,12 +22,12 @@
 	method="post">	
 <div align="center" valign="middle">
 	<ul style="font-size:25pt; padding-bottom:30px;">
-	<span style="background-color:#DCEBFF">Q/A °Ô½ÃÆÇ</ul>	
+	<span style="background-color:#DCEBFF">Q/A ê²Œì‹œíŒ</ul>	
 </div>
 <table>
 <tr>
 	<td>
-		<font size=2>±Û ºñ¹Ð¹øÈ£ </font>
+		<font size=2>ê¸€ ë¹„ë°€ë²ˆí˜¸ </font>
 	</td>
 	<td>
 		<input name="BOARD_PASS" type="password" size="10" maxlength="10">
@@ -34,9 +35,9 @@
 </tr>
 <tr>
 	<td colspan=2 align=center>
-		<a href="javascript:deleteForm.submit()">»èÁ¦</a>
+		<a href="javascript:deleteForm.submit()">ì‚­ì œ</a>
 		&nbsp; &nbsp; &nbsp;
-		<a href="javascript:history.go(-1)">µ¹¾Æ°¡±â</a>
+		<a href="javascript:history.go(-1)">ëŒì•„ê°€ê¸°</a>
 	</td>
 </tr>
 </table>

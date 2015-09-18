@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 <!-- Footer Component -->
 <footer>
@@ -8,12 +8,12 @@
 	</div>	
 	<div id="footer_content">
 		<br />
-		<p><strong>È¨ÆäÀÌÁöÀÌ¿ë¾à°ü - °³ÀÌÀüº¸Ãë±Þ¹æÄ§ - ÀÌ¸ÞÀÏ¹«´Ü¼öÁý°ÅºÎ - °øÁö»çÇ×</strong></p>
+		<p><strong>í™ˆíŽ˜ì´ì§€ì´ìš©ì•½ê´€ - ê°œì´ì „ë³´ì·¨ê¸‰ë°©ì¹¨ - ì´ë©”ì¼ë¬´ë‹¨ìˆ˜ì§‘ê±°ë¶€ - ê³µì§€ì‚¬í•­</strong></p>
 		<br />
 		<p>
-		YTCÁ÷¾÷Àü¹®ÇÐ±³ ÀÌ»çÀå: È«¿ÏÅÃ £ü °æ±âµµ ¼º³²½Ã ¼öÁ¤±¸ ¼º³²´ë·Î 1322,4Ãþ(´ö¿µºôµù, ÅÂÆòµ¿) (¿ì)461-823 £ü »ç¾÷ÀÚµî·Ï¹øÈ£: 129-91-44331<br />
-		Åë½ÅÆÇ¸Å¾÷ ½Å°í¹øÈ£: °æ±â¼º³² 2007-184È£ £ü ÀüÈ­: 031-758-4500 £ü ÆÑ½º: 031-751-4700<br />
-		Copyright ¨Ï YTCÁ÷¾÷Àü¹®ÇÐ±³20145 All rights reserved<br />
+		YTCì§ì—…ì „ë¬¸í•™êµ ì´ì‚¬ìž¥: í™ì™„íƒ ï½œ ê²½ê¸°ë„ ì„±ë‚¨ì‹œ ìˆ˜ì •êµ¬ ì„±ë‚¨ëŒ€ë¡œ 1322,4ì¸µ(ë•ì˜ë¹Œë”©, íƒœí‰ë™) (ìš°)461-823 ï½œ ì‚¬ì—…ìžë“±ë¡ë²ˆí˜¸: 129-91-44331<br />
+		í†µì‹ íŒë§¤ì—… ì‹ ê³ ë²ˆí˜¸: ê²½ê¸°ì„±ë‚¨ 2007-184í˜¸ ï½œ ì „í™”: 031-758-4500 ï½œ íŒ©ìŠ¤: 031-751-4700<br />
+		Copyright â“’ YTCì§ì—…ì „ë¬¸í•™êµ20145 All rights reserved<br />
 		</p>
 	</div>
 </footer>

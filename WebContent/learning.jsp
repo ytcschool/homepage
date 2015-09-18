@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 <style>
 div#learning-box {
@@ -23,17 +23,17 @@ h1 {
 
 <div id="content">
 	<div id="learning-box">
-		<h1>¸ðÁý °úÁ¤ ¾È³»</h1>
+		<h1>ëª¨ì§‘ ê³¼ì • ì•ˆë‚´</h1>
 		
 		<table>
 			<tr>
-				<td><b>IT ÄÜÅÙÃ÷ °èÈ¹ ¹× ¿î¿µÀÚ °úÁ¤<b></br><img src="resources/images/learning1.png" width="300" height="200"></td>
-				<td><b>»ý»êÁ¤º¸½Ã½ºÅÛ(ERP) °úÁ¤<b></br><img src="resources/images/learning2.png" width="300" height="200"></td>
+				<td><b>IT ì½˜í…ì¸  ê³„íš ë° ìš´ì˜ìž ê³¼ì •<b></br><img src="resources/images/learning1.png" width="300" height="200"></td>
+				<td><b>ìƒì‚°ì •ë³´ì‹œìŠ¤í…œ(ERP) ê³¼ì •<b></br><img src="resources/images/learning2.png" width="300" height="200"></td>
 			</tr>					
 			
 			<tr>
-				<td><b>°ü±¤ ¿©Çà »óÇ° °³¹ß °úÁ¤<b></br><img src="resources/images/learning3.png" width="300" height="200"></td>
-				<td><b>»ç¹° ÀÎÅÍ³Ý °³¹ßÀÚ °úÁ¤<b></br><img src="resources/images/learning4.png" width="300" height="200"></td>
+				<td><b>ê´€ê´‘ ì—¬í–‰ ìƒí’ˆ ê°œë°œ ê³¼ì •<b></br><img src="resources/images/learning3.png" width="300" height="200"></td>
+				<td><b>ì‚¬ë¬¼ ì¸í„°ë„· ê°œë°œìž ê³¼ì •<b></br><img src="resources/images/learning4.png" width="300" height="200"></td>
 			</tr>					
 		</table>
 	</div>

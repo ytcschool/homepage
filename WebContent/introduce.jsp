@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <style>
 div#intro-box {
 	height: 900px;
@@ -41,15 +41,15 @@ div#intro-box {
 	<div id="intro-box">
 		<aside id="main_aside">
 			<article class="main_aside">
-				<p><h3>ÀÎ»ç¸»</h3></p>
+				<p><h3>ì¸ì‚¬ë§</h3></p>
 				<hr/>
 			</article>
 			<article class="main_aside">
-				<p><h3>±³ÈÆ</h3></p>
+				<p><h3>êµí›ˆ</h3></p>
 				<hr/>
 			</article>
 			<article class="main_aside">
-				<p><h3>Ã£¾Æ¿À½Ã´Â ±æ</h3></p>
+				<p><h3>ì°¾ì•„ì˜¤ì‹œëŠ” ê¸¸</h3></p>
 			<hr/>
 			</article>
 		</aside>
@@ -58,7 +58,7 @@ div#intro-box {
 		<section id="main_section">
 			<article class="main_article">
 				<p>
-				<img src="<%=request.getContextPath() %>/resources/images/introducepic.png" alt="ÀÎ»ç¸»" width="600"
+				<img src="<%=request.getContextPath() %>/resources/images/introducepic.png" alt="ì¸ì‚¬ë§" width="600"
 						height="250">
 				</p>
 			</article>
@@ -66,7 +66,7 @@ div#intro-box {
 <br/><br/>
 			<article class="main_article">
 				<p>
-					<img src="<%=request.getContextPath() %>/resources/images/diciple.png" alt="±³ÈÆ" width="600"
+					<img src="<%=request.getContextPath() %>/resources/images/diciple.png" alt="êµí›ˆ" width="600"
 						height="250">
 				</p>
 			</article>
@@ -74,7 +74,7 @@ div#intro-box {
 
 			<article class="main_article">
 				<p>
-					<img src="<%=request.getContextPath() %>/resources/images/map.png" alt="Áöµµ" width="600"
+					<img src="<%=request.getContextPath() %>/resources/images/map.png" alt="ì§€ë„" width="600"
 						height="250">
 				</p>
 			</article>

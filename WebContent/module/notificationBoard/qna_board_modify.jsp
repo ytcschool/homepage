@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import="kr.or.ytc.qnaboard.model.*" %>
 <%
 	BoardBean board = (BoardBean)request.getAttribute("boarddata");
@@ -19,7 +20,7 @@
 
 <div id="content">
 <div id="qnalist-wrapper">
-	<title>Q/A °Ô½ÃÆÇ</title>
+	<title>Q/A ê²Œì‹œíŒ</title>
 	<script type="text/javascript">
 	function modifyboard(){
 		modifyform.submit();
@@ -32,12 +33,12 @@
 
 <div align="center" valign="middle">
 	<ul style="font-size:25pt; padding-bottom:30px;">
-	<span style="background-color:#DCEBFF">Q/A °Ô½ÃÆÇ</ul>	
+	<span style="background-color:#DCEBFF">Q/A ê²Œì‹œíŒ</ul>	
 </div>
 <table>
 	<tr>
-		<td style="font-family:µ¸À½; font-size:15px" height="30px">
-			<div align="center">Á¦ &nbsp; ¸ñ</div>
+		<td style="font-family:ë‹ìŒ; font-size:15px" height="30px">
+			<div align="center">ì œ &nbsp; ëª©</div>
 		</td>
 		<td align="left">
 			<input name="BOARD_SUBJECT" size="35" maxlength="100" 
@@ -45,8 +46,8 @@
 		</td>
 	</tr>
 	<tr>
-		<td style="font-family:µ¸À½; font-size:15px" height="30px">
-			<div align="center">³» &nbsp; ¿ë</div>
+		<td style="font-family:ë‹ìŒ; font-size:15px" height="30px">
+			<div align="center">ë‚´ &nbsp; ìš©</div>
 		</td>
 		<td colspan="3">
 			<textarea name="BOARD_CONTENT" cols="67" rows="15"><%=board.getBOARD_CONTENT() %></textarea>
@@ -54,8 +55,8 @@
 	</tr>
 	
 	<tr>
-		<td style="font-family:µ¸À½; font-size:15px" height="30px">
-			<div align="center">ÆÄÀÏ Ã·ºÎ</div>
+		<td style="font-family:ë‹ìŒ; font-size:15px" height="30px">
+			<div align="center">íŒŒì¼ ì²¨ë¶€</div>
 		</td>
 	<%if(!(board.getBOARD_FILE()==null)){ %>
 		<td align="center">
@@ -63,8 +64,8 @@
 			<%=board.getBOARD_FILE() %>
 		</td>
 	<%} %>
-		<td style="font-family:µ¸À½; font-size:15px" height="30px">
-			<div align="right">ºñ¹Ğ¹øÈ£</div>
+		<td style="font-family:ë‹ìŒ; font-size:15px" height="30px">
+			<div align="right">ë¹„ë°€ë²ˆí˜¸</div>
 		</td>
 		<td align="right">
 			<input name="BOARD_PASS" type="password" size="10" maxlength="10" >
@@ -72,12 +73,12 @@
 	</tr>
 </table>
 	<div id="BtnArea" align="center" valign="middle">
-			<a href="javascript:modifyboard()">[¼öÁ¤]</a>&nbsp;&nbsp;
-			<a href="javascript:history.go(-1)">[µÚ·Î]</a>&nbsp;&nbsp;
+			<a href="javascript:modifyboard()">[ìˆ˜ì •]</a>&nbsp;&nbsp;
+			<a href="javascript:history.go(-1)">[ë’¤ë¡œ]</a>&nbsp;&nbsp;
 			</font>
 		</div>
 	</tr>
 </form>
-<!-- °Ô½ÃÆÇ ¼öÁ¤ -->
+<!-- ê²Œì‹œíŒ ìˆ˜ì • -->
 </div>
 </div>

@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import="kr.or.ytc.qnaboard.model.*" %>
 <%
 	BoardBean board=(BoardBean)request.getAttribute("boarddata");
@@ -33,11 +34,11 @@
 
 <div align="center" valign="middle">
 	<ul style="font-size:25pt; padding-bottom:30px;">
-	<span style="background-color:#DCEBFF">Q/A °Ô½ÃÆÇ</ul>	
+	<span style="background-color:#DCEBFF">Q/A ê²Œì‹œíŒ</ul>	
 <table>
 	<tr>
-		<td style="font-family:µ¸À½; font-size:15px" height="30px">
-			<div align="center">±Û¾´ÀÌ</div>
+		<td style="font-family:ë‹ìŒ; font-size:15px" height="30px">
+			<div align="center">ê¸€ì“´ì´</div>
 		</td>
 		<td align="left">
 			<input name="BOARD_NAME" type="text" size="10" maxlength="10" 
@@ -46,8 +47,8 @@
 	</tr>
 	
 	<tr>
-		<td style="font-family:µ¸À½; font-size:15px" height="30px">
-			<div align="center">Á¦ &nbsp; ¸ñ</div>
+		<td style="font-family:ë‹ìŒ; font-size:15px" height="30px">
+			<div align="center">ì œ &nbsp; ëª©</div>
 		</td>
 		<td align="left">
 			<input name="BOARD_SUBJECT" type="text" size="50" 
@@ -55,8 +56,8 @@
 		</td>
 	</tr>
 	<tr>
-		<td style="font-family:µ¸À½; font-size:15px" height="30px">
-			<div align="center">³» ¿ë</div>
+		<td style="font-family:ë‹ìŒ; font-size:15px" height="30px">
+			<div align="center">ë‚´ ìš©</div>
 		</td>
 		<td>
 			<textarea name="BOARD_CONTENT" cols="67" rows="15"></textarea>
@@ -64,15 +65,15 @@
 	</tr>
 	<tr>
 		<td></td>
-		<td style="font-family:µ¸À½; font-size:15px" height="30px">
-			<div align="right">ºñ¹Ð¹øÈ£<input name="BOARD_PASS" type="password" 
+		<td style="font-family:ë‹ìŒ; font-size:15px" height="30px">
+			<div align="right">ë¹„ë°€ë²ˆí˜¸<input name="BOARD_PASS" type="password" 
 				size="10" maxlength="10"></div>
 		</td>
 	</tr>
 </table>
 	<div id="BtnArea" align="center" valign="middle">
-		<a href="javascript:replyboard()">[µî·Ï]</a> &nbsp; &nbsp; &nbsp;
-		<a href="javascript:history.go(-1)">[µÚ·Î]</a>
+		<a href="javascript:replyboard()">[ë“±ë¡]</a> &nbsp; &nbsp; &nbsp;
+		<a href="javascript:history.go(-1)">[ë’¤ë¡œ]</a>
 	</div>
 
 </form>

@@ -25,7 +25,9 @@ public class BoardFrontController extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("in Controller");
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html; charset=utf-8");
+
 		String RequestURI = request.getRequestURI();
 		String contextPath = request.getContextPath();
 		String command = RequestURI.substring(contextPath.length());
@@ -35,7 +37,7 @@ public class BoardFrontController extends HttpServlet {
 		if(command.equals("/BoardWrite.do")){
 			forward = new ActionForward();
 			forward.setRedirect(false);
-			forward.setPath("/module/notificationBoard/qna_board_write.view"); //±³Àç p396 86¶óÀÎ		
+			forward.setPath("/module/notificationBoard/qna_board_write.view"); //ï¿½ï¿½ï¿½ï¿½ p396 86ï¿½ï¿½ï¿½ï¿½		
 		} else if(command.equals("/BoardAddAction.do")){
 			action = new BoardAddAction();
 			try {
@@ -98,7 +100,7 @@ public class BoardFrontController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-		//forward°¡ nullÀÌ ¾Æ´Ï¸é ÆäÀÌÁö º¯°æ(±³Àç 86¶óÀÎ Âü°í)
+		//forwardï¿½ï¿½ nullï¿½ï¿½ ï¿½Æ´Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ 86ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
 		if(forward != null){
 			if(forward.isRedirect()){
 				response.sendRedirect(forward.getPath());
