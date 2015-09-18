@@ -35,7 +35,7 @@
 	  <nav id="menuListBox" class="skew50">
 	    <ul id="mainMenu">
 	 	  <li class="menu1"><span><a class="main" href="<%=request.getContextPath()%>/introduce.view">학교소개</a></span></li> 	
-	 	  <li class="menu2"><span><a class="main" href="#">교육과정</a></span></li> 	
+	 	  <li class="menu2"><span><a class="main" href="<%=request.getContextPath()%>/learning.view">교육과정</a></span></li> 	
 	 	  <li class="menu3"><span><a class="main" href="#">커뮤니티</a></span></li> 	
 	 	</ul> 
 	    <ul id="sideMenu">

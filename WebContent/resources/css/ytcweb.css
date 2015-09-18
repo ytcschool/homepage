@@ -36,7 +36,8 @@ header#main_header {
 		width: 960px; magin: 0 auto;
 		height: 80px;
 		position: relative;
-		border: 1px solid green;
+/* 		border: 1px solid green; */
+		background: black;
 }
 
 
@@ -88,7 +89,7 @@ header#main_header {
 	position: absolute;
 	margin-left: -33px;
 	border-right: 1px solid #2bd3ff;
-	background: white; /*black*/
+	background: black; /*black*/
 }
 
 #menuListBox #mainMenu {
@@ -143,8 +144,8 @@ header#main_header {
 	position: relative;
 	width: 120px;
 	height: 40px;
-	border-top: 2px solid white;	
-	border-bottom: 1px solid white;	
+	border-top: 2px solid black;	
+	border-bottom: 1px solid black;	
 	line-height: 34px;
 	cursor: pointer;
 	box-sizing: border-box;
@@ -220,8 +221,9 @@ footer {
 	width: 960px;
 	margin-top: -100px;
 	clear: both;
-	border: 1px solid blue;
+/* 	border: 1px solid blue; */
 	text-align: center;
+	background: #d0d3d5;
 }
 
 #footer_logo {
@@ -247,7 +249,7 @@ footer {
 div#content {
 	position: relative;
 	height: 100%;
-	border: 1px solid red;
+/* 	border: 1px solid red; */
 	width: 960px;
 	text-align: center;
 }

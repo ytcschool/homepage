@@ -133,9 +133,11 @@ if(listcount > 0){
 	{
 	%>
 	<div align="center" valign="middle">
-		<ul colspan="4">Q/A Board</ul>
-		<ul align=right>
-			<font size=2>Q/A list not found</font>
+		<ul colspan="4" style="font-size:25pt; padding-bottom:30px">
+		<span style="background-color:#DCEBFF">Q/A Board</span></ul>
+		<ul align="center" style="border:1px solid white-space; height: 300px">
+			<br/>
+			<font size=6>Q/A list is not found</font>
 		</ul>
 	</div>
 	<%
