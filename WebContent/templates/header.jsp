@@ -39,7 +39,7 @@
 	 	  <li class="menu3"><span><a class="main" href="#">커뮤니티</a></span></li> 	
 	 	</ul> 
 	    <ul id="sideMenu">
-	 	  <li><span><a class="main" href="#">공지사항</a></span></li> 	
+	 	  <li><span><a class="main" href="<%=request.getContextPath() %>/AnnmntList.do">공지사항</a></span></li> 	
 	 	  <li><span><a class="main" href="<%=request.getContextPath() %>/BoardList.do">Q/A</a></span></li> 	
 	 	</ul> 
 	  </nav>
