@@ -1,4 +1,5 @@
 @CHARSET "EUC-KR";
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
 /*  Init  */
 * { margin:0; padding: 0; }
@@ -33,17 +34,11 @@ img { border: 0; }
 header#main_header {
 		overflow: hidden;
 		width: 960px; magin: 0 auto;
-		height: 100px;
+		height: 80px;
 		position: relative;
 		border: 1px solid green;
 }
 
-#main_header > #title {
-	position: absolute;
-	left: 20px; bottom: 10px;
-/* 	border: 1px solid red; */
-	height: 80px;
-}
 
 /* Global Menu */
 .skew50 {
@@ -63,7 +58,6 @@ header#main_header {
 	overflow: hidden;
 	position: absolute;
 	left: -180px;
-	top: 20px;
 	width: 330px;
 	height: 80px;
 	z-index: 100;
@@ -79,12 +73,12 @@ header#main_header {
 
 #menuTitleBox div.title {
 	position: absolute;
-	top: 20px;
+	top: 10px;
 	left: 200px;
 	width: 82px;
 	height: 80px;
-	font-size: 18px;
-	font-weight: bold;
+	font-size: 45px;
+	font-family: 'Montserrat', sans-serif;
 	color: #fff;
 }
 
@@ -92,7 +86,6 @@ header#main_header {
 #menuListBox {
 	overflow: hidden;
 	position: absolute;
-	top: 20px;
 	margin-left: -33px;
 	border-right: 1px solid #2bd3ff;
 	background: white; /*black*/
@@ -129,6 +122,12 @@ header#main_header {
 	vertical-align: middle;
 	line-height: 15px;
 	-webkit-transform: skew(50deg);
+	font-family: 'Nanum Gothic', serif;
+	font-size: 22px;
+}
+
+#menuListBox #mainMenu li span a {
+	color: #3b3b3b;
 }
 
 #menuListBox #sideMenu {
@@ -154,19 +153,26 @@ header#main_header {
 	display: inline-block;
 	position: relative;
 	width: 120px;
-	margin: 0 0 0 10px;
+	margin: 0 0 0 -12px;
 	padding: 5px;
 	vertical-align: middle;
 	line-height: 15px;
 	-webkit-transform: skew(50deg);
+	font-family: 'Nanum Gothic', serif;
+	font-size: 15px;
+	text-align: center;
 }
 
 #menuListBox #sideMenu li a {
 	margin: 0 0 0 10px;
+	color: #3b3b3b;
 }
 
 #menuListBox #mainMenu li:hover, #menuListBox #sideMenu li:hover {
-	background: #000;
+	background: white;
+}
+#menuListBox #mainMenu li :hover + a, #menuListBox #sideMenu li:hover + a {
+	color: white;
 }
 
 /* Open&Close Button */

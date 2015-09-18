@@ -1,12 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+    
+<link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+  WebFontConfig = {
+    custom: {
+        families: ['Nanum Gothic'],
+        urls: ['http://fonts.googleapis.com/earlyaccess/nanumgothic.css']
+    }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1.4.10/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })(); 
+ </script>
 
 <!-- Header Component -->
 <header id="main_header">
-	<hgroup id="title">
-		<h3>Header</h3>	
-	</hgroup>
-
 	<nav id="main_gnb"> 
 	  <div id="menuTitleBox" class="skew50">
   	    <div class="un_skew50">
@@ -14,9 +29,9 @@
   		</div>
 	  </div>
 	  <input id="select1" name="radioMenu" type="radio" class="openInput" checked />
-	  <label for="select1" class="openBtn headerBtn">Open Menu</label>
+<!-- 	  <label for="select1" class="openBtn headerBtn">Open Menu</label> -->
 	  <input id="select2" name="radioMenu" type="radio" class="closeInput" />
-	  <label for="select2" class="closeBtn headerBtn">Close Menu</label>
+<!-- 	  <label for="select2" class="closeBtn headerBtn">Close Menu</label> -->
 	  <nav id="menuListBox" class="skew50">
 	    <ul id="mainMenu">
 	 	  <li class="menu1"><span><a class="main" href="<%=request.getContextPath()%>/introduce.view">학교소개</a></span></li> 	
