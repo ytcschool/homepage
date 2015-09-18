@@ -32,13 +32,13 @@
 		
 		<!-- 로그인 배너 -->
 		<div id="left_item" class="left_item">
-			<br />
-			<br />
+			<br /><br/>
+			
 			<form name="loginform" action="./MemberLoginAction.me" method="post">
 			<input id="memId" class="loginInput" type="text" name="MEMBER_ID" placeholder="ID" size="20">
 			<br /><br />
 			<input id="memPw" class="loginInput" type="password" name="MEMBER_PW" placeholder="Password" size="20">
-			<br />&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+			<br /><br/>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
 			<p id="loginbtn">
 			<a href="javascript:loginform.submit()" class="button" id="signInButton">&nbsp;&nbsp;&nbsp;Sign-In&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp; 
 			</p>
@@ -47,13 +47,13 @@
 		</div>
 	
 		<!-- 회원가입 배너 -->
-		<div class="right_item">
+		<div id="right_item">
 		<br/>
 		<form name="joinform" action="./MemberJoinAction.me" method="post">
-			<input type="text" name="MEMBER_ID" placeholder="ID" size="10"/>&nbsp;&nbsp;&nbsp;
-			<input type="password" name="MEMBER_PW" placeholder="Password" size="10"/><br /><br />
-			<input type="text" name="MEMBER_NAME" placeholder="Name" size="10"/>&nbsp;&nbsp;&nbsp;
-			<input type="text" name="MEMBER_EMAIL" placeholder="E-mail" size="10"/><br /><br />
+			<input class="joinInput" type="text" name="MEMBER_ID" placeholder="ID" size="10"/>&nbsp;&nbsp;&nbsp;
+			<input class="joinInput" type="password" name="MEMBER_PW" placeholder="Password" size="10"/><br /><br />
+			<input class="joinInput" type="text" name="MEMBER_NAME" placeholder="Name" size="10"/>&nbsp;&nbsp;&nbsp;
+			<input class="joinInput" type="text" name="MEMBER_EMAIL" placeholder="E-mail" size="10"/><br /><br />
 			
 			Birth&nbsp;Date:
 			<select name="MEMBER_YEAR">
@@ -67,13 +67,13 @@
 			<select name="MEMBER_DAY"><%for(int day=1; day<=31; day++){%><option><%=day%></option><%}%>
 			</select><br /><br />
 			 
-			Gender: &nbsp; <input type="radio" name="MEMBER_GENDER" value="male"/>Male&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gender:&nbsp; <input type="radio" name="MEMBER_GENDER" value="male"/>Male&nbsp;&nbsp;
 			<input type="radio" name="MEMBER_GENDER" value="female"/>Female&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			
 			<br />&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
 			<p id="signupbtn">
-			<a href="javascript:joinform.submit()" class="button">&nbsp;&nbsp;&nbsp;Sign-Up&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp; 
-			<a href="javascript:joinform.reset()" class="button">&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;</a>
+			<a href="javascript:joinform.submit()" class="button" id="joinButton">&nbsp;&nbsp;&nbsp;Sign-Up&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp; 
+			<a href="javascript:joinform.reset()" class="button" id="resetButton">&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;</a>
 			</p>
 			</form>
 		</div>
