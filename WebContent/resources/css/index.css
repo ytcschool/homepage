@@ -65,8 +65,9 @@ div#loginSuccess {
 	width: 155px;
 	height:155px;
 	padding: 10px;
-	background-color: #FFFFEB;
+	background-color: rgba( 255, 255, 255, 0.8 );
 	z-index: 101;
+	
 }
 
 div#loginSuccess > p {

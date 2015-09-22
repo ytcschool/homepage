@@ -12,7 +12,7 @@
 		String sessionId = (String)session.getAttribute("id");
 		String sessionName = (String)session.getAttribute("name");
 		String userName = (String)request.getParameter("MEMBER_NAME");
-		System.out.println(sessionName);
+		
 %>	
 	<div id="loginSuccess">	
 		<p><b><%out.println("<br/>" + sessionName + "<br/>" +"Welcome!");%></b></p>
