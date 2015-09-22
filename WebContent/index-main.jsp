@@ -49,11 +49,14 @@
 		<!-- 회원가입 배너 -->
 		<div id="right_item">
 		<br/>
+<script>
+var checkForm = null;
+</script>
 		<form name="joinform" action="./MemberJoinAction.me" method="post">
-			<input class="joinInput" type="text" name="MEMBER_ID" placeholder="ID" size="10"/>&nbsp;&nbsp;&nbsp;
-			<input class="joinInput" type="password" name="MEMBER_PW" placeholder="Password" size="10"/><br /><br />
-			<input class="joinInput" type="text" name="MEMBER_NAME" placeholder="Name" size="10"/>&nbsp;&nbsp;&nbsp;
-			<input class="joinInput" type="text" name="MEMBER_EMAIL" placeholder="E-mail" size="10"/><br /><br />
+			<input id="signId" class="joinInput" type="text" name="MEMBER_ID" placeholder="ID" size="10"/>&nbsp;&nbsp;&nbsp;
+			<input id="signPw" class="joinInput" type="password" name="MEMBER_PW" placeholder="Password" size="10"/><br /><br />
+			<input id="signName" class="joinInput" type="text" name="MEMBER_NAME" placeholder="Name" size="10"/>&nbsp;&nbsp;&nbsp;
+			<input id="signEmail" class="joinInput" type="text" name="MEMBER_EMAIL" placeholder="E-mail" size="10"/><br /><br />
 			
 			Birth&nbsp;Date:
 			<select name="MEMBER_YEAR">
@@ -72,7 +75,7 @@
 			
 			<br />&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
 			<p id="signupbtn">
-			<a href="javascript:joinform.submit()" class="button" id="joinButton">&nbsp;&nbsp;&nbsp;Sign-Up&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp; 
+			<a href="javascript:checkForm()" class="button" id="joinButton">&nbsp;&nbsp;&nbsp;Sign-Up&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp; 
 			<a href="javascript:joinform.reset()" class="button" id="resetButton">&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;</a>
 			</p>
 			</form>
@@ -104,15 +107,44 @@
 </div>
 
 <!-- Sign-In / Sign-Up 테두리 설정 -->
+<script src="http://code.jquery.com/jquery.js"></script>
 <script>
-document.getElementById("main_aside").style.borderStyle = "none";
-var mainAside = document.getElementById("main_aside");
-var appear = function() {
-	mainAside.style.border = "1px solid gray";
-};
-var disappear = function() {
+ document.getElementById("main_aside").style.borderStyle = "none";
+ var mainAside = document.getElementById("main_aside");
+ var appear = function() {
+ 	mainAside.style.border = "1px solid gray";
+ };
+ var disappear = function() {
 	mainAside.style.border = "none";
 };
+
+checkForm = function(){
+	var form = $('form[name="joinform"]')[0];
+	console.log("테스트1");
+	if($("#signId").val()==null || $("#signId").val()==""){
+		console.log("테스트2");
+		alert("아이디를 입력하세요");
+		$("#signId").focus();
+		return false;
+	}else if($("#signPw").val()==null || $("#signPw").val()==""){
+		console.log("테스트3");
+		alert("패스워드를 입력하세요");
+		$("#signPw").focus();
+		return false;
+	}else if($("#signName").val()==null || $("#signName").val()==""){
+		alert("이름을 입력하세요");
+		$("#signName").focus();
+		return false;
+	}else if($("#signEmail").val()==null || $("#signEmail").val()==""){
+		alert("이메일을 입력하세요");
+		$("#signEmail").focus();
+		return false;
+	}
+	form.submit();
+}
+
+$(document).ready(function(){
+});
 </script>
 <script src="resources/js/jquery-1.11.3.min.js"></script>
 <script src="resources/js/slider.js"></script>
