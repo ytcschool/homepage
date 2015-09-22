@@ -60,7 +60,7 @@ public class MemberDAO {
 			pstmt.setString(7, member.getMEMBER_GENDER());
 			pstmt.setString(8, member.getMEMBER_EMAIL());
 			result = pstmt.executeUpdate();
-
+			
 			if (result != 0) {
 				return true;
 			}

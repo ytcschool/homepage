@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!-- 로그인 / 회원가입 스타일 -->
 <link href="resources/css/index.css" type="text/css" rel="stylesheet" /> 
@@ -50,10 +49,11 @@
 		<div id="right_item">
 		<br/>
 		<form name="joinform" action="./MemberJoinAction.me" method="post">
-			<input class="joinInput" type="text" name="MEMBER_ID" placeholder="ID" size="10"/>&nbsp;&nbsp;&nbsp;
-			<input class="joinInput" type="password" name="MEMBER_PW" placeholder="Password" size="10"/><br /><br />
-			<input class="joinInput" type="text" name="MEMBER_NAME" placeholder="Name" size="10"/>&nbsp;&nbsp;&nbsp;
-			<input class="joinInput" type="text" name="MEMBER_EMAIL" placeholder="E-mail" size="10"/><br /><br />
+			<input class="joinInput" type="text" id="MEMBER_ID" name="MEMBER_ID" placeholder="ID" size="6"/>
+			<input id="id_check" type="button" name="id_check" value="CHECK" size="5" />&nbsp;
+			<input class="joinInput" type="password" name="MEMBER_PW" placeholder="Password" size="7"/><br /><br />
+			<input class="joinInput" type="text" name="MEMBER_NAME" placeholder="Name" size="6"/>&nbsp;&nbsp;
+			<input class="joinInput" type="text" name="MEMBER_EMAIL" placeholder="E-mail" size="15"/><br /><br />
 			
 			Birth&nbsp;Date:
 			<select name="MEMBER_YEAR">
@@ -102,6 +102,34 @@
     <div id="consult_box"><img src="resources/images/consult.png" width="100%" height="100%"/></div>
 	</div>
 </div>
+
+<!-- 경고창 꾸미기 -->
+<link rel="stylesheet" href="resources/css/alertify.core.css" />
+<link rel="stylesheet" href="resources/css/alertify.default.css" id="toggleCSS" />
+<script src="resources/js/alertify.min.js"></script>
+
+<!-- ID 중복체크 기능 -->
+<script src="http://code.jquery.com/jquery.js"></script>
+<script>
+	$(document).ready(function(){
+		$('#id_check').click(function(){
+			var member_id = $('#MEMBER_ID').val();
+			if (member_id != "" && member_id != null) {
+				$.post('id_check.jsp', 'MEMBER_ID='+member_id, function(data) {
+					console.log(data);
+					console.log(typeof data);
+					if (data == "true") {
+							alertify.alert("ID is not available");
+					} else {
+							alertify.alert("ID is available");
+					}
+				});
+			} else {
+				alert("중복검사를 하기 전 아이디를 먼저 입력해주세요.");
+			} // end of if
+		}); // end of id_check	
+	});
+</script>
 
 <!-- Sign-In / Sign-Up 테두리 설정 -->
 <script>
