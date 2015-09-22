@@ -21,6 +21,11 @@ public class MemberLoginAction implements Action {
 
 		member.setMEMBER_ID(request.getParameter("MEMBER_ID"));
 		member.setMEMBER_PW(request.getParameter("MEMBER_PW"));
+		
+		// 가입회원 이름정보 추출
+		String mem_name = memberdao.pickMember(member);
+		
+		// 로그인 상 회원 검증 과정
 		result = memberdao.isMember(member);
 
 		if (result == 0) {
@@ -45,7 +50,8 @@ public class MemberLoginAction implements Action {
 
 		// 로그인 성공
 		session.setAttribute("id", member.getMEMBER_ID());
-
+		session.setAttribute("name", mem_name);
+		
 		forward.setRedirect(true);
 		forward.setPath("./index.jsp");
 		return forward;

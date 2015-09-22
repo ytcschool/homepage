@@ -57,13 +57,13 @@ div#loginSuccess {
 	position: absolute;
 	width: 270px;
 	height: 270px;
-	right: 50px;
-	top: 50px;
-	border: 2px solid orange;
+	right: 60px;
+	top: 70px;
+	
 	text-align: center;
 	font-size: 20px;
 	width: 155px;
-	height: 60px;
+	height:155px;
 	padding: 10px;
 	background-color: #FFFFEB;
 	z-index: 101;
