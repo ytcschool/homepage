@@ -9,7 +9,7 @@ import kr.or.ytc.qnaboard.model.BoardDAO;
 public class BoardReplyAction implements Action {
 	 public ActionForward execute(HttpServletRequest request,HttpServletResponse response) 
 	 throws Exception{
-		 	request.setCharacterEncoding("euc-kr");
+		 	request.setCharacterEncoding("utf-8");
 		 	ActionForward forward = new ActionForward();
 		 	
 			BoardDAO boarddao=new BoardDAO();
@@ -27,10 +27,10 @@ public class BoardReplyAction implements Action {
 	   		
 	   		result=boarddao.boardReply(boarddata);
 	   		if(result==0){
-	   			System.out.println("´äÀå ½ÇÆÐ");
+	   			System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 	   			return null;
 	   		}
-	   		System.out.println("´äÀå ¿Ï·á");
+	   		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½");
 	   		
 	   		forward.setRedirect(true);
 	   		forward.setPath("./BoardDetailAction.do?num="+result);

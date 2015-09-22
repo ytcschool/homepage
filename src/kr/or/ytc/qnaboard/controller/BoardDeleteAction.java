@@ -11,7 +11,7 @@ public class BoardDeleteAction implements Action {
 	 public ActionForward execute(HttpServletRequest request,HttpServletResponse response) 
 	 	throws Exception{
 		ActionForward forward = new ActionForward();
-		request.setCharacterEncoding("euc-kr");
+		request.setCharacterEncoding("utf-8");
 		
 	   	boolean result=false;
 	   	boolean usercheck=false;
@@ -21,10 +21,10 @@ public class BoardDeleteAction implements Action {
 	   	usercheck=boarddao.isBoardWriter(num, request.getParameter("BOARD_PASS"));
 	   	
 	   	if(usercheck==false){
-	   		response.setContentType("text/html;charset=euc-kr");
+	   		response.setContentType("text/html;charset=utf-8");
 	   		PrintWriter out=response.getWriter();
 	   		out.println("<script>");
-	   		out.println("alert('»èÁ¦ÇÒ ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.');");
+	   		out.println("alert('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.');");
 	   		out.println("location.href='./BoardList.do';");
 	   		out.println("</script>");
 	   		out.close();
@@ -33,11 +33,11 @@ public class BoardDeleteAction implements Action {
 	   	
 	   	result=boarddao.boardDelete(num);
 	   	if(result==false){
-	   		System.out.println("°Ô½ÃÆÇ »èÁ¦ ½ÇÆÐ");
+	   		System.out.println("ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 	   		return null;
 	   	}
 	   	
-	   	System.out.println("°Ô½ÃÆÇ »èÁ¦ ¼º°ø");
+	   	System.out.println("ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 	   	forward.setRedirect(true);
    		forward.setPath("./BoardList.do");
    		return forward;

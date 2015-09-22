@@ -12,7 +12,7 @@ public class AnnmntDeleteAction implements AnnmntAction {
 			 	throws Exception{
 				 
 		 AnnmntActionForward forward = new AnnmntActionForward();
-		 	request.setCharacterEncoding("euc-kr");
+		 	request.setCharacterEncoding("utf-8");
 				
 				
 			   	boolean result=false;
@@ -23,10 +23,10 @@ public class AnnmntDeleteAction implements AnnmntAction {
 			   	usercheck=boarddao.isBoardWriter(num, request.getParameter("ANNBOARD_PASS"));
 			   	
 			   	if(usercheck==false){
-			   		response.setContentType("text/html;charset=euc-kr");
+			   		response.setContentType("text/html;charset=utf-8");
 			   		PrintWriter out=response.getWriter();
 			   		out.println("<script>");
-			   		out.println("alert('»èÁ¦ÇÒ ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.');");
+			   		out.println("alert('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.');");
 			   		out.println("location.href='<%=request.getContextPath() %>/AnnmntList.do';");
 			   		out.println("</script>");
 			   		out.close();
@@ -35,11 +35,11 @@ public class AnnmntDeleteAction implements AnnmntAction {
 			   	
 			   	result=boarddao.boardDelete(num);
 			   	if(result==false){
-			   		System.out.println("°Ô½ÃÆÇ »èÁ¦ ½ÇÆÐ");
+			   		System.out.println("ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 			   		return null;
 			   	}
 			   	
-			   	System.out.println("°Ô½ÃÆÇ »èÁ¦ ¼º°ø");
+			   	System.out.println("ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 			   	forward.setRedirect(true);
 		   		//forward.setPath("./module/AnnmntBoard/ann_board_list.view");
 		   		forward.setPath(request.getContextPath()+"/AnnmntList.do");

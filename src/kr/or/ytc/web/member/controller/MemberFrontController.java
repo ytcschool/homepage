@@ -12,6 +12,9 @@ public class MemberFrontController extends javax.servlet.http.HttpServlet implem
 
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.print("MemberFrontController");
+
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html; charset=utf-8");
 		
 		String RequestURI = request.getRequestURI();
 		String contextPath = request.getContextPath();
@@ -19,26 +22,26 @@ public class MemberFrontController extends javax.servlet.http.HttpServlet implem
 		ActionForward forward = null;
 		Action action = null;
 
-		// °æ·Î È®ÀÎ
+		// ï¿½ï¿½ï¿½ È®ï¿½ï¿½
 		System.out.println(RequestURI);
 		System.out.println(contextPath);
 		System.out.println(command);
 		
-		// ·Î±×ÀÎ ±â´É
+		// ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 		if (command.equals("/MemberLogin.me")) {
 			forward = new ActionForward();
 			forward.setRedirect(false);
 			forward.setPath("./index.jsp");
 		} 
 		
-		// È¸¿ø°¡ÀÔ ±â´É
+		// È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 		else if (command.equals("/MemberJoin.me")) {
 			forward = new ActionForward();
 			forward.setRedirect(false);
 			forward.setPath("./module/joinForm.view");
 		} 
 		
-		// ·Î±×ÀÎ Ã³¸®
+		// ï¿½Î±ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
 		else if (command.equals("/MemberLoginAction.me")) {
 			action = new MemberLoginAction();
 			try {
@@ -48,7 +51,7 @@ public class MemberFrontController extends javax.servlet.http.HttpServlet implem
 			}
 		} 
 		
-		// È¸¿ø°¡ÀÔ Ã³¸®
+		// È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
 		else if (command.equals("/MemberJoinAction.me")) {
 			action = new MemberJoinAction();
 			try {
@@ -58,7 +61,7 @@ public class MemberFrontController extends javax.servlet.http.HttpServlet implem
 			}
 		} 
 		
-		// ·Î±×¾Æ¿ô Ã³¸®
+		// ï¿½Î±×¾Æ¿ï¿½ Ã³ï¿½ï¿½
 		else if (command.equals("/MemberLogoutAction.me")) {
 			action = new MemberLogoutAction();
 			try {
@@ -68,7 +71,7 @@ public class MemberFrontController extends javax.servlet.http.HttpServlet implem
 			}
 		}
 		
-		// Æ÷¿öµù Ã³¸®
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
 		if (forward != null) {
 			if (forward.isRedirect()) {
 				response.sendRedirect(forward.getPath());

@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<!-- ·Î±×ÀÎ / È¸¿ø°¡ÀÔ ½ºÅ¸ÀÏ -->
+<!-- ï¿½Î±ï¿½ï¿½ï¿½ / È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½ -->
 <link href="resources/css/index.css" type="text/css" rel="stylesheet" /> 
 
 <div id="content">
 	<div id="content-wrapper">
 <%
-	// ·Î±×ÀÎ ¼º°ø ½Ã
+	// ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 	if (session.getAttribute("id") != null) {	
 		String sessionId = (String)session.getAttribute("id");
 		String sessionName = (String)session.getAttribute("name");
@@ -14,28 +14,28 @@
 		
 %>	
 	<div id="loginSuccess">	
-		<p><b><%out.println("<br/>" + sessionName + "<br/>" +"Welcome!");%></b></p>
-		<a href="./MemberLogoutAction.me" class="button">&nbsp;&nbsp;LogOut&nbsp;&nbsp;</a>
+		<p><b><%out.println("<br/>" + sessionName + "ë‹˜ <br/>" +"í™˜ì˜í•©ë‹ˆë‹¤.");%></b></p>
+		<a href="./MemberLogoutAction.me" class="button">&nbsp;&nbsp;ë¡œê·¸ì•„ì›ƒ&nbsp;&nbsp;</a>
 	</div>
 <%
-	// ·Î±×ÀÎ ½ÇÆĞ ½Ã
+	// ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 	} else if (session.getAttribute("id") == null) {		
 %>
 
-<!-- ·Î±×ÀÎ / È¸¿ø°¡ÀÔ ¹è³Ê -->
+<!-- ï¿½Î±ï¿½ï¿½ï¿½ / È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ -->
 	<aside id="main_aside">
 		<input id="first" type ="radio" name="tab" checked="checked" onclick="disappear()" />
 		<input id="second" type="radio" name="tab" onclick="appear()" />
 		<section class="buttons">
-			<label for="first">Sign-In</label>
-			<label for="second">Sign-Up</label>
+			<label for="first">ë¡œê·¸ì¸</label>
+			<label for="second">íšŒì›ê°€ì…</label>
 		</section>
 		
-		<!-- ·Î±×ÀÎ ¹è³Ê -->
+		<!-- ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ -->
 		<div id="left_item" class="left_item">
 		<br /><br/>
 		
-		<!-- Àü¿ªº¯¼ö checkId ¼±¾ğ -->
+		<!-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ checkId ï¿½ï¿½ï¿½ï¿½ -->
 		<script> var checkId = null; </script>
 			
 			<form name="loginform" action="./MemberLoginAction.me" method="post">
@@ -44,27 +44,27 @@
 			<input id="memPw" class="loginInput" type="password" name="MEMBER_PW" placeholder="Password" size="20">
 			<br /><br/>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
 			<p id="loginbtn">
-			<a href="javascript:checkId()" class="button" id="signInButton">&nbsp;&nbsp;&nbsp;Sign-In&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp; 
+			<a href="javascript:checkId()" class="button" id="signInButton">&nbsp;&nbsp;&nbsp;ë¡œê·¸ì¸&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp; 
 			</p>
 			</form>
 			<br />
 		</div>
 	
-		<!-- È¸¿ø°¡ÀÔ ¹è³Ê -->
+		<!-- È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ -->
 		<div id="right_item">
 		<br/>
 		
-		<!-- Àü¿ªº¯¼ö checkForm ¼±¾ğ -->
+		<!-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ checkForm ï¿½ï¿½ï¿½ï¿½ -->
 		<script> var checkForm = null; </script>
 		
 		<form name="joinform" action="./MemberJoinAction.me" method="post">
 			<input id="MEMBER_ID" class="joinInput" type="text" name="MEMBER_ID" placeholder="ID" size="6"/>
-			<input id="id_check" type="button" name="id_check" value="CHECK" size="5" />&nbsp;
+			<input id="id_check" type="button" name="id_check" value="ì¤‘ë³µí™•ì¸" size="5" />&nbsp;
 			<input id="signPw" class="joinInput" type="password" name="MEMBER_PW" placeholder="Password" size="7"/><br /><br />
 			<input id="signName" class="joinInput" type="text" name="MEMBER_NAME" placeholder="Name" size="6"/>&nbsp;&nbsp;
 			<input id="signEmail" class="joinInput" type="text" name="MEMBER_EMAIL" placeholder="E-mail" size="15"/><br /><br />
 			
-			Birth&nbsp;Date:
+			<b>ìƒë…„ì›”ì¼:</b>
 			<select name="MEMBER_YEAR">
 				<%for(int year=2010; year>=1930; year--){%><option><%=year%></option><%}%>
 			</select>&nbsp;
@@ -76,13 +76,13 @@
 			<select name="MEMBER_DAY"><%for(int day=1; day<=31; day++){%><option><%=day%></option><%}%>
 			</select><br /><br />
 			 
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gender:&nbsp; <input type="radio" name="MEMBER_GENDER" value="male"/>Male&nbsp;&nbsp;
-			<input type="radio" name="MEMBER_GENDER" value="female"/>Female&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ì„±ë³„:</b>&nbsp; <input type="radio" name="MEMBER_GENDER" value="male"/>ë‚¨ì&nbsp;&nbsp;
+			<input type="radio" name="MEMBER_GENDER" value="female"/>ì—¬ì&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			
 			<br />&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
 			<p id="signupbtn">
-			<a href="javascript:checkForm()" class="button" id="joinButton">&nbsp;&nbsp;&nbsp;Sign-Up&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp; 
-			<a href="javascript:joinform.reset()" class="button" id="resetButton">&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;</a>
+			<a href="javascript:checkForm()" class="button" id="joinButton">&nbsp;&nbsp;&nbsp;íšŒì›ê°€ì…&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp; 
+			<a href="javascript:joinform.reset()" class="button" id="resetButton">&nbsp;&nbsp;ë‹¤ì‹œì‘ì„±&nbsp;&nbsp;</a>
 			</p>
 			</form>
 		</div>
@@ -130,12 +130,12 @@
 	</div>
 </div>
 
-<!-- °æ°íÃ¢ ²Ù¹Ì±â -->
+<!-- ï¿½ï¿½ï¿½Ã¢ ï¿½Ù¹Ì±ï¿½ -->
 <link rel="stylesheet" href="resources/css/alertify.core.css" />
 <link rel="stylesheet" href="resources/css/alertify.default.css" id="toggleCSS" />
 <script src="resources/js/alertify.min.js"></script>
 
-<!-- ID Áßº¹Ã¼Å© ±â´É -->
+<!-- ID ï¿½ßºï¿½Ã¼Å© ï¿½ï¿½ï¿½ -->
 <script src="http://code.jquery.com/jquery.js"></script>
 <script>
 	$(document).ready(function(){
@@ -167,7 +167,7 @@
 	});
 </script>
 
-<!-- Sign-In / Sign-Up Å×µÎ¸® ¼³Á¤ -->
+<!-- Sign-In / Sign-Up ï¿½×µÎ¸ï¿½ ï¿½ï¿½ï¿½ï¿½ -->
 <script src="http://code.jquery.com/jquery.js"></script>
 <script>
  document.getElementById("main_aside").style.borderStyle = "none";
@@ -179,7 +179,7 @@
 	mainAside.style.border = "none";
 };
 
-// ·Î±×ÀÎ ½Ã ID È¤Àº Password ¹Ì ÀÔ·Â½Ã °æ°í¹® Ã³¸® 
+// ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ ID È¤ï¿½ï¿½ Password ï¿½ï¿½ ï¿½Ô·Â½ï¿½ ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ 
 checkId = function(){
 	var form = $('form[name="loginform"]')[0];
 	if($("#memId").val()==null || $("#memId").val()==""){
@@ -200,7 +200,7 @@ checkId = function(){
 	form.submit();
 }
 
-// È¸¿ø°¡ÀÔ ½Ã ÀÔ·ÂÁ¤º¸ ¹Ì ÀÔ·Â½Ã °æ°í¹® Ã³¸®
+// È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ô·Â½ï¿½ ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
 checkForm = function(){
 	var form = $('form[name="joinform"]')[0];
 	if($("#MEMBER_ID").val()==null || $("#MEMBER_ID").val()==""){
@@ -239,7 +239,7 @@ $(document).ready(function(){
 });
 </script>
 
-<!-- °¶·¯¸® ½ºÅ©¸³Æ® -->
+<!-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½Æ® -->
 <script>
  $(document).ready(function(){
 	$('#banner li').each(function(idx, item){

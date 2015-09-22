@@ -1,11 +1,11 @@
-<%@page import="java.sql.ResultSet"%><%@page import="javax.sql.DataSource"%><%@page import="javax.naming.*"%><%@page import="java.sql.PreparedStatement"%><%@page import="java.sql.Connection"%><%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%><%
+<%@page import="java.sql.ResultSet"%><%@page import="javax.sql.DataSource"%><%@page import="javax.naming.*"%><%@page import="java.sql.PreparedStatement"%><%@page import="java.sql.Connection"%><%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%><%
 	String member_id = request.getParameter("MEMBER_ID");
 	// System.out.println(member_id);
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	String sql = "SELECT * FROM MEMBER WHERE MEMBER_ID=?";
-	// ID Áßº¹ ÆÇ´Ü º¯¼ö
+	// ID ì¤‘ë³µ íŒë‹¨ ë³€ìˆ˜
 	String bool = "false";
 	try {
 		Context init = new InitialContext();

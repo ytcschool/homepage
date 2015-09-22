@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="kr.or.ytc.web.annmntboard.model.*" %>
@@ -44,7 +44,7 @@
 	<div id="annList-wrapper">
 		<div align="center" valign="middle">
 			<ul colspan="4" style="font-size:25pt; padding-bottom:30px;">
-			<span style="background-color:#DCEBFF">°øÁö»çÇ×</ul>	
+			<span style="background-color:#DCEBFF">ê³µì§€ì‚¬í•­</ul>	
 		</div>
 		<%
 		if(listcount > 0){
@@ -53,11 +53,11 @@
 			<table> 
 			
 				<tr align="center">
-					<td style=width:8%>±Û¹øÈ£</td>
-					<td style=width:50%>Á¦¸ñ</td>
-					<td style=width:14%>ÀÛ¼ºÀÚ</td>
-					<td style=width:17%>ÀÛ¼ºÀÏ</td>
-					<td style=width:11%>Á¶È¸¼ö</td>
+					<td style=width:8%>ê¸€ë²ˆí˜¸</td>
+					<td style=width:50%>ì œëª©</td>
+					<td style=width:14%>ì‘ì„±ì</td>
+					<td style=width:17%>ì‘ì„±ì¼</td>
+					<td style=width:11%>ì¡°íšŒìˆ˜</td>
 				</tr>		
 				<%
 				for(int i=0;i<boardList.size();i++){
@@ -76,9 +76,9 @@
 			</table>
 			<div id="pagecount">
 				<%if(nowpage<=1){ %>
-					[ÀÌÀü]&nbsp;
+					[ì´ì „]&nbsp;
 				<%}else{ %>
-					<a href="<%=request.getContextPath() %>/AnnmntList.do?page=<%=nowpage-1 %>">[ÀÌÀü]</a>
+					<a href="<%=request.getContextPath() %>/AnnmntList.do?page=<%=nowpage-1 %>">[ì´ì „]</a>
 				<%} %>
 				
 				<%for(int a=startpage;a<=endpage;a++){
@@ -90,9 +90,9 @@
 				<%} %>
 				
 				<%if(nowpage>=maxpage){ %>
-					[´ÙÀ½]
+					[ë‹¤ìŒ]
 				<%}else{ %>
-					<a href="<%=request.getContextPath() %>/AnnmntList.do?page=<%=nowpage+1 %>">[´ÙÀ½]</a>
+					<a href="<%=request.getContextPath() %>/AnnmntList.do?page=<%=nowpage+1 %>">[ë‹¤ìŒ]</a>
 				<%} %>
 			</div>
 		<%
@@ -100,13 +100,13 @@
 		else
 		{
 		%>
-			<font size=5>µî·ÏµÈ ±ÛÀÌ ¾ø½À´Ï´Ù.</font>
+			<font size=5>ë“±ë¡ëœ ê¸€ì´ ì—†ìŠµë‹ˆë‹¤.</font>
 		<%
 		}
 		%>
 		
 		<div id="write">
-			<a href="<%=request.getContextPath()%>/AnnmntWrite.do">[±Û¾²±â]</a>
+			<a href="<%=request.getContextPath()%>/AnnmntWrite.do">[ê¸€ì“°ê¸°]</a>
 		</div>
 	</div>
 </div> 

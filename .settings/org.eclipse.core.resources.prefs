@@ -1,6 +1,5 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=refs/heads/fb-qna
 eclipse.preferences.version=1
-<<<<<<< HEAD
-encoding//WebContent/index-main.jsp=EUC-KR
-=======
 encoding//WebContent/module/notificationBoard/qna_board_list.jsp=UTF-8
->>>>>>> refs/heads/fb-qna

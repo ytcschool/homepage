@@ -11,7 +11,7 @@ import kr.or.ytc.qnaboard.model.BoardDAO;
  public class BoardModifyAction implements Action {
 	 public ActionForward execute(HttpServletRequest request,HttpServletResponse response) 
 	 	throws Exception{
-		 request.setCharacterEncoding("euc-kr");
+		 request.setCharacterEncoding("utf-8");
 		 ActionForward forward = new ActionForward();
 		 boolean result = false;
 		 
@@ -22,10 +22,10 @@ import kr.or.ytc.qnaboard.model.BoardDAO;
 		 
 		 boolean usercheck=boarddao.isBoardWriter(num, request.getParameter("BOARD_PASS"));
 		 if(usercheck==false){
-		   		response.setContentType("text/html;charset=euc-kr");
+		   		response.setContentType("text/html;charset=utf-8");
 		   		PrintWriter out=response.getWriter();
 		   		out.println("<script>");
-		   		out.println("alert('¼öÁ¤ÇÒ ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.');");
+		   		out.println("alert('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.');");
 		   		out.println("location.href='./BoardList.do';");
 		   		out.println("</script>");
 		   		out.close();
@@ -39,10 +39,10 @@ import kr.or.ytc.qnaboard.model.BoardDAO;
 			 
 			 result = boarddao.boardModify(boarddata);
 			 if(result==false){
-		   		System.out.println("°Ô½ÃÆÇ ¼öÁ¤ ½ÇÆÐ");
+		   		System.out.println("ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 		   		return null;
 		   	 }
-		   	 System.out.println("°Ô½ÃÆÇ ¼öÁ¤ ¿Ï·á");
+		   	 System.out.println("ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½");
 		   	 
 		   	 forward.setRedirect(true);
 		   	 forward.setPath("./BoardDetailAction.do?num="+boarddata.getBOARD_NUM());

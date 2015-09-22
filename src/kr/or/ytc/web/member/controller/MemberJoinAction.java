@@ -10,7 +10,7 @@ import kr.or.ytc.web.member.model.MemberDAO;
 
 public class MemberJoinAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		request.setCharacterEncoding("euc-kr");
+		request.setCharacterEncoding("utf-8");
 
 		ActionForward forward = new ActionForward();
 
@@ -34,20 +34,20 @@ public class MemberJoinAction implements Action {
 		String pw = request.getParameter("MEMBER_PW");
 		
 		if (id == null && pw == null) {
-			response.setContentType("text/html;charset=euc-kr");
+			response.setContentType("text/html;charset=utf-8");
 			PrintWriter out = response.getWriter();
 			out.println("<script>");
-			out.println("alert('Á¤º¸¸¦ ¹ÌÀÔ·ÂÇÑ Ç×¸ñÀÌ ÀÖ½À´Ï´Ù. È®ÀÎÇØÁÖ½Ã±â ¹Ù¶ø´Ï´Ù.');");
+			out.println("alert('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½×¸ï¿½ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½. È®ï¿½ï¿½ï¿½ï¿½ï¿½Ö½Ã±ï¿½ ï¿½Ù¶ï¿½ï¿½Ï´ï¿½.');");
 			out.println("</script>");
 			out.close();
 		}
 		
 		if (result == false) {
-			System.out.println("È¸¿ø°¡ÀÔ ½ÇÆÐ");
+			System.out.println("È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 			return null;
 		}
 
-		// È¸¿ø°¡ÀÔ ¼º°ø.
+		// È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 		forward.setRedirect(true);
 		forward.setPath("./MemberLogin.me");
 		return forward;

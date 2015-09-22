@@ -10,7 +10,7 @@ import kr.or.ytc.web.annmntboard.model.*;
 public class AnnmntModifyAction implements AnnmntAction {
 	 public AnnmntActionForward execute(HttpServletRequest request,HttpServletResponse response) 
 			 	throws Exception{
-				 request.setCharacterEncoding("euc-kr");
+				 request.setCharacterEncoding("utf-8");
 				 AnnmntActionForward forward = new AnnmntActionForward();
 				 boolean result = false;
 				 
@@ -21,10 +21,10 @@ public class AnnmntModifyAction implements AnnmntAction {
 				 
 				 boolean usercheck=boarddao.isBoardWriter(num, request.getParameter("ANNBOARD_PASS"));
 				 if(usercheck==false){
-				   		response.setContentType("text/html;charset=euc-kr");
+				   		response.setContentType("text/html;charset=utf-8");
 				   		PrintWriter out=response.getWriter();
 				   		out.println("<script>");
-				   		out.println("alert('¼öÁ¤ÇÒ ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.');");
+				   		out.println("alert('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.');");
 				   		out.println("location.href='./AnnmntList.do';");
 				   		out.println("</script>");
 				   		out.close();
@@ -38,10 +38,10 @@ public class AnnmntModifyAction implements AnnmntAction {
 					 
 					 result = boarddao.boardModify(boarddata);
 					 if(result==false){
-				   		System.out.println("°Ô½ÃÆÇ ¼öÁ¤ ½ÇÆÐ");
+				   		System.out.println("ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 				   		return null;
 				   	 }
-				   	 System.out.println("°Ô½ÃÆÇ ¼öÁ¤ ¿Ï·á");
+				   	 System.out.println("ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½");
 				   	 
 				   	 forward.setRedirect(true);
 				   	 forward.setPath("./AnnmntDetailAction.do?num="+boarddata.getANNBOARD_NUM());

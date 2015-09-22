@@ -9,7 +9,7 @@ import kr.or.ytc.qnaboard.model.BoardDAO;
 public class BoardModifyView implements Action {
 	 public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception{
 		 	ActionForward forward = new ActionForward();
-		 	request.setCharacterEncoding("euc-kr");
+		 	request.setCharacterEncoding("utf-8");
 	   		
 			BoardDAO boarddao=new BoardDAO();
 		   	BoardBean boarddata=new BoardBean();
@@ -18,10 +18,10 @@ public class BoardModifyView implements Action {
 		   	boarddata=boarddao.getDetail(num);
 		   	
 		   	if(boarddata==null){
-		   		System.out.println("(¼öÁ¤)»ó¼¼º¸±â ½ÇÆÐ");
+		   		System.out.println("(ï¿½ï¿½ï¿½ï¿½)ï¿½ó¼¼ºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 		   		return null;
 		   	}
-		   	System.out.println("(¼öÁ¤)»ó¼¼º¸±â ¼º°ø");
+		   	System.out.println("(ï¿½ï¿½ï¿½ï¿½)ï¿½ó¼¼ºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 		   	
 		   	request.setAttribute("boarddata", boarddata);
 		   	forward.setRedirect(false);

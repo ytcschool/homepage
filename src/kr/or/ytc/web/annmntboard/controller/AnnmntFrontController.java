@@ -31,6 +31,9 @@ public class AnnmntFrontController
 		 String command=RequestURI.substring(contextPath.length());
 		 AnnmntActionForward forward=null;
 		 AnnmntAction action=null;
+		 
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html; charset=utf-8");
 		
 		if(command.equals("/AnnmntWrite.do")){
 			forward=new AnnmntActionForward();

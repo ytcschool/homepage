@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import="kr.or.ytc.web.annmntboard.model.*" %>
 <%
 Announcement annboard = (Announcement)request.getAttribute("boarddata");
@@ -39,7 +39,7 @@ Announcement annboard = (Announcement)request.getAttribute("boarddata");
 	<div id="annList-wrapper">
 		<div align="center" valign="middle">
 			<ul style="font-size:25pt; padding-bottom:30px;">
-			<span style="background-color:#DCEBFF">°øÁö»çÇ×</ul>	
+			<span style="background-color:#DCEBFF">ê³µì§€ì‚¬í•­</ul>	
 		</div>
 
 		<form action="<%=request.getContextPath() %>/AnnmntModifyAction.do" method="post" name="modifyform">
@@ -47,11 +47,11 @@ Announcement annboard = (Announcement)request.getAttribute("boarddata");
 			<table>
 		
 				<tr height="40">
-					<td align="center">Á¦ ¸ñ</td>
+					<td align="center">ì œ ëª©</td>
 					<td colspan="3" align="left" ><input name="ANNBOARD_SUBJECT" value="<%=annboard.getANNBOARD_SUBJECT()%>"></td>
 				</tr>
 				<tr height="190">
-					<td align="center">³» ¿ë</td>
+					<td align="center">ë‚´ ìš©</td>
 					<td colspan="3">
 						<textarea name="ANNBOARD_CONTENT" rows="10" cols="78"><%=annboard.getANNBOARD_CONTENT() %></textarea>
 					</td>
@@ -59,17 +59,17 @@ Announcement annboard = (Announcement)request.getAttribute("boarddata");
 				
 				<tr height="40">
 					<%if(!(annboard.getANNBOARD_FILE()==null)){ %>
-					<td align="center" align="left">Ã·ºÎÆÄÀÏ</td>
+					<td align="center" align="left">ì²¨ë¶€íŒŒì¼</td>
 					<td align="center"><%=annboard.getANNBOARD_FILE() %></td>
 					<%} %>
-					<td width="90">ºñ¹Ğ¹øÈ£</td>
+					<td width="90">ë¹„ë°€ë²ˆí˜¸</td>
 					<td width="90"><input name="ANNBOARD_PASS" type="password" size="15"></td>
 				</tr>
 			</table>
 			
 			<div id="ankor_area">
-				<a href="javascript:modifyboard()">[µî·Ï]</a>
-				<a href="javascript:history.go(-1)">[µÚ·Î]</a>
+				<a href="javascript:modifyboard()">[ë“±ë¡]</a>
+				<a href="javascript:history.go(-1)">[ë’¤ë¡œ]</a>
 			</div>
 		</form>
 	</div>
