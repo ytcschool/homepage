@@ -6,10 +6,13 @@
 	font-family: sans-serif;
 }
 .alertify {
+	width: 200px;
+	height: 110px;
+	margin: 80px 200px 0px -100px;
 	background: #FFF;
-	border: 10px solid #333; /* browsers that don't support rgba */
-	border: 10px solid rgba(0,0,0,.7);
-	border-radius: 8px;
+	border: 3px solid #333; /* browsers that don't support rgba */
+	border: 3px solid rgba(0,0,0,.7);
+	border-radius: 3px;
 	box-shadow: 0 3px 3px rgba(0,0,0,.3);
 	-webkit-background-clip: padding;     /* Safari 4? Chrome 6? */
 	   -moz-background-clip: padding;     /* Firefox 3.6 */
@@ -21,6 +24,7 @@
 		border-radius: 4px;
 	}
 	.alertify-button {
+		margin-top: 10px;
 		border-radius: 4px;
 		color: #FFF;
 		font-weight: bold;
@@ -59,8 +63,15 @@
 		.alertify-button-ok,
 		.alertify-button-ok:hover,
 		.alertify-button-ok:focus {
-			background-color: #5CB811;
-			border: 1px solid #3B7808;
+			border: 2px solid black;
+		}
+		
+		.bgcolor-red {
+			background: red;
+		}
+		
+		.bgcolor-green {
+			background: green;
 		}
 
 .alertify-log {

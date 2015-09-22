@@ -96,7 +96,32 @@
 		}
 		.alertify-inner {
 			text-align: center;
+			
 		}
+		.color-red {
+			color: red;
+		}
+		
+		.color-blue {
+			color: blue;
+		}
+		
+		.color-orange {
+			color: orange;
+		}
+		
+		.color-green {
+			color: green;
+		}
+		
+		.bgcolor-red {
+			background: red;
+		}
+		
+		.bgcolor-green {
+			background: green;
+		}
+		
 		.alertify-text {
 			margin-bottom: 15px;
 			width: 100%;
@@ -111,7 +136,6 @@
 			.alertify-button:hover,
 			.alertify-button:active,
 			.alertify-button:visited {
-				background: none;
 				text-decoration: none;
 				border: none;
 				/* line-height and font-size for input button */
