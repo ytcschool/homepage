@@ -48,12 +48,15 @@
 		<!-- 회원가입 배너 -->
 		<div id="right_item">
 		<br/>
+<script>
+var checkForm = null;
+</script>
 		<form name="joinform" action="./MemberJoinAction.me" method="post">
-			<input class="joinInput" type="text" id="MEMBER_ID" name="MEMBER_ID" placeholder="ID" size="6"/>
+			<input id="MEMBER_ID" class="joinInput" type="text" name="MEMBER_ID" placeholder="ID" size="6"/>
 			<input id="id_check" type="button" name="id_check" value="CHECK" size="5" />&nbsp;
-			<input class="joinInput" type="password" name="MEMBER_PW" placeholder="Password" size="7"/><br /><br />
-			<input class="joinInput" type="text" name="MEMBER_NAME" placeholder="Name" size="6"/>&nbsp;&nbsp;
-			<input class="joinInput" type="text" name="MEMBER_EMAIL" placeholder="E-mail" size="15"/><br /><br />
+			<input id="signPw" class="joinInput" type="password" name="MEMBER_PW" placeholder="Password" size="7"/><br /><br />
+			<input id="signName" class="joinInput" type="text" name="MEMBER_NAME" placeholder="Name" size="6"/>&nbsp;&nbsp;
+			<input id="signEmail" class="joinInput" type="text" name="MEMBER_EMAIL" placeholder="E-mail" size="15"/><br /><br />
 			
 			Birth&nbsp;Date:
 			<select name="MEMBER_YEAR">
@@ -72,7 +75,7 @@
 			
 			<br />&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
 			<p id="signupbtn">
-			<a href="javascript:joinform.submit()" class="button" id="joinButton">&nbsp;&nbsp;&nbsp;Sign-Up&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp; 
+			<a href="javascript:checkForm()" class="button" id="joinButton">&nbsp;&nbsp;&nbsp;Sign-Up&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp; 
 			<a href="javascript:joinform.reset()" class="button" id="resetButton">&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;</a>
 			</p>
 			</form>
@@ -125,22 +128,48 @@
 					}
 				});
 			} else {
-				alert("중복검사를 하기 전 아이디를 먼저 입력해주세요.");
+				alert("You must input ID before ID Check!");
 			} // end of if
 		}); // end of id_check	
 	});
 </script>
 
 <!-- Sign-In / Sign-Up 테두리 설정 -->
+<script src="http://code.jquery.com/jquery.js"></script>
 <script>
-document.getElementById("main_aside").style.borderStyle = "none";
-var mainAside = document.getElementById("main_aside");
-var appear = function() {
-	mainAside.style.border = "1px solid gray";
-};
-var disappear = function() {
+ document.getElementById("main_aside").style.borderStyle = "none";
+ var mainAside = document.getElementById("main_aside");
+ var appear = function() {
+ 	mainAside.style.border = "1px solid gray";
+ };
+ var disappear = function() {
 	mainAside.style.border = "none";
 };
+
+checkForm = function(){
+	var form = $('form[name="joinform"]')[0];
+	if($("#MEMBER_ID").val()==null || $("#signId").val()==""){
+		alert("You must input ID!");
+		$("#MEMBER_ID").focus();
+		return false;
+	}else if($("#signPw").val()==null || $("#signPw").val()==""){
+		alert("You must input Password!");
+		$("#signPw").focus();
+		return false;
+	}else if($("#signName").val()==null || $("#signName").val()==""){
+		alert("You must input Name!");
+		$("#signName").focus();
+		return false;
+	}else if($("#signEmail").val()==null || $("#signEmail").val()==""){
+		alert("You must input Email!");
+		$("#signEmail").focus();
+		return false;
+	}
+	form.submit();
+}
+
+$(document).ready(function(){
+});
 </script>
 <script src="resources/js/jquery-1.11.3.min.js"></script>
 <script src="resources/js/slider.js"></script>
