@@ -10,11 +10,13 @@
 	// 로그인 성공 시
 	if (session.getAttribute("id") != null) {	
 		String sessionId = (String)session.getAttribute("id");
-		String userName = (String)request.getParameter("MEMBER_ID");
+		String sessionName = (String)session.getAttribute("name");
+		String userName = (String)request.getParameter("MEMBER_NAME");
+		
 %>	
 	<div id="loginSuccess">	
-		<p><b><%out.println(sessionId + " Welcome!");%></b></p>
-		<a href="./MemberLogoutAction.me" class="button">&nbsp;&nbsp;Logout&nbsp;&nbsp;</a>
+		<p><b><%out.println("<br/>" + sessionName + "<br/>" +"Welcome!");%></b></p>
+		<a href="./MemberLogoutAction.me" class="button">&nbsp;&nbsp;LogOut&nbsp;&nbsp;</a>
 	</div>
 <%
 	// 로그인 실패 시 (혹은 로그인 시)

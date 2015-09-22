@@ -57,16 +57,17 @@ div#loginSuccess {
 	position: absolute;
 	width: 270px;
 	height: 270px;
-	right: 50px;
-	top: 50px;
-	border: 2px solid orange;
+	right: 60px;
+	top: 70px;
+	
 	text-align: center;
 	font-size: 20px;
 	width: 155px;
-	height: 60px;
+	height:155px;
 	padding: 10px;
-	background-color: #FFFFEB;
+	background-color: rgba( 255, 255, 255, 0.7 );
 	z-index: 101;
+	
 }
 
 div#loginSuccess > p {
@@ -111,7 +112,7 @@ a:hover {
 }
 
 div#right_item {
-	background:white;
+	background-color: rgba( 255,255,255, 0.7 );
 	height: 243px;
 	
 }
@@ -119,6 +120,7 @@ div#right_item input.joinInput{
 	background: lightyellow;
 	border-radius:4px;
 	padding:5px;
+	
 	
 }
 div#left_item input.loginInput {
