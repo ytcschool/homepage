@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!-- 로그인 / 회원가입 스타일 -->
 <link href="resources/css/index.css" type="text/css" rel="stylesheet" /> 
@@ -19,8 +18,8 @@
 		<a href="./MemberLogoutAction.me" class="button">&nbsp;&nbsp;LogOut&nbsp;&nbsp;</a>
 	</div>
 <%
-	// 로그인 실패 시 (혹은 로그인 시)
-	} else if (session.getAttribute("id") == null) {
+	// 로그인 실패 시
+	} else if (session.getAttribute("id") == null) {		
 %>
 
 <!-- 로그인 / 회원가입 배너 -->
@@ -34,7 +33,10 @@
 		
 		<!-- 로그인 배너 -->
 		<div id="left_item" class="left_item">
-			<br /><br/>
+		<br /><br/>
+		
+		<!-- 전역변수 checkId 선언 -->
+		<script> var checkId = null; </script>
 			
 			<form name="loginform" action="./MemberLoginAction.me" method="post">
 			<input id="memId" class="loginInput" type="text" name="MEMBER_ID" placeholder="ID" size="20">
@@ -42,7 +44,7 @@
 			<input id="memPw" class="loginInput" type="password" name="MEMBER_PW" placeholder="Password" size="20">
 			<br /><br/>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
 			<p id="loginbtn">
-			<a href="javascript:loginform.submit()" class="button" id="signInButton">&nbsp;&nbsp;&nbsp;Sign-In&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp; 
+			<a href="javascript:checkId()" class="button" id="signInButton">&nbsp;&nbsp;&nbsp;Sign-In&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp; 
 			</p>
 			</form>
 			<br />
@@ -51,11 +53,16 @@
 		<!-- 회원가입 배너 -->
 		<div id="right_item">
 		<br/>
+		
+		<!-- 전역변수 checkForm 선언 -->
+		<script> var checkForm = null; </script>
+		
 		<form name="joinform" action="./MemberJoinAction.me" method="post">
-			<input class="joinInput" type="text" name="MEMBER_ID" placeholder="ID" size="10"/>&nbsp;&nbsp;&nbsp;
-			<input class="joinInput" type="password" name="MEMBER_PW" placeholder="Password" size="10"/><br /><br />
-			<input class="joinInput" type="text" name="MEMBER_NAME" placeholder="Name" size="10"/>&nbsp;&nbsp;&nbsp;
-			<input class="joinInput" type="text" name="MEMBER_EMAIL" placeholder="E-mail" size="10"/><br /><br />
+			<input id="MEMBER_ID" class="joinInput" type="text" name="MEMBER_ID" placeholder="ID" size="6"/>
+			<input id="id_check" type="button" name="id_check" value="CHECK" size="5" />&nbsp;
+			<input id="signPw" class="joinInput" type="password" name="MEMBER_PW" placeholder="Password" size="7"/><br /><br />
+			<input id="signName" class="joinInput" type="text" name="MEMBER_NAME" placeholder="Name" size="6"/>&nbsp;&nbsp;
+			<input id="signEmail" class="joinInput" type="text" name="MEMBER_EMAIL" placeholder="E-mail" size="15"/><br /><br />
 			
 			Birth&nbsp;Date:
 			<select name="MEMBER_YEAR">
@@ -74,7 +81,7 @@
 			
 			<br />&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
 			<p id="signupbtn">
-			<a href="javascript:joinform.submit()" class="button" id="joinButton">&nbsp;&nbsp;&nbsp;Sign-Up&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp; 
+			<a href="javascript:checkForm()" class="button" id="joinButton">&nbsp;&nbsp;&nbsp;Sign-Up&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp; 
 			<a href="javascript:joinform.reset()" class="button" id="resetButton">&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;</a>
 			</p>
 			</form>
@@ -123,18 +130,113 @@
 	</div>
 </div>
 
-<script src="resources/js/jquery-1.11.3.min.js"></script>
-<script src="resources/js/slider.js"></script>
-<!-- Sign-In / Sign-Up 테두리 설정 -->
+<!-- 경고창 꾸미기 -->
+<link rel="stylesheet" href="resources/css/alertify.core.css" />
+<link rel="stylesheet" href="resources/css/alertify.default.css" id="toggleCSS" />
+<script src="resources/js/alertify.min.js"></script>
+
+<!-- ID 중복체크 기능 -->
+<script src="http://code.jquery.com/jquery.js"></script>
 <script>
-document.getElementById("main_aside").style.borderStyle = "none";
-var mainAside = document.getElementById("main_aside");
-var appear = function() {
-	mainAside.style.border = "1px solid gray";
-};
-var disappear = function() {
+	$(document).ready(function(){
+		$('#id_check').click(function(){
+			var member_id = $('#MEMBER_ID').val();
+			if (member_id != "" && member_id != null) {
+				$.post('id_check.jsp', 'MEMBER_ID='+member_id, function(data) {
+					console.log(data);
+					console.log(typeof data);
+					if (data == "true") {
+							alertify.alert("ID is not available");
+							$('div.alertify-dialog').addClass('color-red');
+							$('.alertify-button-ok, .alertify-button-ok:hover, .alertify-button-ok:focus').addClass('bgcolor-red');
+							$('.alertify-button:hover').addClass('bgcolor-red');				
+					} else {
+							alertify.alert("ID is available");
+							$('div.alertify-dialog').addClass('color-blue');
+							$('.alertify-button-ok, .alertify-button-ok:hover, .alertify-button-ok:focus').addClass('bgcolor-green');
+							$('.alertify-button:hover').addClass('bgcolor-green');
+					}
+				});
+			} else {
+				alertify.alert("You miss ID!");
+				$('div.alertify-dialog').addClass('color-red');
+				$('.alertify-button-ok, .alertify-button-ok:hover, .alertify-button-ok:focus').addClass('bgcolor-red');
+				$('.alertify-button:hover').addClass('bgcolor-red');
+			} // end of if
+		}); // end of id_check	
+	});
+</script>
+
+<!-- Sign-In / Sign-Up 테두리 설정 -->
+<script src="http://code.jquery.com/jquery.js"></script>
+<script>
+ document.getElementById("main_aside").style.borderStyle = "none";
+ var mainAside = document.getElementById("main_aside");
+ var appear = function() {
+ 	mainAside.style.border = "1px solid gray";
+ };
+ var disappear = function() {
 	mainAside.style.border = "none";
 };
+
+// 로그인 시 ID 혹은 Password 미 입력시 경고문 처리 
+checkId = function(){
+	var form = $('form[name="loginform"]')[0];
+	if($("#memId").val()==null || $("#memId").val()==""){
+		alertify.alert("You miss ID!");
+		$('div.alertify-dialog').addClass('color-red');
+		$('.alertify-button-ok, .alertify-button-ok:hover, .alertify-button-ok:focus').addClass('bgcolor-red');
+		$('.alertify-button:hover').addClass('bgcolor-red');	
+		$("#memId").focus();
+		return false;
+	}else if($("#memPw").val()==null || $("#memPw").val()==""){
+		alertify.alert("You miss Password!");
+		$('div.alertify-dialog').addClass('color-red');
+		$('.alertify-button-ok, .alertify-button-ok:hover, .alertify-button-ok:focus').addClass('bgcolor-red');
+		$('.alertify-button:hover').addClass('bgcolor-red');	
+		$("#memPw").focus();
+		return false;
+	}
+	form.submit();
+}
+
+// 회원가입 시 입력정보 미 입력시 경고문 처리
+checkForm = function(){
+	var form = $('form[name="joinform"]')[0];
+	if($("#MEMBER_ID").val()==null || $("#MEMBER_ID").val()==""){
+		alertify.alert("You miss ID!");
+		$('div.alertify-dialog').addClass('color-red');
+		$('.alertify-button-ok, .alertify-button-ok:hover, .alertify-button-ok:focus').addClass('bgcolor-red');
+		$('.alertify-button:hover').addClass('bgcolor-red');
+		$("#MEMBER_ID").focus();
+		return false;
+	}else if($("#signPw").val()==null || $("#signPw").val()==""){
+		alertify.alert("You miss Password!");
+		$('div.alertify-dialog').addClass('color-red');
+		$('.alertify-button-ok, .alertify-button-ok:hover, .alertify-button-ok:focus').addClass('bgcolor-red');
+		$('.alertify-button:hover').addClass('bgcolor-red');
+		$("#signPw").focus();
+		return false;
+	}else if($("#signName").val()==null || $("#signName").val()==""){
+		alertify.alert("You miss Name!");
+		$('div.alertify-dialog').addClass('color-red');
+		$('.alertify-button-ok, .alertify-button-ok:hover, .alertify-button-ok:focus').addClass('bgcolor-red');
+		$('.alertify-button:hover').addClass('bgcolor-red');
+		$("#signName").focus();
+		return false;
+	}else if($("#signEmail").val()==null || $("#signEmail").val()==""){
+		alertify.alert("You miss Email!");
+		$('div.alertify-dialog').addClass('color-red');
+		$('.alertify-button-ok, .alertify-button-ok:hover, .alertify-button-ok:focus').addClass('bgcolor-red');
+		$('.alertify-button:hover').addClass('bgcolor-red');
+		$("#signEmail").focus();
+		return false;
+	}
+	form.submit();
+}
+
+$(document).ready(function(){
+});
 </script>
 
 <!-- 갤러리 스크립트 -->
@@ -157,3 +259,14 @@ var disappear = function() {
 	}, 5000);
  });
 </script>
+
+<script src="resources/js/slider.js"></script>
+
+<style>
+input.joinInput:focus, input.loginInput:focus {
+	outline: none !important;
+	border-color: #33CC00;
+ 	box-shadow: 0 0 8px #33CC00;
+	border-radius: 20px;
+}
+</style>

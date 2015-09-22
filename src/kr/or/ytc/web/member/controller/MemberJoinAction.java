@@ -1,5 +1,7 @@
 package kr.or.ytc.web.member.controller;
 
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -28,6 +30,18 @@ public class MemberJoinAction implements Action {
 
 		result = memberdao.joinMember(member);
 
+		String id = request.getParameter("MEBMER_ID");
+		String pw = request.getParameter("MEMBER_PW");
+		
+		if (id == null && pw == null) {
+			response.setContentType("text/html;charset=euc-kr");
+			PrintWriter out = response.getWriter();
+			out.println("<script>");
+			out.println("alert('정보를 미입력한 항목이 있습니다. 확인해주시기 바랍니다.');");
+			out.println("</script>");
+			out.close();
+		}
+		
 		if (result == false) {
 			System.out.println("회원가입 실패");
 			return null;
