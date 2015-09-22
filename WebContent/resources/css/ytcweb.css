@@ -36,7 +36,7 @@ header#main_header {
 		width: 960px; magin: 0 auto;
 		height: 80px;
 		position: relative;
-/* 		border: 1px solid green; */
+		border: 1px solid black;
 		background: black;
 }
 
@@ -116,9 +116,9 @@ header#main_header {
 	background: red;
 }
 
-#menuListBox #mainMenu .menu1 { background: red; }
-#menuListBox #mainMenu .menu2 { background: orange; }
-#menuListBox #mainMenu .menu3 { background: yellow; }
+#menuListBox #mainMenu .menu1 { background: white; }
+#menuListBox #mainMenu .menu2 { background: white; }
+#menuListBox #mainMenu .menu3 { background: white; }
 
 #menuListBox #mainMenu li span {
 	display: inline-block;
@@ -148,7 +148,7 @@ header#main_header {
 	position: relative; 
 	margin: 0 0 0 -76px; 
 	vertical-align: top; 
-	background: lightgreen;
+	background: white;
 }
 
 #menuListBox #sideMenu > li {
@@ -186,9 +186,9 @@ header#main_header {
 }
 
 #menuListBox #mainMenu li:hover, #menuListBox #sideMenu li:hover {
-	background: white;
+	background: black;
 }
-#menuListBox #mainMenu li :hover + a, #menuListBox #sideMenu li:hover + a {
+#menuListBox #mainMenu li:hover a, #menuListBox #sideMenu li:hover a {
 	color: white;
 }
 
