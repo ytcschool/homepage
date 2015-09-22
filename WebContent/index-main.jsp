@@ -98,11 +98,31 @@
         </div>
         <div class="slide-buttons"></div>
       </div>
-    <div id="annmnt_box">공지사항 미니 목록</div>
+    <div id="annmnt_box">
+    <div id="bgcolor">
+	<h1 id="gTitle">Gallery</h1>
+		<ul id="banner">
+			<li><a href="gallery.view?imgNum=01"><img src="resources/images/gallery/img01.JPG" width="250px" height="150px"/></a></li>
+			<li><a href="gallery.view?imgNum=02"><img src="resources/images/gallery/img02.JPG" width="250px" height="150px"/></a></li>
+			<li><a href="gallery.view?imgNum=03"><img src="resources/images/gallery/img03.JPG" width="250px" height="150px"/></a></li>
+			<li><a href="gallery.view?imgNum=04"><img src="resources/images/gallery/img04.JPG" width="250px" height="150px"/></a></li>		
+			<li><a href="gallery.view?imgNum=05"><img src="resources/images/gallery/img05.JPG" width="250px" height="150px"/></a></li>
+			<li><a href="gallery.view?imgNum=06"><img src="resources/images/gallery/img06.JPG" width="250px" height="150px"/></a></li>
+			<li><a href="gallery.view?imgNum=07"><img src="resources/images/gallery/img07.JPG" width="250px" height="150px"/></a></li>
+			<li><a href="gallery.view?imgNum=08"><img src="resources/images/gallery/img08.JPG" width="250px" height="150px"/></a></li>
+			<li><a href="gallery.view?imgNum=09"><img src="resources/images/gallery/img09.JPG" width="250px" height="150px"/></a></li>
+			<li><a href="gallery.view?imgNum=10"><img src="resources/images/gallery/img10.JPG" width="250px" height="150px"/></a></li>		
+			<li><a href="gallery.view?imgNum=11"><img src="resources/images/gallery/img11.JPG" width="250px" height="150px"/></a></li>
+			<li><a href="gallery.view?imgNum=12"><img src="resources/images/gallery/img12.JPG" width="250px" height="150px"/></a></li>
+		</ul>
+	</div>
+    </div>
     <div id="consult_box"><img src="resources/images/consult.png" width="100%" height="100%"/></div>
 	</div>
 </div>
 
+<script src="resources/js/jquery-1.11.3.min.js"></script>
+<script src="resources/js/slider.js"></script>
 <!-- Sign-In / Sign-Up 테두리 설정 -->
 <script>
 document.getElementById("main_aside").style.borderStyle = "none";
@@ -114,5 +134,24 @@ var disappear = function() {
 	mainAside.style.border = "none";
 };
 </script>
-<script src="resources/js/jquery-1.11.3.min.js"></script>
-<script src="resources/js/slider.js"></script>
+
+<!-- 갤러리 스크립트 -->
+<script>
+ $(document).ready(function(){
+	$('#banner li').each(function(idx, item){
+		$(this).css({'zIndex':((idx*-1)+12)+''});
+	});
+	var cnt = 0;
+	var lis = $('#banner li');
+	var inter = setInterval(function(){
+		$(lis[cnt]).fadeOut('slow');
+		cnt++;
+		if(cnt > 11){
+			cnt = 0;
+			$('#banner li').each(function(idx, item){
+				$(this).fadeIn('slow');
+			});
+		}
+	}, 5000);
+ });
+</script>

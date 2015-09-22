@@ -181,7 +181,7 @@ div#annmnt_box {
 	width: 450px;
 	height: 200px;
 	text-align: center;
-	border: 1px solid black;
+	border: 1px solid white;
 }
 div#consult_box {
 	position: absolute;
@@ -190,4 +190,35 @@ div#consult_box {
 	height: 200px;
 	text-align: center;
 	border: 1px solid #6d6d6d;
+}
+
+
+/********** MiniGallery***********/
+div#bgcolor {
+	background: #e2fef4;
+	width: 450px;
+	height:200px;
+}
+h1#gTitle {
+	text-align: center;
+	color: #828282;
+	font-size: 23px;
+}
+ul#banner {
+	padding: 0;
+	width: 250px;
+	height: 150px;
+	position: relative;	
+}
+ul#banner > li {
+	list-style: none;
+	margin-left: 100px;
+	border: 0px solid green;
+	width: 250px;
+	height: 150px;
+	position: absolute;
+	top: 0px; 
+}
+ul#banner > li:nth-child(12) {
+	box-shadow: 0 5px 35px rgba(0,0,0,.80);
 }
