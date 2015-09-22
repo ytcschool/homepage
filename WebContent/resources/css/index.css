@@ -65,7 +65,7 @@ div#loginSuccess {
 	width: 155px;
 	height:155px;
 	padding: 10px;
-	background-color: rgba( 255, 255, 255, 0.8 );
+	background-color: rgba( 255, 255, 255, 0.7 );
 	z-index: 101;
 	
 }
@@ -112,7 +112,7 @@ a:hover {
 }
 
 div#right_item {
-	background:white;
+	background-color: rgba( 255, 255, 255, 0.8 );
 	height: 243px;
 	
 }
@@ -120,6 +120,7 @@ div#right_item input.joinInput{
 	background: lightyellow;
 	border-radius:4px;
 	padding:5px;
+	
 	
 }
 div#left_item input.loginInput {
