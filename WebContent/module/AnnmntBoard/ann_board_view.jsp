@@ -51,7 +51,7 @@
 			</tr>
 			<tr height="200" id="content_tr">
 				<td width="100" align="center">내 용</td>
-				<td width="500" align="left"><%=annboard.getANNBOARD_CONTENT() %></td>
+				<td width="500" align="left" word-break:break-all><%=annboard.getANNBOARD_CONTENT() %></td>
 			</tr>
 			<tr height="50">
 				<td width="100" align="center">첨부파일</td>

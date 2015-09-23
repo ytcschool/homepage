@@ -15,11 +15,17 @@
 
 	
 	// 관리자 확인
-	if (session.getAttribute("id").equals("admin")) {
-		System.out.println("관리자 화면");
+	if ((session.getAttribute("id"))!=null) {
+		if (session.getAttribute("id").equals("admin")) {
+			System.out.println("관리자 화면");
+		} else {
+			System.out.println("관리자 화면 아님");
+		}	
 	} else {
-		System.out.println("관리자 화면 아님");
+		
 	}
+	
+	
 %>
 
 <script type="text/javascript">
@@ -74,14 +80,16 @@
 			
 
 				<%
-				if (session.getAttribute("id").equals("admin")) {
+				if ((session.getAttribute("id"))!=null) {
+					if (session.getAttribute("id").equals("admin")) {
 				%>
-					<td style=width:2%>√</td>
+						<td style=width:2%>√</td>
 				<%
-				} else {
+					} else {
 				%>
 
 				<%	
+					}
 				}
 				%>
 					<td style=width:8%>글번호</td>
@@ -99,16 +107,18 @@
 				<tr align="center">
 				<!-- 게시판 항목 -->
 				<%
-				if (session.getAttribute("id").equals("admin")) {
+				if ((session.getAttribute("id"))!=null) {
+					if (session.getAttribute("id").equals("admin")) {
 				%>
 				
-					<td><input type="checkbox" name="chkdel" value="<%=bl.getANNBOARD_NUM() %>"/></td>
+						<td><input type="checkbox" name="chkdel" value="<%=bl.getANNBOARD_NUM() %>"/></td>
 				
 				<%
-				} else {
+					} else {
 				%>
 
 				<%	
+					}
 				}
 				%>
 			
@@ -161,17 +171,19 @@
 		%>
 		
 		<%
-		if (session.getAttribute("id").equals("admin")) {
+		if ((session.getAttribute("id"))!=null) {
+			if (session.getAttribute("id").equals("admin")) {
 		%>
-			<div id="write_delete">
-				<a href="<%=request.getContextPath()%>/AnnmntWrite.do">[글쓰기]</a>
-				<a href="javascript:chkdelete()">[글삭제]</a>
-			</div>
+				<div id="write_delete">
+					<a href="<%=request.getContextPath()%>/AnnmntWrite.do">[글쓰기]</a>
+					<a href="javascript:chkdelete()">[글삭제]</a>
+				</div>
 		<%
-		} else {
+			} else {
 		%>
 
 		<%	
+			}
 		}
 		%>
 		

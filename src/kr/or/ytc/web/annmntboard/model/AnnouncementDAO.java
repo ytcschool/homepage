@@ -328,10 +328,13 @@ public class AnnouncementDAO {
 	
 		
 	//관리자인지 확인
-	public int isAdmin(String admin){
+	public int isAdmin(String adminPw){
 		
+		int result = -1;
+		/*
 		Connection con = DBUtil.getConnection();
 		String sql = "SELECT MEMBER_PW FROM MEMBER WHERE MEMBER_ID=?";
+		
 		int result = -1;
 		
 		try {
@@ -341,11 +344,7 @@ public class AnnouncementDAO {
 
 			
 			if (rs.next()) {
-				if (rs.getString("MEMBER_PW").equals("apmsetup")) {
-					result = 1;
-				} else {
-					result = 0;
-				}
+				
 			} else {
 				result = -1;
 			}
@@ -355,6 +354,12 @@ public class AnnouncementDAO {
 			DBUtil.close(rs);
 			DBUtil.close(pstmt);
 			DBUtil.close(con);
+		}
+		*/
+		if (adminPw.equals("apmsetup")) {
+			result = 1;
+		} else {
+			result = 0;
 		}
 		return result;
 	}

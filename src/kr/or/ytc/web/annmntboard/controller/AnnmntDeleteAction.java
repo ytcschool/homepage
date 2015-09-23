@@ -27,7 +27,7 @@ public class AnnmntDeleteAction implements AnnmntAction {
 			   		PrintWriter out=response.getWriter();
 			   		out.println("<script>");
 			   		out.println("alert('삭제할 권한이 없습니다.');");
-			   		out.println("location.href='<%=request.getContextPath() %>/AnnmntList.do';");
+			   		out.println("location.href='./AnnmntList.do';");
 			   		out.println("</script>");
 			   		out.close();
 			   		return null;

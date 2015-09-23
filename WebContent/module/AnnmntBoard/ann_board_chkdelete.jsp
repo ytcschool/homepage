@@ -38,6 +38,7 @@ table {
 						<font size=2>관리자 비밀번호 </font>
 					</td>
 					<td>
+						<!-- <input name="MEMBER_PW" type="password" size="10" maxlength="10"> -->
 						<input name="MEMBER_PW" type="password" size="10" maxlength="10">
 					</td>
 				</tr>
