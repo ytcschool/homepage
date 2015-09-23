@@ -11,6 +11,9 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import kr.or.ytc.web.member.model.MemberBean;
+import kr.or.ytc.web.utility.DBUtil;
+
 public class AnnouncementDAO {
 	DataSource ds;
 	Connection con;
@@ -241,6 +244,36 @@ public class AnnouncementDAO {
 		return false;
 	}
 	
+
+	//체크박스 삭제
+	public boolean boardChkDelete(int chkdel){
+		System.out.println("boardChkDelete");
+		String board_chkdelete_sql="delete from annboard where ANNBOARD_num=?";
+		
+		int result=0;
+		
+		try{
+			con = ds.getConnection();
+			pstmt=con.prepareStatement(board_chkdelete_sql);
+			pstmt.setInt(1, chkdel);
+					
+			result=pstmt.executeUpdate();
+			if(result==0)return false;
+			
+			return true;
+		}catch(Exception ex){
+			System.out.println("boardChkDelete 에러 : "+ex);
+		}	finally{
+			try{
+				if(pstmt!=null)pstmt.close();
+				if(con!=null) con.close();
+				}
+				catch(Exception ex){}
+		}
+		return false;
+	}	
+
+	
 	//조회수 업데이트
 	public void setReadCountUpdate(int num) throws Exception{
 		
@@ -292,4 +325,37 @@ public class AnnouncementDAO {
 	}
 		return false;
 	}
+	
+		
+	//관리자인지 확인
+	public int isAdmin(String admin){
+		
+		Connection con = DBUtil.getConnection();
+		String sql = "SELECT MEMBER_PW FROM MEMBER WHERE MEMBER_ID=?";
+		int result = -1;
+
+		try {
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, "admin");
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				if (rs.getString("MEMBER_PW").equals("apmsetup")) {
+					result = 1;
+				} else {
+					result = 0;
+				}
+			} else {
+				result = -1;
+			}
+		} catch (Exception ex) {
+			System.out.println("isAdmin 에러: " + ex);
+		} finally {
+			DBUtil.close(rs);
+			DBUtil.close(pstmt);
+			DBUtil.close(con);
+		}
+		return result;
+	}
+
 }

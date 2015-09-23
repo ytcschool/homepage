@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 		"/AnnmntWrite.do", 
 		"/AnnmntModify.do",
 		"/AnnmntDelete.do",
+		"/AnnmntChkDelete.do",
+		"/AnnmntChkDeleteAction.do",
 		"/AnnmntAddAction.do",
 		"/AnnmntModifyAction.do", 
 		"/AnnmntDeleteAction.do", 
@@ -32,6 +34,9 @@ public class AnnmntFrontController
 		 AnnmntActionForward forward=null;
 		 AnnmntAction action=null;
 		
+		 System.out.println(command);
+		 
+		 
 		if(command.equals("/AnnmntWrite.do")){
 			forward=new AnnmntActionForward();
 			forward.setRedirect(false);
@@ -41,7 +46,18 @@ public class AnnmntFrontController
 			forward=new AnnmntActionForward();
 			forward.setRedirect(false);
 			forward.setPath("./module/AnnmntBoard/ann_board_delete.view");
-			
+
+		}else if(command.equals("/AnnmntChkDelete.do")){
+			forward=new AnnmntActionForward();
+			forward.setRedirect(false);
+			forward.setPath("./module/AnnmntBoard/ann_board_chkdelete.view");
+		}else if(command.equals("/AnnmntChkDeleteAction.do")){
+				action = new AnnmntChkDeleteAction();
+				try{
+					forward=action.execute(request, response);
+				}catch(Exception e){
+					e.printStackTrace();
+				}		
 		}else if(command.equals("/AnnmntModify.do")){
 			action = new AnnmntModifyView();
 			try{
