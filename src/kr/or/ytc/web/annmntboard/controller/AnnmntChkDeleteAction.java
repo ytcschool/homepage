@@ -14,7 +14,7 @@ public class AnnmntChkDeleteAction implements AnnmntAction {
 			 	throws Exception{
 			
 		 
-		 HttpSession session = request.getSession();
+		HttpSession session = request.getSession();
 		String[] chkdelList = (String[])session.getAttribute("chkdelList");
 
 		
@@ -40,7 +40,7 @@ public class AnnmntChkDeleteAction implements AnnmntAction {
 	   		out.println("</script>");
 	   		out.close();
 	   		return null;
-		 }
+		}
 		for (int i=0; i<chkdelList.length;i++) {
 			System.out.println(chkdelList[i]);
 			int num = Integer.parseInt(chkdelList[i]);
@@ -61,10 +61,10 @@ public class AnnmntChkDeleteAction implements AnnmntAction {
 		 }
 	   	*/
 		 
-		 forward.setRedirect(true);
+		forward.setRedirect(true);
   		//forward.setPath("./module/AnnmntBoard/ann_board_list.view");
-		 forward.setPath(request.getContextPath()+"/AnnmntList.do");
-		 return forward;
+		forward.setPath(request.getContextPath()+"/AnnmntList.do");
+		return forward;
 	   		
 	}
 }
