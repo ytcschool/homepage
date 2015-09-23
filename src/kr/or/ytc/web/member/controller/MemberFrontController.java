@@ -22,26 +22,26 @@ public class MemberFrontController extends javax.servlet.http.HttpServlet implem
 		ActionForward forward = null;
 		Action action = null;
 
-		// ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+		// °æ·Î È®ÀÎ
 		System.out.println(RequestURI);
 		System.out.println(contextPath);
 		System.out.println(command);
 		
-		// ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+		// ·Î±×ÀÎ
 		if (command.equals("/MemberLogin.me")) {
 			forward = new ActionForward();
 			forward.setRedirect(false);
 			forward.setPath("./index.jsp");
 		} 
 		
-		// È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+		// È¸¿ø°¡ÀÔ
 		else if (command.equals("/MemberJoin.me")) {
 			forward = new ActionForward();
 			forward.setRedirect(false);
 			forward.setPath("./module/joinForm.view");
 		} 
 		
-		// ï¿½Î±ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
+		// ·Î±×ÀÎ Ã³¸®
 		else if (command.equals("/MemberLoginAction.me")) {
 			action = new MemberLoginAction();
 			try {
@@ -51,7 +51,7 @@ public class MemberFrontController extends javax.servlet.http.HttpServlet implem
 			}
 		} 
 		
-		// È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
+		// È¸¿ø°¡ÀÔ Ã³¸®
 		else if (command.equals("/MemberJoinAction.me")) {
 			action = new MemberJoinAction();
 			try {
@@ -61,7 +61,7 @@ public class MemberFrontController extends javax.servlet.http.HttpServlet implem
 			}
 		} 
 		
-		// ï¿½Î±×¾Æ¿ï¿½ Ã³ï¿½ï¿½
+		// ·Î±×¾Æ¿ô Ã³¸®
 		else if (command.equals("/MemberLogoutAction.me")) {
 			action = new MemberLogoutAction();
 			try {
@@ -71,7 +71,7 @@ public class MemberFrontController extends javax.servlet.http.HttpServlet implem
 			}
 		}
 		
-		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
+		// µ¥ÀÌÅÍ Àü¼Û ¹æ½Ä
 		if (forward != null) {
 			if (forward.isRedirect()) {
 				response.sendRedirect(forward.getPath());

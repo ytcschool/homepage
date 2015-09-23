@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<!-- �α��� / ȸ������ ��Ÿ�� -->
 <link href="resources/css/index.css" type="text/css" rel="stylesheet" /> 
 
 <div id="content">
 	<div id="content-wrapper">
 <%
-	// �α��� ���� ��
+	// 로그인 성공 시
 	if (session.getAttribute("id") != null) {	
 		String sessionId = (String)session.getAttribute("id");
 		String sessionName = (String)session.getAttribute("name");
@@ -18,11 +17,11 @@
 		<a href="./MemberLogoutAction.me" class="button">&nbsp;&nbsp;로그아웃&nbsp;&nbsp;</a>
 	</div>
 <%
-	// �α��� ���� ��
+	// 로그인 실패 시
 	} else if (session.getAttribute("id") == null) {		
 %>
 
-<!-- �α��� / ȸ������ ��� -->
+<!-- 로그인 / 회원가입 기능 -->
 	<aside id="main_aside">
 		<input id="first" type ="radio" name="tab" checked="checked" onclick="disappear()" />
 		<input id="second" type="radio" name="tab" onclick="appear()" />
@@ -31,11 +30,10 @@
 			<label for="second">회원가입</label>
 		</section>
 		
-		<!-- �α��� ��� -->
+		<!-- 로그인 배너 -->
 		<div id="left_item" class="left_item">
 		<br /><br/>
 		
-		<!-- �������� checkId ���� -->
 		<script> var checkId = null; </script>
 			
 			<form name="loginform" action="./MemberLoginAction.me" method="post">
@@ -50,18 +48,17 @@
 			<br />
 		</div>
 	
-		<!-- ȸ������ ��� -->
+		<!-- 회원가입 배너 -->
 		<div id="right_item">
 		<br/>
 		
-		<!-- �������� checkForm ���� -->
 		<script> var checkForm = null; </script>
 		
 		<form name="joinform" action="./MemberJoinAction.me" method="post">
 			<input id="MEMBER_ID" class="joinInput" type="text" name="MEMBER_ID" placeholder="ID" size="6"/>
 			<input id="id_check" type="button" name="id_check" value="중복확인" size="5" />&nbsp;
 			<input id="signPw" class="joinInput" type="password" name="MEMBER_PW" placeholder="Password" size="7"/><br /><br />
-			<input id="signName" class="joinInput" type="text" name="MEMBER_NAME" placeholder="Name" size="6"/>&nbsp;&nbsp;
+			<input id="signName" class="joinInput" type="text" name="MEMBER_NAME" placeholder="Name" size="7"/>&nbsp;&nbsp;
 			<input id="signEmail" class="joinInput" type="text" name="MEMBER_EMAIL" placeholder="E-mail" size="15"/><br /><br />
 			
 			<b>생년월일:</b>
@@ -130,12 +127,12 @@
 	</div>
 </div>
 
-<!-- ���â �ٹ̱� -->
+<!-- 경고창 디자인 인터페이스 -->
 <link rel="stylesheet" href="resources/css/alertify.core.css" />
 <link rel="stylesheet" href="resources/css/alertify.default.css" id="toggleCSS" />
 <script src="resources/js/alertify.min.js"></script>
 
-<!-- ID �ߺ�üũ ��� -->
+<!-- ID 중복체크 -->
 <script src="http://code.jquery.com/jquery.js"></script>
 <script>
 	$(document).ready(function(){
@@ -146,12 +143,12 @@
 					console.log(data);
 					console.log(typeof data);
 					if (data == "true") {
-							alertify.alert("ID is not available");
+							alertify.alert("해당 아이디 사용 불가능");
 							$('div.alertify-dialog').addClass('color-red');
 							$('.alertify-button-ok, .alertify-button-ok:hover, .alertify-button-ok:focus').addClass('bgcolor-red');
 							$('.alertify-button:hover').addClass('bgcolor-red');				
 					} else {
-							alertify.alert("ID is available");
+							alertify.alert("해당 아이디 사용 가능");
 							$('div.alertify-dialog').addClass('color-blue');
 							$('.alertify-button-ok, .alertify-button-ok:hover, .alertify-button-ok:focus').addClass('bgcolor-green');
 							$('.alertify-button:hover').addClass('bgcolor-green');
@@ -167,7 +164,7 @@
 	});
 </script>
 
-<!-- Sign-In / Sign-Up �׵θ� ���� -->
+<!-- Sign-In / Sign-Up -->
 <script src="http://code.jquery.com/jquery.js"></script>
 <script>
  document.getElementById("main_aside").style.borderStyle = "none";
@@ -179,18 +176,18 @@
 	mainAside.style.border = "none";
 };
 
-// �α��� �� ID Ȥ�� Password �� �Է½� ��� ó�� 
+// 로그인 누락 정보 경고 기능
 checkId = function(){
 	var form = $('form[name="loginform"]')[0];
 	if($("#memId").val()==null || $("#memId").val()==""){
-		alertify.alert("You miss ID!");
+		alertify.alert("아이디를 누락했습니다.");
 		$('div.alertify-dialog').addClass('color-red');
 		$('.alertify-button-ok, .alertify-button-ok:hover, .alertify-button-ok:focus').addClass('bgcolor-red');
 		$('.alertify-button:hover').addClass('bgcolor-red');	
 		$("#memId").focus();
 		return false;
 	}else if($("#memPw").val()==null || $("#memPw").val()==""){
-		alertify.alert("You miss Password!");
+		alertify.alert("비밀번호를 누락했습니다.");
 		$('div.alertify-dialog').addClass('color-red');
 		$('.alertify-button-ok, .alertify-button-ok:hover, .alertify-button-ok:focus').addClass('bgcolor-red');
 		$('.alertify-button:hover').addClass('bgcolor-red');	
@@ -200,32 +197,32 @@ checkId = function(){
 	form.submit();
 }
 
-// ȸ������ �� �Է����� �� �Է½� ��� ó��
+// 회원가입 누락 정보 경고 기능
 checkForm = function(){
 	var form = $('form[name="joinform"]')[0];
 	if($("#MEMBER_ID").val()==null || $("#MEMBER_ID").val()==""){
-		alertify.alert("You miss ID!");
+		alertify.alert("아이디를 누락했습니다.");
 		$('div.alertify-dialog').addClass('color-red');
 		$('.alertify-button-ok, .alertify-button-ok:hover, .alertify-button-ok:focus').addClass('bgcolor-red');
 		$('.alertify-button:hover').addClass('bgcolor-red');
 		$("#MEMBER_ID").focus();
 		return false;
 	}else if($("#signPw").val()==null || $("#signPw").val()==""){
-		alertify.alert("You miss Password!");
+		alertify.alert("비밀번호를 누락했습니다.");
 		$('div.alertify-dialog').addClass('color-red');
 		$('.alertify-button-ok, .alertify-button-ok:hover, .alertify-button-ok:focus').addClass('bgcolor-red');
 		$('.alertify-button:hover').addClass('bgcolor-red');
 		$("#signPw").focus();
 		return false;
 	}else if($("#signName").val()==null || $("#signName").val()==""){
-		alertify.alert("You miss Name!");
+		alertify.alert("이름을 누락했습니다.");
 		$('div.alertify-dialog').addClass('color-red');
 		$('.alertify-button-ok, .alertify-button-ok:hover, .alertify-button-ok:focus').addClass('bgcolor-red');
 		$('.alertify-button:hover').addClass('bgcolor-red');
 		$("#signName").focus();
 		return false;
 	}else if($("#signEmail").val()==null || $("#signEmail").val()==""){
-		alertify.alert("You miss Email!");
+		alertify.alert("이메일을 누락했습니다.");
 		$('div.alertify-dialog').addClass('color-red');
 		$('.alertify-button-ok, .alertify-button-ok:hover, .alertify-button-ok:focus').addClass('bgcolor-red');
 		$('.alertify-button:hover').addClass('bgcolor-red');
@@ -239,7 +236,7 @@ $(document).ready(function(){
 });
 </script>
 
-<!-- ������ ��ũ��Ʈ -->
+<!-- 갤러리 -->
 <script>
  $(document).ready(function(){
 	$('#banner li').each(function(idx, item){

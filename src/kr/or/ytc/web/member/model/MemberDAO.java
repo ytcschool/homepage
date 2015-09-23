@@ -11,7 +11,7 @@ public class MemberDAO {
 	PreparedStatement pstmt;
 	ResultSet rs;
 
-	// 회원 가입자 이름 추출 메소드
+	// ID 중복 체크 메소드
 	public String pickMember(MemberBean member) {
 		Connection con = DBUtil.getConnection();
 		String sql = "SELECT MEMBER_NAME FROM MEMBER WHERE MEMBER_ID=?";
@@ -99,36 +99,6 @@ public class MemberDAO {
 		}
 
 		return false;
-	}
-
-	// ID 중복체크 메소드
-	public int confirmId(MemberBean member) {
-		Connection con = DBUtil.getConnection();
-		String sql = "SELECT * FROM MEMBER WHERE MEMBER_ID=?";
-		int x = -1;
-
-		try {
-			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, member.getMEMBER_ID());
-			System.out.println("sql: " + sql + ", " + " ID: " + member.getMEMBER_ID());
-			rs = pstmt.executeQuery();
-
-			if (rs.next()) {
-				// 해당 ID 있음
-				x = 1;
-			} else {
-				// 해당 ID 없음
-				x = -1;
-			}
-			System.out.println("DAO안: " + x);
-		} catch (Exception ex) {
-			System.out.println("confirmId 에러: " + ex);
-		} finally {
-			DBUtil.close(rs);
-			DBUtil.close(pstmt);
-			DBUtil.close(con);
-		}
-		return x;
 	}
 
 }

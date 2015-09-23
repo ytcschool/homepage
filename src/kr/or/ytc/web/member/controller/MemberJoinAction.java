@@ -1,7 +1,5 @@
 package kr.or.ytc.web.member.controller;
 
-import java.io.PrintWriter;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -29,25 +27,13 @@ public class MemberJoinAction implements Action {
 		member.setMEMBER_EMAIL(request.getParameter("MEMBER_EMAIL"));
 
 		result = memberdao.joinMember(member);
-
-		String id = request.getParameter("MEBMER_ID");
-		String pw = request.getParameter("MEMBER_PW");
-		
-		if (id == null && pw == null) {
-			response.setContentType("text/html;charset=utf-8");
-			PrintWriter out = response.getWriter();
-			out.println("<script>");
-			out.println("alert('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½×¸ï¿½ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½. È®ï¿½ï¿½ï¿½ï¿½ï¿½Ö½Ã±ï¿½ ï¿½Ù¶ï¿½ï¿½Ï´ï¿½.');");
-			out.println("</script>");
-			out.close();
-		}
 		
 		if (result == false) {
-			System.out.println("È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
+			System.out.println("È¸¿ø°¡ÀÔ ½ÇÆÐ");
 			return null;
 		}
 
-		// È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
+		// È¸¿ø°¡ÀÔ ¼º°ø
 		forward.setRedirect(true);
 		forward.setPath("./MemberLogin.me");
 		return forward;
