@@ -30,7 +30,7 @@ public class MemberLoginAction implements Action {
 			response.setContentType("text/html;charset=utf-8");
 			PrintWriter out = response.getWriter();
 			out.println("<script>");
-			out.println("alert('¾ÆÀÌµğ³ª ºñ¹Ğ¹øÈ£°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.')");
+			out.println("alert('ì•„ì´ë””ë‚˜ ë¹„ë°€ë²ˆí˜¸ê°€ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.')");
 			out.println("location.href='./MemberLogin.me';");
 			out.println("</script>");
 			out.close();
@@ -39,7 +39,7 @@ public class MemberLoginAction implements Action {
 			response.setContentType("text/html;charset=utf-8");
 			PrintWriter out = response.getWriter();;
 			out.println("<script>");
-			out.println("alert('·Î±×ÀÎ Á¤º¸°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.')");
+			out.println("alert('ì•„ì´ë”” ì •ë³´ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.')");
 			out.println("location.href='./MemberLogin.me';");
 			out.println("</script>");
 			out.close();

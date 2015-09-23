@@ -3,3 +3,4 @@
 >>>>>>>=refs/heads/fb-qna
 eclipse.preferences.version=1
 encoding//WebContent/module/notificationBoard/qna_board_list.jsp=UTF-8
+encoding//src/kr/or/ytc/web/member/controller/MemberLoginAction.java=UTF-8

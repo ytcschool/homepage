@@ -155,7 +155,7 @@
 					}
 				});
 			} else {
-				alertify.alert("아이디를 누락했습니다.");
+				alertify.alert("아이디가 누락되었습니다.");
 				$('div.alertify-dialog').addClass('color-red');
 				$('.alertify-button-ok, .alertify-button-ok:hover, .alertify-button-ok:focus').addClass('bgcolor-red');
 				$('.alertify-button:hover').addClass('bgcolor-red');
@@ -180,14 +180,14 @@
 checkId = function(){
 	var form = $('form[name="loginform"]')[0];
 	if($("#memId").val()==null || $("#memId").val()==""){
-		alertify.alert("아이디를 누락했습니다.");
+		alertify.alert("아이디가 누락되었습니다.");
 		$('div.alertify-dialog').addClass('color-red');
 		$('.alertify-button-ok, .alertify-button-ok:hover, .alertify-button-ok:focus').addClass('bgcolor-red');
 		$('.alertify-button:hover').addClass('bgcolor-red');	
 		$("#memId").focus();
 		return false;
 	}else if($("#memPw").val()==null || $("#memPw").val()==""){
-		alertify.alert("비밀번호를 누락했습니다.");
+		alertify.alert("비밀번호가 누락되었습니다.");
 		$('div.alertify-dialog').addClass('color-red');
 		$('.alertify-button-ok, .alertify-button-ok:hover, .alertify-button-ok:focus').addClass('bgcolor-red');
 		$('.alertify-button:hover').addClass('bgcolor-red');	
@@ -201,28 +201,28 @@ checkId = function(){
 checkForm = function(){
 	var form = $('form[name="joinform"]')[0];
 	if($("#MEMBER_ID").val()==null || $("#MEMBER_ID").val()==""){
-		alertify.alert("아이디를 누락했습니다.");
+		alertify.alert("아이디가 누락되었습니다.");
 		$('div.alertify-dialog').addClass('color-red');
 		$('.alertify-button-ok, .alertify-button-ok:hover, .alertify-button-ok:focus').addClass('bgcolor-red');
 		$('.alertify-button:hover').addClass('bgcolor-red');
 		$("#MEMBER_ID").focus();
 		return false;
 	}else if($("#signPw").val()==null || $("#signPw").val()==""){
-		alertify.alert("비밀번호를 누락했습니다.");
+		alertify.alert("비밀번호가 누락되었습니다.");
 		$('div.alertify-dialog').addClass('color-red');
 		$('.alertify-button-ok, .alertify-button-ok:hover, .alertify-button-ok:focus').addClass('bgcolor-red');
 		$('.alertify-button:hover').addClass('bgcolor-red');
 		$("#signPw").focus();
 		return false;
 	}else if($("#signName").val()==null || $("#signName").val()==""){
-		alertify.alert("이름을 누락했습니다.");
+		alertify.alert("이름이 누락되었습니다.");
 		$('div.alertify-dialog').addClass('color-red');
 		$('.alertify-button-ok, .alertify-button-ok:hover, .alertify-button-ok:focus').addClass('bgcolor-red');
 		$('.alertify-button:hover').addClass('bgcolor-red');
 		$("#signName").focus();
 		return false;
 	}else if($("#signEmail").val()==null || $("#signEmail").val()==""){
-		alertify.alert("이메일을 누락했습니다.");
+		alertify.alert("이메일이 누락되었습니다.");
 		$('div.alertify-dialog').addClass('color-red');
 		$('.alertify-button-ok, .alertify-button-ok:hover, .alertify-button-ok:focus').addClass('bgcolor-red');
 		$('.alertify-button:hover').addClass('bgcolor-red');
