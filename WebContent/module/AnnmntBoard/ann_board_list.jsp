@@ -14,11 +14,11 @@
 	int endpage=((Integer)request.getAttribute("endpage")).intValue();
 
 	
-	// ���Ǿ��̵� "admin���� Ȯ��"
+	// 관리자 확인
 	if (session.getAttribute("id").equals("admin")) {
-		System.out.println("ȭ�����");
+		System.out.println("관리자 화면");
 	} else {
-		System.out.println("ȭ������");
+		System.out.println("관리자 화면 아님");
 	}
 %>
 
@@ -76,7 +76,7 @@
 				<%
 				if (session.getAttribute("id").equals("admin")) {
 				%>
-					<td style=width:2%>��</td>
+					<td style=width:2%>√</td>
 				<%
 				} else {
 				%>
@@ -97,7 +97,7 @@
 				%>
 							
 				<tr align="center">
-				<!-- ������ ��� /�Ϲݸ�� �� :üũ�ڽ� -->
+				<!-- 게시판 항목 -->
 				<%
 				if (session.getAttribute("id").equals("admin")) {
 				%>

@@ -40,17 +40,17 @@ public class AnnmntChkDeleteAction implements AnnmntAction {
 	   		out.println("</script>");
 	   		out.close();
 	   		return null;
-		}
+		} 
 		for (int i=0; i<chkdelList.length;i++) {
 			System.out.println(chkdelList[i]);
 			int num = Integer.parseInt(chkdelList[i]);
 			result=boarddao.boardChkDelete(num);
-			
-			 if(result==false){
-		   		System.out.println("게시판 삭제 실패");
-		   		return null;
-			 }
-			 System.out.println("게시판 삭제 성공");   	
+						
+			System.out.println("게시판 삭제 성공");   	
+		}
+		if(result==false){
+	   		System.out.println("게시판 삭제 실패");
+	   		return null;
 		}
 		// System.out.println(result); 
 		

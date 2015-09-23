@@ -333,12 +333,13 @@ public class AnnouncementDAO {
 		Connection con = DBUtil.getConnection();
 		String sql = "SELECT MEMBER_PW FROM MEMBER WHERE MEMBER_ID=?";
 		int result = -1;
-
+		
 		try {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, "admin");
 			rs = pstmt.executeQuery();
 
+			
 			if (rs.next()) {
 				if (rs.getString("MEMBER_PW").equals("apmsetup")) {
 					result = 1;
