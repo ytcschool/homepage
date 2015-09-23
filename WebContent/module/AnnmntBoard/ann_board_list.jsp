@@ -3,6 +3,7 @@
 <%@ page import="java.util.*"%>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="kr.or.ytc.web.annmntboard.model.*" %>
+<%@ page import="kr.or.ytc.web.member.model.*" %>
 
 <%
 	List boardList=(List)request.getAttribute("boardlist");
@@ -12,7 +13,27 @@
 	int startpage=((Integer)request.getAttribute("startpage")).intValue();
 	int endpage=((Integer)request.getAttribute("endpage")).intValue();
 
+	
+	// 관리자 확인
+	if ((session.getAttribute("id"))!=null) {
+		if (session.getAttribute("id").equals("admin")) {
+			System.out.println("관리자 화면");
+		} else {
+			System.out.println("관리자 화면 아님");
+		}	
+	} else {
+		
+	}
+	
+	
 %>
+
+<script type="text/javascript">
+	function chkdelete(){
+		chkdel.submit();
+	}
+</script>
+
 <style>
 	#annList-wrapper {
 	 	padding-top: 40px;
@@ -33,15 +54,16 @@
 	 	margin-top: 20px; 
 	 	text-align: center;  
 	 } 
-	 div#write { 
+	 div#write_delete { 
 	 	text-align: right; 
-	  	width: 870px;  
+	  	width: 800px;  
 	 } 
 	
 </style>
 
 <div id="content">
 	<div id="annList-wrapper">
+	
 		<div align="center" valign="middle">
 			<ul colspan="4" style="font-size:25pt; padding-bottom:30px;">
 			<span style="background-color:#DCEBFF">공지사항</ul>	
@@ -50,21 +72,62 @@
 		if(listcount > 0){
 			
 		%>
+		<form action="<%=request.getContextPath() %>/AnnmntChkDelete.do" method="post" name="chkdel">
 			<table> 
 			
 				<tr align="center">
+
+			
+
+				<%
+				if ((session.getAttribute("id"))!=null) {
+					if (session.getAttribute("id").equals("admin")) {
+				%>
+						<td style=width:2%>√</td>
+				<%
+					} else {
+				%>
+
+				<%	
+					}
+				}
+				%>
 					<td style=width:8%>글번호</td>
 					<td style=width:50%>제목</td>
 					<td style=width:14%>작성자</td>
 					<td style=width:17%>작성일</td>
 					<td style=width:11%>조회수</td>
+
 				</tr>		
 				<%
 				for(int i=0;i<boardList.size();i++){
 					Announcement bl=(Announcement)boardList.get(i);
 				%>
+							
 				<tr align="center">
-					<td><%=bl.getANNBOARD_NUM()%></td>
+				<!-- 게시판 항목 -->
+				<%
+				if ((session.getAttribute("id"))!=null) {
+					if (session.getAttribute("id").equals("admin")) {
+				%>
+				
+						<td><input type="checkbox" name="chkdel" value="<%=bl.getANNBOARD_NUM() %>"/></td>
+				
+				<%
+					} else {
+				%>
+
+				<%	
+					}
+				}
+				%>
+			
+				<%
+				int cnt=0;
+				
+				cnt++;
+				%>
+ 					<td><%=bl.getANNBOARD_NUM()%></td>
 					<td align="left"><a href="<%=request.getContextPath() %>/AnnmntDetailAction.do?num=<%=bl.getANNBOARD_NUM()%>">
 						<%=bl.getANNBOARD_SUBJECT()%></a></td>
 					<td><%=bl.getANNBOARD_NAME() %></td>
@@ -74,6 +137,10 @@
 				<%} %>
 				
 			</table>
+			
+			</form>
+			
+			
 			<div id="pagecount">
 				<%if(nowpage<=1){ %>
 					[이전]&nbsp;
@@ -96,17 +163,29 @@
 				<%} %>
 			</div>
 		<%
-		}
-		else
-		{
+		} else {
 		%>
 			<font size=5>등록된 글이 없습니다.</font>
 		<%
 		}
 		%>
 		
-		<div id="write">
-			<a href="<%=request.getContextPath()%>/AnnmntWrite.do">[글쓰기]</a>
-		</div>
+		<%
+		if ((session.getAttribute("id"))!=null) {
+			if (session.getAttribute("id").equals("admin")) {
+		%>
+				<div id="write_delete">
+					<a href="<%=request.getContextPath()%>/AnnmntWrite.do">[글쓰기]</a>
+					<a href="javascript:chkdelete()">[글삭제]</a>
+				</div>
+		<%
+			} else {
+		%>
+
+		<%	
+			}
+		}
+		%>
+		
 	</div>
 </div> 

@@ -24,7 +24,7 @@ public class AnnmntModifyAction implements AnnmntAction {
 				   		response.setContentType("text/html;charset=utf-8");
 				   		PrintWriter out=response.getWriter();
 				   		out.println("<script>");
-				   		out.println("alert('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.');");
+				   		out.println("alert('¼öÁ¤ÇÒ ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.');");
 				   		out.println("location.href='./AnnmntList.do';");
 				   		out.println("</script>");
 				   		out.close();
@@ -38,10 +38,10 @@ public class AnnmntModifyAction implements AnnmntAction {
 					 
 					 result = boarddao.boardModify(boarddata);
 					 if(result==false){
-				   		System.out.println("ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
+				   		System.out.println("°Ô½ÃÆÇ ¼öÁ¤ ½ÇÆÐ");
 				   		return null;
 				   	 }
-				   	 System.out.println("ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½");
+				   	 System.out.println("°Ô½ÃÆÇ ¼öÁ¤ ¿Ï·á");
 				   	 
 				   	 forward.setRedirect(true);
 				   	 forward.setPath("./AnnmntDetailAction.do?num="+boarddata.getANNBOARD_NUM());

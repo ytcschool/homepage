@@ -26,8 +26,8 @@ public class AnnmntDeleteAction implements AnnmntAction {
 			   		response.setContentType("text/html;charset=utf-8");
 			   		PrintWriter out=response.getWriter();
 			   		out.println("<script>");
-			   		out.println("alert('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.');");
-			   		out.println("location.href='<%=request.getContextPath() %>/AnnmntList.do';");
+			   		out.println("alert('»èÁ¦ÇÒ ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.');");
+			   		out.println("location.href='./AnnmntList.do';");
 			   		out.println("</script>");
 			   		out.close();
 			   		return null;
@@ -35,11 +35,11 @@ public class AnnmntDeleteAction implements AnnmntAction {
 			   	
 			   	result=boarddao.boardDelete(num);
 			   	if(result==false){
-			   		System.out.println("ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
+			   		System.out.println("°Ô½ÃÆÇ »èÁ¦ ½ÇÆÐ");
 			   		return null;
 			   	}
 			   	
-			   	System.out.println("ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
+			   	System.out.println("°Ô½ÃÆÇ »èÁ¦ ¼º°ø");
 			   	forward.setRedirect(true);
 		   		//forward.setPath("./module/AnnmntBoard/ann_board_list.view");
 		   		forward.setPath(request.getContextPath()+"/AnnmntList.do");

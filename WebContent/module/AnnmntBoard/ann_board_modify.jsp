@@ -9,7 +9,6 @@ Announcement annboard = (Announcement)request.getAttribute("boarddata");
 		modifyform.submit();
 	}
 </script>
-
 <style>
 	#annList-wrapper {
 	 	padding-top: 40px;

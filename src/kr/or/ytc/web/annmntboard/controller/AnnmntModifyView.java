@@ -18,10 +18,10 @@ public class AnnmntModifyView implements AnnmntAction {
 		   	boarddata=boarddao.getDetail(num);
 		   	
 		   	if(boarddata==null){
-		   		System.out.println("(ï¿½ï¿½ï¿½ï¿½)ï¿½ó¼¼ºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
+		   		System.out.println("ÆäÀÌÁö ÀÌµ¿ ½ÇÆĞ");
 		   		return null;
 		   	}
-		   	System.out.println("(ï¿½ï¿½ï¿½ï¿½)ï¿½ó¼¼ºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
+		   	System.out.println("ÆäÀÌÁö ÀÌµ¿ ¿Ï·á");
 		   	
 		   	request.setAttribute("boarddata", boarddata);
 		   	forward.setRedirect(false);

@@ -24,7 +24,7 @@ public class BoardDeleteAction implements Action {
 	   		response.setContentType("text/html;charset=utf-8");
 	   		PrintWriter out=response.getWriter();
 	   		out.println("<script>");
-	   		out.println("alert('������ ������ �����ϴ�.');");
+	   		out.println("alert('삭제할 권한이 없습니다..');");
 	   		out.println("location.href='./BoardList.do';");
 	   		out.println("</script>");
 	   		out.close();
@@ -33,11 +33,10 @@ public class BoardDeleteAction implements Action {
 	   	
 	   	result=boarddao.boardDelete(num);
 	   	if(result==false){
-	   		System.out.println("�Խ��� ���� ����");
+	   		System.out.println("게시판 삭제 성공");
 	   		return null;
 	   	}
 	   	
-	   	System.out.println("�Խ��� ���� ����");
 	   	forward.setRedirect(true);
    		forward.setPath("./BoardList.do");
    		return forward;

@@ -43,10 +43,10 @@ public class AnnmntAddAction implements AnnmntAction {
 	   		result=boarddao.boardInsert(boarddata);
 	   		
 	   		if(result==false){
-	   			System.out.println("ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
+	   			System.out.println("°Ô½ÃÆÇ µî·Ï ½ÇÆÐ");
 	   			return null;
 	   		}
-	   		System.out.println("ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½");
+	   		System.out.println("°Ô½ÃÆÇ µî·Ï ¿Ï·á");
 	   		
 	   		forward.setRedirect(true);
 	   		forward.setPath(request.getContextPath()+"/AnnmntList.do");

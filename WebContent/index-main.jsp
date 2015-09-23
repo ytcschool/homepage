@@ -108,18 +108,18 @@
     <div id="bgcolor">
 	<h1 id="gTitle">Gallery</h1>
 		<ul id="banner">
-			<li><a href="gallery.view?imgNum=01"><img src="resources/images/gallery/img01.JPG" width="250px" height="150px"/></a></li>
-			<li><a href="gallery.view?imgNum=02"><img src="resources/images/gallery/img02.JPG" width="250px" height="150px"/></a></li>
-			<li><a href="gallery.view?imgNum=03"><img src="resources/images/gallery/img03.JPG" width="250px" height="150px"/></a></li>
-			<li><a href="gallery.view?imgNum=04"><img src="resources/images/gallery/img04.JPG" width="250px" height="150px"/></a></li>		
-			<li><a href="gallery.view?imgNum=05"><img src="resources/images/gallery/img05.JPG" width="250px" height="150px"/></a></li>
-			<li><a href="gallery.view?imgNum=06"><img src="resources/images/gallery/img06.JPG" width="250px" height="150px"/></a></li>
-			<li><a href="gallery.view?imgNum=07"><img src="resources/images/gallery/img07.JPG" width="250px" height="150px"/></a></li>
-			<li><a href="gallery.view?imgNum=08"><img src="resources/images/gallery/img08.JPG" width="250px" height="150px"/></a></li>
-			<li><a href="gallery.view?imgNum=09"><img src="resources/images/gallery/img09.JPG" width="250px" height="150px"/></a></li>
-			<li><a href="gallery.view?imgNum=10"><img src="resources/images/gallery/img10.JPG" width="250px" height="150px"/></a></li>		
-			<li><a href="gallery.view?imgNum=11"><img src="resources/images/gallery/img11.JPG" width="250px" height="150px"/></a></li>
-			<li><a href="gallery.view?imgNum=12"><img src="resources/images/gallery/img12.JPG" width="250px" height="150px"/></a></li>
+			<li><a href="gallery.view?imgNum=01"><img src="resources/images/gallery/img01.JPG" width="300px" height="165px"/></a></li>
+			<li><a href="gallery.view?imgNum=02"><img src="resources/images/gallery/img02.JPG" width="300px" height="165px"/></a></li>
+			<li><a href="gallery.view?imgNum=03"><img src="resources/images/gallery/img03.JPG" width="300px" height="165px"/></a></li>
+			<li><a href="gallery.view?imgNum=04"><img src="resources/images/gallery/img04.JPG" width="300px" height="165px"/></a></li>		
+			<li><a href="gallery.view?imgNum=05"><img src="resources/images/gallery/img05.JPG" width="300px" height="165px"/></a></li>
+			<li><a href="gallery.view?imgNum=06"><img src="resources/images/gallery/img06.JPG" width="300px" height="165px"/></a></li>
+			<li><a href="gallery.view?imgNum=07"><img src="resources/images/gallery/img07.JPG" width="300px" height="165px"/></a></li>
+			<li><a href="gallery.view?imgNum=08"><img src="resources/images/gallery/img08.JPG" width="300px" height="165px"/></a></li>
+			<li><a href="gallery.view?imgNum=09"><img src="resources/images/gallery/img09.JPG" width="300px" height="165px"/></a></li>
+			<li><a href="gallery.view?imgNum=10"><img src="resources/images/gallery/img10.JPG" width="300px" height="165px"/></a></li>		
+			<li><a href="gallery.view?imgNum=11"><img src="resources/images/gallery/img11.JPG" width="300px" height="165px"/></a></li>
+			<li><a href="gallery.view?imgNum=12"><img src="resources/images/gallery/img12.JPG" width="300px" height="165px"/></a></li>
 		</ul>
 	</div>
     </div>

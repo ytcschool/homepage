@@ -18,10 +18,10 @@ public class AnnmntDetailAction implements AnnmntAction {
 	   	boarddata=boarddao.getDetail(num);
 	   	
 	   	if(boarddata==null){
-	   		System.out.println("ï¿½ó¼¼ºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
+	   		System.out.println("»ó¼¼º¸±â ½ÇÆÐ");
 	   		return null;
 	   	}
-	   	System.out.println("ï¿½ó¼¼ºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
+	   	System.out.println("»ó¼¼º¸±â ¼º°ø");
 	   	
 	   	request.setAttribute("boarddata", boarddata);
 	   	AnnmntActionForward forward = new AnnmntActionForward();

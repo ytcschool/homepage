@@ -27,10 +27,10 @@ public class BoardReplyAction implements Action {
 	   		
 	   		result=boarddao.boardReply(boarddata);
 	   		if(result==0){
-	   			System.out.println("���� ����");
+	   			System.out.println("답장실패");
 	   			return null;
 	   		}
-	   		System.out.println("���� �Ϸ�");
+	   		System.out.println("답장완료");
 	   		
 	   		forward.setRedirect(true);
 	   		forward.setPath("./BoardDetailAction.do?num="+result);
