@@ -27,7 +27,7 @@
 <div id="qnalist-wrapper">
 	<div align="center" valign="middle">
 		<ul colspan="4" style="font-size:25pt; padding-bottom:30px;">
-		<span style=background-color:#DCEBFF>Q/A 게시판</ul>
+		<span style=background-color:#DCEBFF>Q/A 게시판</span></ul>
 	</div>
 <table cellspacing="0" width=540 align="center" border="1px solid black">	
 	<tr>

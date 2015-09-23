@@ -45,7 +45,7 @@ if(listcount > 0){
 %>
 	<div align="center" valign="middle">
 		<ul colspan="4" style="font-size:25pt; padding-bottom:30px;">
-		<span style="background-color:#DCEBFF">Q/A Board</ul>	
+		<span style="background-color:#DCEBFF">Q/A 게시판</ul>	
 	</div>
 <table width=700 align="center">
 	<tr id="abc" align="center" valign="middle" style="background:#DFD4D4">
@@ -53,7 +53,7 @@ if(listcount > 0){
 			<div align="center">글번호</div>
 		</td>
 		<td style="font-family:Tahoma;font-size:10pt;" width="45%">
-			<div align="center">제 &nbsp &nbsp 목</div>
+			<div align="center">제 &nbsp; &nbsp; 목</div>
 		</td>
 		<td style="font-family:Tahoma;font-size:10pt;" width="14%">
 			<div align="center">작성자</div>
@@ -135,7 +135,7 @@ if(listcount > 0){
 	%>
 	<div align="center" valign="middle">
 		<ul colspan="4" style="font-size:25pt; padding-bottom:30px">
-		<span style="background-color:#DCEBFF">Q/A Board</span></ul>
+		<span style="background-color:#DCEBFF">Q/A 게시판</span></ul>
 		<ul align="center" style="border:1px solid white-space; height: 300px">
 			<br/>
 			<font size=6>Q/A list is not found</font>
@@ -145,7 +145,7 @@ if(listcount > 0){
 	}
 	%>
 	<div id="writeBtnArea">
-	   		<a href="./BoardWrite.do">[Write]</a>
+	   		<a href="./BoardWrite.do">[글쓰기]</a>
 	</div>
 </div>
 </div>

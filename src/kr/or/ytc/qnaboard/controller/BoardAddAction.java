@@ -26,14 +26,13 @@ public class BoardAddAction implements Action {
 		int fileSize = 5*1024*1024;
 		
 		realFolder=request.getRealPath(saveFolder);
-		
 		boolean result = false;
 		try {
 			MultipartRequest multi = null;
 			multi = new MultipartRequest(request, 
 						realFolder, 
 						fileSize, 
-						"euc-kr", 
+						"utf-8", 
 						new DefaultFileRenamePolicy());
 			boarddata.setBOARD_NAME(multi.getParameter("BOARD_NAME"));
 			boarddata.setBOARD_PASS(multi.getParameter("BOARD_PASS"));
@@ -44,10 +43,10 @@ public class BoardAddAction implements Action {
 			result = boarddao.boardInsert(boarddata);
 			
 			if(result==false){
-				System.out.println("°Ô½ÃÆÇ µî·Ï ½ÇÆĞ");
+				System.out.println("ê²Œì‹œíŒ ë“±ë¡ ì‹¤íŒ¨");
 				return null;
 			}
-			System.out.println("°Ô½ÃÆÇ µî·Ï ¿Ï·á");
+			System.out.println("ê²Œì‹œíŒ ë“±ë¡ ì™„ë£Œ");
 			
 			forward.setRedirect(true);
 			forward.setPath("./BoardList.do");

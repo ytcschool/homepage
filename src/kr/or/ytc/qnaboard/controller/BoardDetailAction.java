@@ -18,10 +18,10 @@ import kr.or.ytc.qnaboard.model.BoardDAO;
 	   	boarddata=boarddao.getDetail(num);
 	   	
 	   	if(boarddata==null){
-	   		System.out.println("»ó¼¼º¸±â ½ÇÆĞ");
+	   		System.out.println("ìƒì„¸ë³´ê¸° ì‹¤íŒ¨");
 	   		return null;
 	   	}
-	   	System.out.println("»ó¼¼º¸±â ¼º°ø");
+	   	System.out.println("ìƒì„¸ë³´ê¸° ì„±ê³µ");
 	   	
 	   	request.setAttribute("boarddata", boarddata);
 	   	ActionForward forward = new ActionForward();

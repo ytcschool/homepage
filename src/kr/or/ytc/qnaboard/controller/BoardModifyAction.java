@@ -25,7 +25,7 @@ import kr.or.ytc.qnaboard.model.BoardDAO;
 		   		response.setContentType("text/html;charset=euc-kr");
 		   		PrintWriter out=response.getWriter();
 		   		out.println("<script>");
-		   		out.println("alert('¼öÁ¤ÇÒ ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.');");
+		   		out.println("alert('ìˆ˜ì •í•  ê¶Œí•œì´ ì—†ìŠµë‹ˆë‹¤.');");
 		   		out.println("location.href='./BoardList.do';");
 		   		out.println("</script>");
 		   		out.close();
@@ -39,10 +39,10 @@ import kr.or.ytc.qnaboard.model.BoardDAO;
 			 
 			 result = boarddao.boardModify(boarddata);
 			 if(result==false){
-		   		System.out.println("°Ô½ÃÆÇ ¼öÁ¤ ½ÇÆĞ");
+		   		System.out.println("ê²Œì‹œíŒ ìˆ˜ì • ì‹¤íŒ¨");
 		   		return null;
 		   	 }
-		   	 System.out.println("°Ô½ÃÆÇ ¼öÁ¤ ¿Ï·á");
+		   	 System.out.println("ê²Œì‹œíŒ ìˆ˜ì • ì™„ë£Œ");
 		   	 
 		   	 forward.setRedirect(true);
 		   	 forward.setPath("./BoardDetailAction.do?num="+boarddata.getBOARD_NUM());

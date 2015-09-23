@@ -24,7 +24,7 @@ public class BoardDeleteAction implements Action {
 	   		response.setContentType("text/html;charset=euc-kr");
 	   		PrintWriter out=response.getWriter();
 	   		out.println("<script>");
-	   		out.println("alert('»èÁ¦ÇÒ ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.');");
+	   		out.println("alert('ì‚­ì œí•  ê¶Œí•œì´ ì—†ìŠµë‹ˆë‹¤..');");
 	   		out.println("location.href='./BoardList.do';");
 	   		out.println("</script>");
 	   		out.close();
@@ -33,11 +33,11 @@ public class BoardDeleteAction implements Action {
 	   	
 	   	result=boarddao.boardDelete(num);
 	   	if(result==false){
-	   		System.out.println("°Ô½ÃÆÇ »èÁ¦ ½ÇÆĞ");
+	   		System.out.println("ê²Œì‹œíŒ ì‚­ì œ ì„±ê³µ");
 	   		return null;
 	   	}
 	   	
-	   	System.out.println("°Ô½ÃÆÇ »èÁ¦ ¼º°ø");
+	   	System.out.println("ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 	   	forward.setRedirect(true);
    		forward.setPath("./BoardList.do");
    		return forward;

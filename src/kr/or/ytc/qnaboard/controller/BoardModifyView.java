@@ -18,10 +18,10 @@ public class BoardModifyView implements Action {
 		   	boarddata=boarddao.getDetail(num);
 		   	
 		   	if(boarddata==null){
-		   		System.out.println("(¼öÁ¤)»ó¼¼º¸±â ½ÇÆĞ");
+		   		System.out.println("(ìˆ˜ì •)ìƒì„¸ë³´ê¸° ì‹¤íŒ¨");
 		   		return null;
 		   	}
-		   	System.out.println("(¼öÁ¤)»ó¼¼º¸±â ¼º°ø");
+		   	System.out.println("(ìˆ˜ì •)ìƒì„¸ë³´ê¸° ì„±ê³µ");
 		   	
 		   	request.setAttribute("boarddata", boarddata);
 		   	forward.setRedirect(false);
