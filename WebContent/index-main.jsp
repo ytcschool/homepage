@@ -155,7 +155,7 @@
 					}
 				});
 			} else {
-				alertify.alert("You miss ID!");
+				alertify.alert("아이디를 누락했습니다.");
 				$('div.alertify-dialog').addClass('color-red');
 				$('.alertify-button-ok, .alertify-button-ok:hover, .alertify-button-ok:focus').addClass('bgcolor-red');
 				$('.alertify-button:hover').addClass('bgcolor-red');
