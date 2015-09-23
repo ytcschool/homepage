@@ -27,17 +27,17 @@ input:nth-of-type(2):checked ~ div:nth-of-type(2) {border:none;}
 
 section.buttons{overflow:hidden;}
 section.buttons > label{
-	/*¼öÆòÁ¤·Ä*/
+	/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 	display:block; float:left;
-	/*Å©±â ¹× ±ÛÀÚ À§Ä¡ ÁöÁ¤*/
+	/*Å©ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½*/
 	width:135px; heigth:30px;
 	line-hegiht:30px;
 	text-align:center;
-	/*Å×µÎ¸® ÁöÁ¤*/
+	/*ï¿½×µÎ¸ï¿½ ï¿½ï¿½ï¿½ï¿½*/
 	box-sizing:border-box;
 	border:3px solid black;
 	border-radius:5px;
-	/*»ö»ó ÁöÁ¤*/
+	/*ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½*/
 	background:white;
 	color:#003973;
 }
@@ -52,7 +52,7 @@ input:nth-of-type(2):checked ~ section.buttons > label:nth-of-type(2){
 		color:black;
 }	
 
-/* ·Î±×ÀÎ ¼º°ø ½Ã ½ºÅ¸ÀÏ Àû¿ë ºÎºÐ */
+/* ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Îºï¿½ */
 div#loginSuccess {
 	position: absolute;
 	width: 270px;
@@ -82,7 +82,7 @@ p#signupbtn {
 	margin: auto;
 }
 
-/* <a> ÅÂ±× ¹öÆ°À¸·Î º¯°æ */
+/* <a> ï¿½Â±ï¿½ ï¿½ï¿½Æ°ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ */
 a.button {
 	-webkit-appearance: button;
 	-moz-appearance: button;
@@ -98,7 +98,7 @@ a#joinButton{
 a#resetButton{
 	padding:4px 17px;
 }
-/* ¸µÅ© ¼Ó¼º º¯°æ */
+/* ï¿½ï¿½Å© ï¿½Ó¼ï¿½ ï¿½ï¿½ï¿½ï¿½ */
 a:link {
 	color: black; text-decoration: none;
 }
@@ -179,17 +179,19 @@ div#left_item input.loginInput {
 /********** Index Box **********/
 div#annmnt_box {
 	position: absolute;
+	top: 60%;
 	left: 50px; bottom: 50px;
 	width: 450px;
-	height: 200px;
+	height: 250px;
 	text-align: center;
-	border: 1px solid white;
+	border: 1px solid #6d6d6d;
 }
 div#consult_box {
 	position: absolute;
+	top: 60%;
 	right: 50px; bottom: 50px;
 	width: 350px;
-	height: 200px;
+	height: 250px;
 	text-align: center;
 	border: 1px solid #6d6d6d;
 }
@@ -199,7 +201,7 @@ div#consult_box {
 div#bgcolor {
 	background: #e2fef4;
 	width: 450px;
-	height:200px;
+	height:250px;
 }
 h1#gTitle {
 	text-align: center;
@@ -208,16 +210,17 @@ h1#gTitle {
 }
 ul#banner {
 	padding: 0;
-	width: 250px;
-	height: 150px;
+	width: 300px;
+	height: 165px;
 	position: relative;	
+	margin-top: 20px;
 }
 ul#banner > li {
 	list-style: none;
-	margin-left: 100px;
+	margin-left: 75px;
 	border: 0px solid green;
-	width: 250px;
-	height: 150px;
+	width: 300px;
+	height: 165px;
 	position: absolute;
 	top: 0px; 
 }
