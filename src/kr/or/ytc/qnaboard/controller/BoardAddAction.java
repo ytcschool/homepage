@@ -26,7 +26,6 @@ public class BoardAddAction implements Action {
 		int fileSize = 5*1024*1024;
 		
 		realFolder=request.getRealPath(saveFolder);
-		
 		boolean result = false;
 		try {
 			MultipartRequest multi = null;
@@ -44,10 +43,10 @@ public class BoardAddAction implements Action {
 			result = boarddao.boardInsert(boarddata);
 			
 			if(result==false){
-				System.out.println("�Խ��� ��� ����");
+				System.out.println("게시판 등록 실패");
 				return null;
 			}
-			System.out.println("�Խ��� ��� �Ϸ�");
+			System.out.println("게시판 등록 완료");
 			
 			forward.setRedirect(true);
 			forward.setPath("./BoardList.do");

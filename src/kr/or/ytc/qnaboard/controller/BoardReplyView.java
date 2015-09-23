@@ -19,10 +19,10 @@ public class BoardReplyView implements Action {
 	   		boarddata=boarddao.getDetail(num);
 	   		
 	   		if(boarddata==null){
-	   			System.out.println("´äÀå ÆäÀÌÁö ÀÌµ¿ ½ÇÆĞ");
+	   			System.out.println("ë‹µì¥í˜ì´ì§€ ì´ë™ ì‹¤íŒ¨");
 	   			return null;
 	   		}
-	   		System.out.println("´äÀå ÆäÀÌÁö ÀÌµ¿ ¿Ï·á");
+	   		System.out.println("ë‹µì¥í˜ì´ì§€ ì´ë™ ì™„ë£Œ");
 	   		
 	   		request.setAttribute("boarddata", boarddata);
 	   		
