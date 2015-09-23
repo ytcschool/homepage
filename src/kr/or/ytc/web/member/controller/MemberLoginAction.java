@@ -21,31 +21,37 @@ public class MemberLoginAction implements Action {
 
 		member.setMEMBER_ID(request.getParameter("MEMBER_ID"));
 		member.setMEMBER_PW(request.getParameter("MEMBER_PW"));
+		
+		// ï¿½ï¿½ï¿½ï¿½È¸ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		String mem_name = memberdao.pickMember(member);
+		
+		// ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		result = memberdao.isMember(member);
 
 		if (result == 0) {
-			response.setContentType("text/html;charset=euc-kr");
+			response.setContentType("text/html;charset=utf-8");
 			PrintWriter out = response.getWriter();
 			out.println("<script>");
-			out.println("alert('¾ÆÀÌµð³ª ºñ¹Ð¹øÈ£°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.');");
+			out.println("alert('ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½Ð¹ï¿½È£ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ ï¿½Ê½ï¿½ï¿½Ï´ï¿½.');");
 			out.println("location.href='./MemberLogin.me';");
 			out.println("</script>");
 			out.close();
 			return null;
 		} else if (result == -1) {
-			response.setContentType("text/html;charset=euc-kr");
+			response.setContentType("text/html;charset=utf-8");
 			PrintWriter out = response.getWriter();
 			out.println("<script>");
-			out.println("alert('¾ÆÀÌµð°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.');");
+			out.println("alert('ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê½ï¿½ï¿½Ï´ï¿½.');");
 			out.println("location.href='./MemberLogin.me';");
 			out.println("</script>");
 			out.close();
 			return null;
 		}
 
-		// ·Î±×ÀÎ ¼º°ø
+		// ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		session.setAttribute("id", member.getMEMBER_ID());
-
+		session.setAttribute("name", mem_name);
+		
 		forward.setRedirect(true);
 		forward.setPath("./index.jsp");
 		return forward;

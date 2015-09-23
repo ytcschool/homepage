@@ -11,6 +11,32 @@ public class MemberDAO {
 	PreparedStatement pstmt;
 	ResultSet rs;
 
+	// 회원 가입자 이름 추출 메소드
+	public String pickMember(MemberBean member) {
+		Connection con = DBUtil.getConnection();
+		String sql = "SELECT MEMBER_NAME FROM MEMBER WHERE MEMBER_ID=?";
+		String mem_name = "";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, member.getMEMBER_ID());
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				mem_name = rs.getString(1);
+			} else {
+				mem_name = null;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBUtil.close(rs);
+			DBUtil.close(pstmt);
+			DBUtil.close(con);
+		}
+		return mem_name;
+	}
+	
 	// 회원정보 확인 메소드
 	public int isMember(MemberBean member) {
 
@@ -60,7 +86,7 @@ public class MemberDAO {
 			pstmt.setString(7, member.getMEMBER_GENDER());
 			pstmt.setString(8, member.getMEMBER_EMAIL());
 			result = pstmt.executeUpdate();
-
+			
 			if (result != 0) {
 				return true;
 			}

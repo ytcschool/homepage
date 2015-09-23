@@ -9,7 +9,7 @@ import kr.or.ytc.web.annmntboard.model.Announcement;
 public class AnnmntModifyView implements AnnmntAction {
 	 public AnnmntActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception{
 		 	AnnmntActionForward forward = new AnnmntActionForward();
-		 	request.setCharacterEncoding("euc-kr");
+		 	request.setCharacterEncoding("utf-8");
 	   		
 			AnnouncementDAO boarddao=new AnnouncementDAO();
 			Announcement boarddata=new Announcement();
@@ -18,10 +18,10 @@ public class AnnmntModifyView implements AnnmntAction {
 		   	boarddata=boarddao.getDetail(num);
 		   	
 		   	if(boarddata==null){
-		   		System.out.println("(¼öÁ¤)»ó¼¼º¸±â ½ÇÆÐ");
+		   		System.out.println("(ï¿½ï¿½ï¿½ï¿½)ï¿½ó¼¼ºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 		   		return null;
 		   	}
-		   	System.out.println("(¼öÁ¤)»ó¼¼º¸±â ¼º°ø");
+		   	System.out.println("(ï¿½ï¿½ï¿½ï¿½)ï¿½ó¼¼ºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 		   	
 		   	request.setAttribute("boarddata", boarddata);
 		   	forward.setRedirect(false);

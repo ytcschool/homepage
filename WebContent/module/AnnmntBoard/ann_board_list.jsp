@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="kr.or.ytc.web.annmntboard.model.*" %>
@@ -14,11 +14,11 @@
 	int endpage=((Integer)request.getAttribute("endpage")).intValue();
 
 	
-	// ¼¼¼Ç¾ÆÀÌµð°¡ "adminÀÎÁö È®ÀÎ"
+	// ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½Ìµï¿½ "adminï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½"
 	if (session.getAttribute("id").equals("admin")) {
-		System.out.println("È­¸éÃâ·Â");
+		System.out.println("È­ï¿½ï¿½ï¿½ï¿½ï¿½");
 	} else {
-		System.out.println("È­¸éºñÃâ·Â");
+		System.out.println("È­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 	}
 %>
 
@@ -60,7 +60,7 @@
 	
 		<div align="center" valign="middle">
 			<ul colspan="4" style="font-size:25pt; padding-bottom:30px;">
-			<span style="background-color:#DCEBFF">°øÁö»çÇ×</ul>	
+			<span style="background-color:#DCEBFF">ê³µì§€ì‚¬í•­</ul>	
 		</div>
 		<%
 		if(listcount > 0){
@@ -70,12 +70,13 @@
 			<table> 
 			
 				<tr align="center">
+
 			
-				<!-- °ü¸®ÀÚ ¸ðµå /ÀÏ¹Ý¸ðµå ºä : Ã¼Å©¹Ú½º-->
+
 				<%
 				if (session.getAttribute("id").equals("admin")) {
 				%>
-					<td style=width:2%>¡î</td>
+					<td style=width:2%>ï¿½ï¿½</td>
 				<%
 				} else {
 				%>
@@ -83,11 +84,12 @@
 				<%	
 				}
 				%>
-					<td style=width:8%>±Û¹øÈ£</td>
-					<td style=width:48%>Á¦¸ñ</td>
-					<td style=width:14%>ÀÛ¼ºÀÚ</td>
-					<td style=width:17%>ÀÛ¼ºÀÏ</td>
-					<td style=width:11%>Á¶È¸¼ö</td>
+					<td style=width:8%>ê¸€ë²ˆí˜¸</td>
+					<td style=width:50%>ì œëª©</td>
+					<td style=width:14%>ìž‘ì„±ìž</td>
+					<td style=width:17%>ìž‘ì„±ì¼</td>
+					<td style=width:11%>ì¡°íšŒìˆ˜</td>
+
 				</tr>		
 				<%
 				for(int i=0;i<boardList.size();i++){
@@ -95,7 +97,7 @@
 				%>
 							
 				<tr align="center">
-				<!-- °ü¸®ÀÚ ¸ðµå /ÀÏ¹Ý¸ðµå ºä :Ã¼Å©¹Ú½º -->
+				<!-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ /ï¿½Ï¹Ý¸ï¿½ï¿½ ï¿½ï¿½ :Ã¼Å©ï¿½Ú½ï¿½ -->
 				<%
 				if (session.getAttribute("id").equals("admin")) {
 				%>
@@ -131,9 +133,9 @@
 			
 			<div id="pagecount">
 				<%if(nowpage<=1){ %>
-					[ÀÌÀü]&nbsp;
+					[ì´ì „]&nbsp;
 				<%}else{ %>
-					<a href="<%=request.getContextPath() %>/AnnmntList.do?page=<%=nowpage-1 %>">[ÀÌÀü]</a>
+					<a href="<%=request.getContextPath() %>/AnnmntList.do?page=<%=nowpage-1 %>">[ì´ì „]</a>
 				<%} %>
 				
 				<%for(int a=startpage;a<=endpage;a++){
@@ -145,15 +147,15 @@
 				<%} %>
 				
 				<%if(nowpage>=maxpage){ %>
-					[´ÙÀ½]
+					[ë‹¤ìŒ]
 				<%}else{ %>
-					<a href="<%=request.getContextPath() %>/AnnmntList.do?page=<%=nowpage+1 %>">[´ÙÀ½]</a>
+					<a href="<%=request.getContextPath() %>/AnnmntList.do?page=<%=nowpage+1 %>">[ë‹¤ìŒ]</a>
 				<%} %>
 			</div>
 		<%
 		} else {
 		%>
-			<font size=5>µî·ÏµÈ ±ÛÀÌ ¾ø½À´Ï´Ù.</font>
+			<font size=5>ë“±ë¡ëœ ê¸€ì´ ì—†ìŠµë‹ˆë‹¤.</font>
 		<%
 		}
 		%>
@@ -162,8 +164,8 @@
 		if (session.getAttribute("id").equals("admin")) {
 		%>
 			<div id="write_delete">
-				<a href="<%=request.getContextPath()%>/AnnmntWrite.do">[±Û¾²±â]</a>
-				<a href="javascript:chkdelete()">[±Û»èÁ¦]</a>
+				<a href="<%=request.getContextPath()%>/AnnmntWrite.do">[ê¸€ì“°ê¸°]</a>
+				<a href="javascript:chkdelete()">[ê¸€ì‚­ì œ]</a>
 			</div>
 		<%
 		} else {
@@ -172,8 +174,6 @@
 		<%	
 		}
 		%>
-		
-		
 		
 	</div>
 </div> 

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import="kr.or.ytc.web.annmntboard.model.*" %>
 <%
 	Announcement annboard = (Announcement)request.getAttribute("boarddata");
@@ -40,21 +40,21 @@
 
 		<div align="center" valign="middle">
 		<ul style="font-size:25pt; padding-bottom:30px;">
-		<span style="background-color:#DCEBFF">°øÁö»çÇ×</ul>	
+		<span style="background-color:#DCEBFF">ê³µì§€ì‚¬í•­</ul>	
 		</div>
 		
 		<table border="1" width="600" height="300" align="center" cellspacing="0">
 	
 			<tr height="50">
-				<td width="100" align="center">Á¦ ¸ñ</td>
+				<td width="100" align="center">ì œ ëª©</td>
 				<td width="500" align="left"><%=annboard.getANNBOARD_SUBJECT()%></td>
 			</tr>
 			<tr height="200" id="content_tr">
-				<td width="100" align="center">³» ¿ë</td>
+				<td width="100" align="center">ë‚´ ìš©</td>
 				<td width="500" align="left"><%=annboard.getANNBOARD_CONTENT() %></td>
 			</tr>
 			<tr height="50">
-				<td width="100" align="center">Ã·ºÎÆÄÀÏ</td>
+				<td width="100" align="center">ì²¨ë¶€íŒŒì¼</td>
 				<%if(!(annboard.getANNBOARD_FILE()==null)){ %>
 				<td width="500"><a href="./module/annboardupload/<%=annboard.getANNBOARD_FILE()%>">
 					<%=annboard.getANNBOARD_FILE() %></a></td>
@@ -64,9 +64,9 @@
 		</table>
 		
 		<div id="ankor_area">
-			<a href="<%=request.getContextPath() %>/AnnmntModify.do?num=<%=annboard.getANNBOARD_NUM() %>">[¼öÁ¤]</a>
-			<a href="<%=request.getContextPath() %>/AnnmntDelete.do?num=<%=annboard.getANNBOARD_NUM() %>">[»èÁ¦]</a>
-			<a href="<%=request.getContextPath() %>/AnnmntList.do">[¸ñ·Ï]</a>
+			<a href="<%=request.getContextPath() %>/AnnmntModify.do?num=<%=annboard.getANNBOARD_NUM() %>">[ìˆ˜ì •]</a>
+			<a href="<%=request.getContextPath() %>/AnnmntDelete.do?num=<%=annboard.getANNBOARD_NUM() %>">[ì‚­ì œ]</a>
+			<a href="<%=request.getContextPath() %>/AnnmntList.do">[ëª©ë¡]</a>
 		</div>
 		
 	</div>

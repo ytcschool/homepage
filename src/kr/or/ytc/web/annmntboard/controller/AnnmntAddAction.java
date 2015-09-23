@@ -28,7 +28,7 @@ public class AnnmntAddAction implements AnnmntAction {
   			multi=new MultipartRequest(request,
   					realFolder,
   					fileSize,
-  					"euc-kr",
+  					"utf-8",
   					new DefaultFileRenamePolicy()
   					);
   			
@@ -43,10 +43,10 @@ public class AnnmntAddAction implements AnnmntAction {
 	   		result=boarddao.boardInsert(boarddata);
 	   		
 	   		if(result==false){
-	   			System.out.println("°Ô½ÃÆÇ µî·Ï ½ÇÆÐ");
+	   			System.out.println("ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 	   			return null;
 	   		}
-	   		System.out.println("°Ô½ÃÆÇ µî·Ï ¿Ï·á");
+	   		System.out.println("ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½");
 	   		
 	   		forward.setRedirect(true);
 	   		forward.setPath(request.getContextPath()+"/AnnmntList.do");

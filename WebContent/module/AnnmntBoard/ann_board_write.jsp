@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 <script language="javascript">
 	function addboard(){
@@ -27,32 +27,32 @@
 			
 		<div align="center" valign="middle">
 			<ul style="font-size:25pt; padding-bottom:30px;">
-			<span style="background-color:#DCEBFF">°øÁö»çÇ×</ul>		 
+			<span style="background-color:#DCEBFF">ê³µì§€ì‚¬í•­</ul>		 
 		
 		 
 			<table>
 				<tr>
-					<td width="100">±Û¾´ÀÌ</td>
+					<td width="100">ê¸€ì“´ì´</td>
 					<td><input name="ANNBOARD_NAME" type="text"></td>
 				</tr>
 				<tr>
-					<td width="100">Á¦ ¸ñ</td>
+					<td width="100">ì œ ëª©</td>
 					<td colspan="2"><input name="ANNBOARD_SUBJECT" type="text" size="44"></td>
 				</tr>
 				<tr height="250">
-					<td width="100">³» ¿ë</td>
+					<td width="100">ë‚´ ìš©</td>
 					<td colspan="4"><textarea  name="ANNBOARD_CONTENT" rows="12" cols="95"></textarea></td>
 				</tr>
 				<tr>
-					<td width="100">ÆÄÀÏÃ·ºÎ</td>
-					<td><input name="ANNBOARD_FILE" type="file" value="&nbsp;&nbsp;&nbsp;&nbsp;Ã£¾Æº¸±â...&nbsp;&nbsp;&nbsp;&nbsp;"/></td>
-					<td width="100">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ºñ¹Ğ¹øÈ£</td>
+					<td width="100">íŒŒì¼ì²¨ë¶€</td>
+					<td><input name="ANNBOARD_FILE" type="file" value="&nbsp;&nbsp;&nbsp;&nbsp;ì°¾ì•„ë³´ê¸°...&nbsp;&nbsp;&nbsp;&nbsp;"/></td>
+					<td width="100">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ë¹„ë°€ë²ˆí˜¸</td>
 					<td width="100"><input name="ANNBOARD_PASS" type="password" size="10"></td>
 				</tr>
 			
 			</table></br>
 			<div id="ankor_area" align="center">
-				<a href="javascript:addboard()">[µî·Ï]</a> &nbsp;&nbsp;<a href="javascript:history.go(-1)">[µÚ·Î]</a>
+				<a href="javascript:addboard()">[ë“±ë¡]</a> &nbsp;&nbsp;<a href="javascript:history.go(-1)">[ë’¤ë¡œ]</a>
 			</div>
 		</form>
 	</div>
