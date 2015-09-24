@@ -40,8 +40,13 @@
 		margin-left: 0px;
 	}	
 	#bigImg {
+		float: left;
 		width:350px;
-		
+		height:250px;
+		-webkit-transition: 1.5s ease-in-out;
+		-moz-transition: 1.5s ease-in-out;
+    	-o-transition: 1.5s ease-in-out;
+    	transition: 1.5s ease-in-out;
 	}
 	#left, #right {
 		border: 0px solid yellow;
@@ -68,7 +73,15 @@
 		font-size: 27px;
 		text-decoration: underline;
 	}
+	#bigImg:hover {
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -o-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+ }
 </style>
+
 
 <div id="content">
 <h1>Gallery</h1>
@@ -114,11 +127,8 @@
 <script src="http://code.jquery.com/jquery.js"></script>
 <script>
 	$(document).ready(function(){
-		$(".imgLine img").unbind('mouseover');
 		$(".imgLine img").attr({width:75, height:75})
-		$(".imgLine").bind("mousemove",function() {
-			console.log('mouse move');
-		$(".imgLine img").mouseover(function(){
+		$(".imgLine img").click(function(){
 			var imgSrc = $(this).attr("src");	
 			var img = "<img src='"+imgSrc+"'width='500px' height='350px'/>";
 			$("#bigImg").html(img);
@@ -147,7 +157,6 @@
  			} else if(imgSrc=="resources/images/gallery/img12.JPG"){
  				$("#leftDown").html("ERP생산정보시스템 수료식.");
  			} 
-		});
 		});
 	});	
 </script>	
