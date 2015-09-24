@@ -8,21 +8,17 @@
 		imgNum = "01";
 	
 %>
-<style>
+<style type="text/css">
+	#content {
+		margin-top: 40px;
+	}
 	#lineWidth {
-		border-bottom: 1px solid #121212;
-    	box-shadow: 0 1px #2A2A2A;
+		border-bottom: 1px solid #fff;
     	margin: 20px 15px;
     	width: 270px;
     }
-    #lineHeight {
-    	background: #121212;
-	    box-shadow: 1px 0 #2a2a2a;
-	    display: inline-block;
-	    width: 1px;
-    }
 	#smallImg {
-		background: #222;
+		background: #e1e3e4;
 		margin-top: 10px;
 		width: 900px;
 		height: 400px;
@@ -40,19 +36,20 @@
 		margin-left: 0px;
 	}	
 	#bigImg {
+		
 		float: left;
 		width:350px;
-		height:250px;
-		-webkit-transition: 1.5s ease-in-out;
-		-moz-transition: 1.5s ease-in-out;
-    	-o-transition: 1.5s ease-in-out;
-    	transition: 1.5s ease-in-out;
+		-webkit-transition: 1s ease-in-out;
+		-moz-transition: 1s ease-in-out;
+    	-o-transition: 1s ease-in-out;
+    	transition: 1s ease-in-out;
 	}
-	#left, #right {
-		border: 0px solid yellow;
+	#left, #right{
+
 		float: left;
 	}
 	#right img {
+		border: 8px solid gray;
 		height: 350px;
 		width: 500px;
 		box-shadow: 0 5px 35px rgba(0,0,0,.80);
@@ -74,17 +71,134 @@
 		text-decoration: underline;
 	}
 	#bigImg:hover {
-    -webkit-transform: scale(1.3);
-    -moz-transform: scale(1.3);
-    -o-transform: scale(1.3);
-    -ms-transform: scale(1.3);
-    transform: scale(1.3);
+    transform: scale(1.4);
  }
+  @-webkit-keyframes spincube {
+    from,to  { -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+    16%      { -webkit-transform: rotateY(-90deg);                           }
+    33%      { -webkit-transform: rotateY(-90deg) rotateZ(90deg);            }
+    50%      { -webkit-transform: rotateY(-180deg) rotateZ(90deg);           }
+    66%      { -webkit-transform: rotateY(-270deg) rotateX(90deg);           }
+    83%      { -webkit-transform: rotateX(90deg);                            }
+  }
+
+  @keyframes spincube {
+    from,to {
+      -moz-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+      -ms-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+      transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    16% {
+      -moz-transform: rotateY(-90deg);
+      -ms-transform: rotateY(-90deg);
+      transform: rotateY(-90deg);
+    }
+    33% {
+      -moz-transform: rotateY(-90deg) rotateZ(90deg);
+      -ms-transform: rotateY(-90deg) rotateZ(90deg);
+      transform: rotateY(-90deg) rotateZ(90deg);
+    }
+    50% {
+      -moz-transform: rotateY(-180deg) rotateZ(90deg);
+      -ms-transform: rotateY(-180deg) rotateZ(90deg);
+      transform: rotateY(-180deg) rotateZ(90deg);
+    }
+    66% {
+      -moz-transform: rotateY(-270deg) rotateX(90deg);
+      -ms-transform: rotateY(-270deg) rotateX(90deg);
+      transform: rotateY(-270deg) rotateX(90deg);
+    }
+    83% {
+      -moz-transform: rotateX(90deg);
+      -ms-transform: rotateX(90deg);
+      transform: rotateX(90deg);
+    }
+  }
+
+  .cubespinner {
+
+    -webkit-animation-name: spincube;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 12s;
+
+    animation-name: spincube;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 12s;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    -webkit-transform-origin: 40px 40px 0;
+    -moz-transform-origin: 40px 40px 0;
+    -ms-transform-origin: 40px 40px 0;
+    transform-origin: 40px 40px 0;
+  }
+
+  .cubespinner div {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border: 1px solid #ccc;
+    background: rgba(255,255,255,0.8);
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+    line-height: 80px;
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .cubespinner .face1 {
+    -webkit-transform: translateZ(40px);
+    -moz-transform: translateZ(40px);
+    -ms-transform: translateZ(40px);
+    transform: translateZ(40px);
+  }
+  .cubespinner .face2 {
+    -webkit-transform: rotateY(90deg) translateZ(40px);
+    -moz-transform: rotateY(90deg) translateZ(40px);
+    -ms-transform: rotateY(90deg) translateZ(40px);
+    transform: rotateY(90deg) translateZ(40px);
+  }
+  .cubespinner .face3 {
+    -webkit-transform: rotateY(90deg) rotateX(90deg) translateZ(450px);
+    -moz-transform: rotateY(90deg) rotateX(90deg) translateZ(40px);
+    -ms-transform: rotateY(90deg) rotateX(90deg) translateZ(40px);
+    transform: rotateY(90deg) rotateX(90deg) translateZ(40px);
+  }
+  .cubespinner .face4 {
+    -webkit-transform: rotateY(180deg) rotateZ(90deg) translateZ(40px);
+    -moz-transform: rotateY(180deg) rotateZ(90deg) translateZ(40px);
+    -ms-transform: rotateY(180deg) rotateZ(90deg) translateZ(40px);
+    transform: rotateY(180deg) rotateZ(90deg) translateZ(40px);
+  }
+  .cubespinner .face5 {
+    -webkit-transform: rotateY(-90deg) rotateZ(90deg) translateZ(40px);
+    -moz-transform: rotateY(-90deg) rotateZ(90deg) translateZ(40px);
+    -ms-transform: rotateY(-90deg) rotateZ(90deg) translateZ(40px);
+    transform: rotateY(-90deg) rotateZ(90deg) translateZ(40px);
+  }
+  .cubespinner .face6 {
+    -webkit-transform: rotateX(-90deg) translateZ(40px);
+    -moz-transform: rotateX(-90deg) translateZ(40px);
+    -ms-transform: rotateX(-90deg) translateZ(40px);
+    transform: rotateX(-90deg) translateZ(40px);
+  }
+
 </style>
-
-
 <div id="content">
-<h1>Gallery</h1>
+	<div class="stage" style="width: 80px; height: 80px;">
+	<div class="cubespinner">
+		<div class="face1">갤러리</div>
+		<div class="face2">YTC</div>
+		<div class="face3"><img src="resources/images/footer.png" style="margin-top:15px;"/></div>
+		<div class="face4">갤러리</div>
+		<div class="face5">YTC</div>
+		<div class="face6"><img src="resources/images/footer.png" style="margin-top:15px;"/></div>
+	</div>
+</div>
 <div id="smallImg">
 	<div id="left">
 		<div class="imgLine"><img src="resources/images/gallery/img01.JPG"/>
@@ -118,9 +232,7 @@
 			} 
 		%></div>
 	</div>
-		
-		<div id="right">
-		<div id="lineHeight" style="height:350px; margin-right:50px; margin-top:20px"></div>
+	<div id="right">
 		<span id="bigImg"><img src="resources/images/gallery/img<%=imgNum %>.JPG" /></span></div>
 	</div>
 </div>
