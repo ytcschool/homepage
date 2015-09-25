@@ -1,12 +1,43 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
-</body>
-</html>
+    
+<style>
+	#guideline-wrapper {
+	 	padding-top: 40px;
+	 	padding-bottom: 50px;
+	 	height: 400px; 
+	} 
+	
+	
+	img {
+	display: block;
+	margin : 0 auto;
+
+	}
+	
+	div#ankor_area {
+		text-align : center;
+		margin : 30px auto;
+		font-size: 16px;
+	}
+
+	
+	div#ankor_area > a {
+		margin: 0 30px;
+	}
+
+</style>
+
+<div id="content">
+	<div id="guideline-wrapper">
+
+		<img src="../resources/images/Guideline/IT_Contents_View.jpg" width="736">
+		<div id="ankor_area">
+		<a href="javascript:history.go(-1)">돌아가기</a>
+	</div>
+	
+	</div>
+	
+	
+</div>
