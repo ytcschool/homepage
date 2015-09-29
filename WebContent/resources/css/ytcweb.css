@@ -84,7 +84,7 @@ header#main_header {
 }
 #menuTitleBox div.title a {
 	display: inline-block;
-	border: 1px solid yellow;
+/* 	border: 1px solid yellow; */
 	width: 500px;
 	padding-left: 25px;
 }
@@ -94,7 +94,8 @@ header#main_header {
 	overflow: hidden;
 	position: absolute;
 	margin-left: -33px;
-	border-right: 1px solid #2bd3ff;
+/* 	border-right: 1px solid #2bd3ff; */
+/* 	border-right: 1px solid #2bd3ff; */
 	background: black; /*black*/
 }
 
@@ -116,9 +117,9 @@ header#main_header {
 	background: red;
 }
 
-#menuListBox #mainMenu .menu1 { background: red; }
-#menuListBox #mainMenu .menu2 { background: orange; }
-#menuListBox #mainMenu .menu3 { background: yellow; }
+#menuListBox #mainMenu .menu1 { background: rgb(211, 100, 99); }
+#menuListBox #mainMenu .menu2 { background: rgb(174, 116, 174); }
+#menuListBox #mainMenu .menu3 { background: rgb(245, 184, 105); }
 
 #menuListBox #mainMenu li span {
 	display: inline-block;
@@ -135,7 +136,8 @@ header#main_header {
 
 #menuListBox #mainMenu li span a {
 	display: block;
-	color: #3b3b3b;
+/* 	color: #3b3b3b; */
+	color: white;
 	width: 100%;
 	height: 80px;
 	line-height: 80px;
@@ -148,7 +150,7 @@ header#main_header {
 	position: relative; 
 	margin: 0 0 0 -76px; 
 	vertical-align: top; 
-	background: lightgreen;
+	background: #3399cc;
 }
 
 #menuListBox #sideMenu > li {
@@ -178,7 +180,7 @@ header#main_header {
 #menuListBox #sideMenu li a {
 	display: block;
 	margin: 0;
-	color: #3b3b3b;
+	color: white;
 	width: 100%;
 	height: 40px;
 	line-height: 40px;
@@ -186,10 +188,10 @@ header#main_header {
 }
 
 #menuListBox #mainMenu li:hover, #menuListBox #sideMenu li:hover {
-	background: black;
+	background: white;
 }
 #menuListBox #mainMenu li:hover a, #menuListBox #sideMenu li:hover a {
-	color: white;
+	color: #3b3b3b;
 }
 
 /* Open&Close Button */
