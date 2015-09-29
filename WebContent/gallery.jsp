@@ -9,89 +9,6 @@
 	
 %>
 <style type="text/css">
-	#content {
-		margin-top: 40px;
-	}
-	#lineWidth {
-		border-bottom: 1px solid #737575;
-		box-shadow: 0 1px #AAADAE;
-/*     	margin-top: 0px; */
-     	margin-left: 15px; 
-    	width: 230px;
-    }
-	#mainbox {
-/* 		background: #e1e3e4; */
- 		background-image: -moz-linear-gradient(top, #e1e3e4, #828283); /* Firefox 3.6 */ 
-   		background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #828283),color-stop(1, #e1e3e4)); /* Safari & Chrome */
-/*    	filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#e1e3e4', endColorstr='#9F9F9F'); /* IE6 & IE7 */ */
-/*    	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#e1e3e4', endColorstr='#9F9F9F')"; /* IE8 */ */
-		margin-top: 10px;
-		width: 900px;
-		height: 400px;
-		padding: 30px;
-		border-radius: 15px;
-/*  	behavior: url(border-radius.htc); */
-	}
-  	#imgLine {
-/*      border: 1px solid blue;    */
-  		width: 220px;
-   		height: 320px; 
-  		margin-left: 20px;
-  	}
-	#imgLine > div{
-		float: left; 
-		width: 33%;
-		opacity: 0.4;
-	}
-  	#imgLine > div:HOVER {
-  		opacity: 1.0;
-  	}
-	#right {
-		width: 550px;
-/* 		padding-top: 0; */
-	}
-/* 	div.imgLine { */
-/* 		margin-left: 0px; */
-/* 	}	 */
-	#bigImg {	
-		float: left;
-		width:350px;
-		-webkit-transition: 1s ease-in-out;
-		-moz-transition: 1s ease-in-out;
-    	-o-transition: 1s ease-in-out;
-    	transition: 1s ease-in-out;
-	}
-	#left, #right{
-		float: left;
-/*  	border: 1px solid red;  */
-	}
-	#right img {
-		border: 8px solid gray;
-		height: 350px;
-		width: 500px;
-		box-shadow: 0 5px 35px rgba(0,0,0,.80);
-	}
-	#leftDown {
-/* 		border: 1px solid yellow; */
-		color: #3F4243;
-		width: 200px;
-		height: 80px;
- 		margin-left: 32px; 
-		margin-top: 10px;
-		font-size: 15px; 
-		text-align: center;
-	}
-	img {
-		border-radius: 15px;
-		border: 1px solid white;
-		width: 65px;
-		height: 65px;
-		margin-top: 5px;
-		margin-left: 5px;
-	}
-	#bigImg:hover {
-		transform: scale(1.4);
- 	}
   @-webkit-keyframes spincube {
     	from,to  { -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
 	    16%      { -webkit-transform: rotateY(-90deg);                           }
@@ -204,8 +121,83 @@
     -moz-transform: rotateX(-90deg) translateZ(40px);
     -ms-transform: rotateX(-90deg) translateZ(40px);
     transform: rotateX(-90deg) translateZ(40px);
-  }
-
+  }      
+/*   -------------------------------------------------------------주사위 */
+	#content {
+		margin-top: 40px;
+	}
+	#lineWidth {
+		border-bottom: 1px solid #737575;
+		box-shadow: 0 1px #AAADAE;
+     	margin-left: 15px; 
+    	width: 230px;
+    }
+	#mainbox {
+/* 		background: #e1e3e4; */
+ 		background-image: -moz-linear-gradient(top, #e1e3e4, #828283); /* Firefox 3.6 */ 
+   		background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #828283),color-stop(1, #e1e3e4)); /* Safari & Chrome */
+/*    	filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#e1e3e4', endColorstr='#9F9F9F'); /* IE6 & IE7 */ */
+/*    	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#e1e3e4', endColorstr='#9F9F9F')"; /* IE8 */ */
+		margin-top: 10px;
+		width: 900px;
+		height: 400px;
+		padding: 30px;
+		border-radius: 15px;
+	}
+  	#imgLine {
+  		width: 220px;
+   		height: 320px; 
+  		margin-left: 20px;
+  	}
+	#imgLine > div{
+		float: left; 
+		width: 33%;
+		opacity: 0.4;
+		-webkit-transition: opacity 1s;
+	}
+   	#imgLine > div:HOVER {  
+   	  	opacity: 1.0;
+    }  
+	#right {
+		width: 550px;
+	}
+	#bigImg {	
+		float: left;
+		width:350px;
+		-webkit-transition: 1s ease-in-out;
+		-moz-transition: 1s ease-in-out;
+    	-o-transition: 1s ease-in-out;
+    	transition: 1s ease-in-out;
+	}
+	#left, #right{
+		float: left;
+	}
+	#right img {
+		border: 8px solid gray;
+		height: 350px;
+		width: 500px;
+		box-shadow: 0 5px 35px rgba(0,0,0,.80);
+	}
+	#leftDown {
+		color: #3F4243;
+		width: 200px;
+		height: 80px;
+ 		margin-left: 32px; 
+		margin-top: 10px;
+		font-size: 15px; 
+		text-align: center;
+	}
+	img {
+		border-radius: 15px;
+		border: 1px solid white;
+		width: 65px;
+		height: 65px;
+		margin-top: 5px;
+		margin-left: 5px;
+	}
+	#bigImg:hover {
+		transform: scale(1.4);
+ 	}
 </style>
 <div id="content">
 	<div class="stage" style="width: 80px; height: 80px;">
@@ -220,7 +212,7 @@
 </div>
 <div id="mainbox">
 	<div id="left">
-		<div id="imgLine" style="word-break:break-all">
+		<div id="imgLine">
 			<div class="img01"><img src="resources/images/gallery/img01.JPG"/></div>
 			<div class="img02"><img src="resources/images/gallery/img02.JPG"/></div>
 			<div class="img03"><img src="resources/images/gallery/img03.JPG"/></div>
