@@ -106,7 +106,7 @@
       </div>
     <div id="annmnt_box">
     <div id="bgcolor">
-	<h1 id="gTitle">Gallery</h1>
+	<h1 id="gTitle">갤러리</h1>
 		<ul id="banner">
 			<li><a href="gallery.view?imgNum=01"><img src="resources/images/gallery/img01.JPG" width="300px" height="165px"/></a></li>
 			<li><a href="gallery.view?imgNum=02"><img src="resources/images/gallery/img02.JPG" width="300px" height="165px"/></a></li>
