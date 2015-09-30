@@ -196,7 +196,7 @@
 		margin-left: 5px;
 	}
 	#bigImg:hover {
-		transform: scale(1.4);
+		transform: scale(1.3);
  	}
 </style>
 <div id="content">
