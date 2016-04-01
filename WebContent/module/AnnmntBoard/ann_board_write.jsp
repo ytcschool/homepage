@@ -10,7 +10,7 @@
 	#annlist-wrapper {
 		padding-top: 40px;
 		padding-bottom: 50px;
-		height: 550px;	
+		height: 470px;	
 	}
 	
 	table {

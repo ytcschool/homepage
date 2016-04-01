@@ -27,7 +27,7 @@ div#intro-box {
 
 #main_aside>article.main_aside {
 	margin-top: 70px;
-	padding: 10px 40px 180px;
+	padding: 10px 40px 280px;
 }
 
 #main_section>article.main_article {
@@ -59,7 +59,7 @@ div#intro-box {
 			<article class="main_article">
 				<p>
 				<img src="<%=request.getContextPath() %>/resources/images/introducepic.png" alt="인사말" width="600"
-						height="250">
+						height="300">
 				</p>
 			</article>
 			
@@ -67,7 +67,7 @@ div#intro-box {
 			<article class="main_article">
 				<p>
 					<img src="<%=request.getContextPath() %>/resources/images/diciple.png" alt="교훈" width="600"
-						height="250">
+						height="350">
 				</p>
 			</article>
 <br/><br/>
@@ -75,7 +75,7 @@ div#intro-box {
 			<article class="main_article">
 				<p>
 					<img src="<%=request.getContextPath() %>/resources/images/map.png" alt="지도" width="600"
-						height="250">
+						height="350">
 				</p>
 			</article>
 

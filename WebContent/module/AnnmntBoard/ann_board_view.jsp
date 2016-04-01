@@ -11,7 +11,7 @@
 	#annList-wrapper {
 	 	padding-top: 40px;
 	 	padding-bottom: 50px;
-	 	height: 400px; 
+	 	height: 470px; 
 	} 
 	table {
 		margin : 0 auto;
